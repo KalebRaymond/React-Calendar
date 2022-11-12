@@ -1,0 +1,11 @@
+.CalendarGridCard {
+    background-color: red;
+
+    div[id="date-container"] {
+        background-color: green;
+
+        span {
+            color: red;
+        }
+    }
+}
