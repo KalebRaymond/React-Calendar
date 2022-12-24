@@ -1,6 +1,6 @@
 # User stories
 
-## View Current Month
+## 1. View Current Month
 As a user, I want to be able to view the current month, so I can see what events are in the calendar
 
 ### Acceptance Criteria
@@ -9,7 +9,7 @@ As a user, I want to be able to view the current month, so I can see what events
 - Calendar dates in the top row of the calendar should display days of the week above the card date number, in order of Sunday to Saturday
 - Each day of the month will indicate that there is an event on that date if there are any
 
-## View Other Months
+## 2. View Other Months
 As a user, I want to be able to navigate to past and future months in the calendar, so that I can see what events are in the past and future
 	
 ### Acceptance Criteria
@@ -17,7 +17,7 @@ As a user, I want to be able to navigate to past and future months in the calend
 - Grayed out dates will indicate that there is an event on that date if there are any
 - The calendar will display navigation arrows at the top to allow for navigating forward and backward
 
-## View Event Details
+## 3. View Event Details
 As a user, I want to be able to view event details, so that I can plan for it and be reminded of the location, time, etc.
 
 ### Acceptance Criteria
@@ -27,7 +27,7 @@ As a user, I want to be able to view event details, so that I can plan for it an
 	* Location
 	* Name
 
-## Add New Events
+## 4. Add New Events
 As a user, I want to be able to add new events to my calendar, so that I can keep track of events coming up in my life
 
 ### Acceptance Criteria	
@@ -39,7 +39,7 @@ As a user, I want to be able to add new events to my calendar, so that I can kee
 - Submitting the form should create a new event
 - The new event should be displayed on the calendar on the date specified by the user
 
-## Delete Events
+## 5. Delete Events
 As a user, I want to be able to delete events, so that I can manage space on my calendar and remove events that have been cancelled in real life
 
 ### Acceptance Criteria	
