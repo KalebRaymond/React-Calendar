@@ -47,7 +47,7 @@ As a user, I want to be able to delete events, so that I can manage space on my 
 - Clicking delete should produce an "Are you sure" confirmation
 - Deleting an event should remove it from the calendar
 
-## Edit Events
+## 6. Edit Events
 As a user, I want to be able to edit events, so that I can update information in case the event changes
 	
 ### Acceptance Criteria
