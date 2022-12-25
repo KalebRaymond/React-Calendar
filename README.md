@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# User stories
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. View Current Month
+As a user, I want to be able to view the current month, so I can see what events are in the calendar
 
-## Available Scripts
+### Acceptance Criteria
+- The calendar displays the name of the month
+- The calendar displays the year
+- Calendar dates in the top row of the calendar should display days of the week above the card date number, in order of Sunday to Saturday
+- Each day of the month will indicate that there is an event on that date if there are any
 
-In the project directory, you can run:
+## 2. View Other Months
+As a user, I want to be able to navigate to past and future months in the calendar, so that I can see what events are in the past and future
+	
+### Acceptance Criteria
+- Calendar dates in the current month view that are part of previous/future months are grayed out
+- Grayed out dates will indicate that there is an event on that date if there are any
+- The calendar will display navigation arrows at the top to allow for navigating forward and backward
 
-### `npm start`
+## 3. View Event Details
+As a user, I want to be able to view event details, so that I can plan for it and be reminded of the location, time, etc.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Acceptance Criteria
+- The calendar should display the name of events on each calendar date
+- Clicking on an event should display the event details
+	* Time
+	* Location
+	* Name
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 4. Add New Events
+As a user, I want to be able to add new events to my calendar, so that I can keep track of events coming up in my life
 
-### `npm test`
+### Acceptance Criteria	
+- Clicking on a calendar date should allow the user to enter details for a new event
+	* Time
+	* Location
+	* Name
+- User should be able to cancel the form without creating a new event
+- Submitting the form should create a new event
+- The new event should be displayed on the calendar on the date specified by the user
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 5. Delete Events
+As a user, I want to be able to delete events, so that I can manage space on my calendar and remove events that have been cancelled in real life
 
-### `npm run build`
+### Acceptance Criteria	
+- Clicking on an event should display an option for deleting the event
+- Clicking delete should produce an "Are you sure" confirmation
+- Deleting an event should remove it from the calendar
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 6. Edit Events
+As a user, I want to be able to edit events, so that I can update information in case the event changes
+	
+### Acceptance Criteria
+- Clicking on an event should display the event details
+- Clicking on the fields for the event details (ex. the title field) should allow the user to change the name
+- Removing focus from the field (ex. by clicking elsewhere or tabbing out of the field) should automatically save any changes
+- Changes to the event (ex. date, name) should be automatically reflected on the calendar
