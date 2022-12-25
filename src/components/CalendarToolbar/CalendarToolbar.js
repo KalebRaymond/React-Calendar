@@ -4,7 +4,12 @@ import styles from './CalendarToolbar.module.scss';
 
 const CalendarToolbar = () => (
   <div className={styles.CalendarToolbar} data-testid="CalendarToolbar">
-    CalendarToolbar Component
+    <span>{`[LEFT ARROW]`}</span>
+    <div id="">
+      <span id="month-name">TESTMONTH</span>
+      <span id="year">TESTYEAR</span>
+    </div>
+    <span>{`[RIGHT ARROW]`}</span>
   </div>
 );
 

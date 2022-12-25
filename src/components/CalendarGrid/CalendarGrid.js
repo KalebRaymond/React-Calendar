@@ -3,15 +3,26 @@ import React from 'react';
 import styles from './CalendarGrid.module.scss';
 
 import CalendarGridCard from 'components/CalendarGridCard/CalendarGridCard';
+import { render } from '@testing-library/react';
 
-const CalendarGrid = () => (
-  <div className={styles.CalendarGrid} data-testid="CalendarGrid">
-    <CalendarGridCard></CalendarGridCard>
-  </div>
-);
+const CalendarGrid = (props) => {
+  const {
+    calendarDates
+  } = props;
 
-CalendarGrid.propTypes = {};
+  const renderDates = () => {
+    console.log(calendarDates);
 
-CalendarGrid.defaultProps = {};
+    return calendarDates?.map((date, i) => {
+      return <CalendarGridCard key={i}></CalendarGridCard>
+    });
+  }
+
+  return (
+    <div className={styles.CalendarGrid} data-testid="CalendarGrid">
+      {renderDates()}
+    </div>
+  );
+}
 
 export default CalendarGrid;

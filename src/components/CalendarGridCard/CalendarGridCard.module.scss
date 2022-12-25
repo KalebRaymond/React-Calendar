@@ -1,11 +1,19 @@
 .CalendarGridCard {
-    background-color: red;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    height: 12em;
+    width: 8em;
 
     div[id="date-container"] {
-        background-color: green;
+        align-items: center;
+        display: flex;
+        height: 15%;
+        justify-content: center; 
+        margin-bottom: 1em;
+    }
 
-        span {
-            color: red;
-        }
+    div[id="card-body"] {
+        flex-grow: 2;
     }
 }
