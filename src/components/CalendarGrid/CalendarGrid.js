@@ -1,15 +1,14 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './CalendarGrid.module.scss';
 
-import CalendarGridCard from 'components/CalendarGridCard/CalendarGridCard';
-import { render } from '@testing-library/react';
+import CalendarGridRow from 'components/CalendarGridRow/CalendarGridRow';
 
 const CalendarGrid = (props) => {
   const {
     calendarDates
   } = props;
 
+  /*
   const renderDates = () => {
     console.log(calendarDates);
 
@@ -17,10 +16,15 @@ const CalendarGrid = (props) => {
       return <CalendarGridCard key={i}></CalendarGridCard>
     });
   }
+  */
 
   return (
     <div className={styles.CalendarGrid} data-testid="CalendarGrid">
-      {renderDates()}
+      <CalendarGridRow></CalendarGridRow>
+      <CalendarGridRow></CalendarGridRow>
+      <CalendarGridRow></CalendarGridRow>
+      <CalendarGridRow></CalendarGridRow>
+      <CalendarGridRow></CalendarGridRow>
     </div>
   );
 }

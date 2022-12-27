@@ -14,18 +14,11 @@ describe('<CalendarGrid />', () => {
 
     expect(calendarGrid).toBeInTheDocument();
   });
-  it('should render 35 dates', async () => {
-    const numDates = 3;
-    const calendarDates = []
+  it('should render 5 weeks', async () => {
+    const numWeeks = 5;
+  
+    render(<CalendarGrid/>);
 
-    for (let i = 0; i < numDates; i++) {
-      calendarDates.push(i);
-    }
-
-    render(<CalendarGrid calendarDates={calendarDates} />);
-
-    screen.debug()
-
-    expect(await screen.findAllByTestId('CalendarGridCard')).toHaveLength(numDates);
-  })
+    expect(await screen.findAllByTestId('CalendarGridRow')).toHaveLength(numWeeks);
+  });
 });
