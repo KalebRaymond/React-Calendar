@@ -1,0 +1,15 @@
+.WeekDaysHeader {
+    display: flex;
+    flex-direction: row;
+    height: 2rem;
+    width: 100%;
+
+    div[class="weekDay"] {
+        align-items: center;
+        border: 1px solid black;
+        display: flex;
+        height: 100%;
+        justify-content: center; 
+        width: 100%;
+    }
+}

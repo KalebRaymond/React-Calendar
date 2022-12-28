@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './CalendarGrid.module.scss';
 
 import CalendarGridRow from 'components/CalendarGridRow/CalendarGridRow';
+import WeekDaysHeader from 'components/WeekDaysHeader/WeekDaysHeader';
 
 const CalendarGrid = (props) => {
   const {
@@ -20,6 +21,7 @@ const CalendarGrid = (props) => {
 
   return (
     <div className={styles.CalendarGrid} data-testid="CalendarGrid">
+      <WeekDaysHeader></WeekDaysHeader>
       <CalendarGridRow></CalendarGridRow>
       <CalendarGridRow></CalendarGridRow>
       <CalendarGridRow></CalendarGridRow>
