@@ -11,16 +11,21 @@ describe('<CalendarToolbar />', () => {
 
     expect(calendarToolbar).toBeInTheDocument();
   });
-  it('should render month name', async () =>{
-    render(<CalendarToolbar />);
+  it('should render month and year', async () =>{
     const monthName = 'TESTMONTH';
-
-    expect(await screen.findByText(monthName)).toBeVisible();
-  });
-  it('should render year', async () =>{
-    render(<CalendarToolbar />);
     const year = 'TESTYEAR';
 
-    expect(await screen.findByText(year)).toBeVisible();
+    render(<CalendarToolbar currentMonth={monthName} currentYear={year}/>);
+
+    const monthYear = `${monthName} ${year}`
+
+    expect(await screen.findByText(monthYear)).toBeVisible();
+  });
+  it('should render two buttons for navigating months', () => {
+    const {container} = render(<CalendarToolbar />);
+
+    const buttons = container.getElementsByTagName('button');
+
+    expect(buttons.length).toBe(2);
   });
 });

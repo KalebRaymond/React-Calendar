@@ -1,17 +1,38 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './CalendarToolbar.module.scss';
+import './CalendarToolbar.scss';
+import IconButton from 'components/IconButton/IconButton';
+import { useTranslation } from 'react-i18next';
 
-const CalendarToolbar = () => (
-  <div className={styles.CalendarToolbar} data-testid="CalendarToolbar">
-    <span>{`[LEFT ARROW]`}</span>
-    <div id="">
-      <span id="month-name">TESTMONTH</span>
-      <span id="year">TESTYEAR</span>
+const CalendarToolbar = (props) => {
+  const {
+    currentMonth,
+    currentYear
+  } = props;
+
+  const {t} = useTranslation();
+
+  const handleLeftNavClick = () => {
+    console.log('### Navigate Month Left');
+  }
+
+  const handleRightNavClick = () => { 
+    console.log('### Navigate Month Right')
+  }
+
+  return (<div className={"CalendarToolbar"} data-testid="CalendarToolbar">
+    <div className="toolbarSection" id="month-year">
+      <span>{`${currentMonth} ${currentYear}`}</span>
     </div>
-    <span>{`[RIGHT ARROW]`}</span>
-  </div>
-);
+    <div className="toolbarSection" id="nav-buttons">
+      <IconButton ariaLabel={t('calendarToolbar.leftNavButton')} onClick={handleLeftNavClick}>
+        <i className="bi bi-chevron-left"></i>
+      </IconButton>
+      <IconButton ariaLabel={t('calendarToolbar.rightNavButton')} onClick={handleRightNavClick}>
+        <i className="bi bi-chevron-right"></i>
+      </IconButton>
+    </div>
+  </div>);
+};
 
 CalendarToolbar.propTypes = {};
 

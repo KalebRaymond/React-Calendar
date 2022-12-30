@@ -28,5 +28,9 @@
         "october": "october",
         "november": "november",
         "december": "december"
+    },
+    "calendarToolbar": {
+        "leftNavButton": "Navigate to previous month",
+        "rightNavButton": "Navigate to next month"
     }
 }

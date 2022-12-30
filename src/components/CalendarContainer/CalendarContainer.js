@@ -7,7 +7,7 @@ import CalendarToolbar from 'components/CalendarToolbar/CalendarToolbar';
 
 const CalendarContainer = () => (
   <div className={styles.CalendarContainer} data-testid="CalendarContainer">
-    <CalendarToolbar></CalendarToolbar>
+    <CalendarToolbar currentMonth={"MONTH"} currentYear={"YEAR"}></CalendarToolbar>
     <CalendarGrid calendarDates={[1, 2, 3]}></CalendarGrid>
   </div>
 );
