@@ -28,4 +28,11 @@ describe('<CalendarToolbar />', () => {
 
     expect(buttons.length).toBe(2);
   });
+  it('should display the previous month when the left nav button is clicked', () => {
+    expect(1).toBe(2);
+  });
+
+  it('should display the next month when the right nav button is clicked', () => {
+    expect(1).toBe(2);
+  });
 });

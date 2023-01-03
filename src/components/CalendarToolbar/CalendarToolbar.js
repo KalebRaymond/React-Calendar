@@ -3,16 +3,21 @@ import './CalendarToolbar.scss';
 import IconButton from 'components/IconButton/IconButton';
 import { useTranslation } from 'react-i18next';
 
+import { useDispatch } from 'react-redux'
+import { testReducerMethod } from '../../reducers/calendarReducer'
+
 const CalendarToolbar = (props) => {
   const {
     currentMonth,
     currentYear
   } = props;
-
+  
   const {t} = useTranslation();
+  const dispatch = useDispatch();
 
   const handleLeftNavClick = () => {
     console.log('### Navigate Month Left');
+    dispatch(testReducerMethod());
   }
 
   const handleRightNavClick = () => { 
