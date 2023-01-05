@@ -5,18 +5,19 @@ import CalendarGrid from 'components/CalendarGrid/CalendarGrid';
 import CalendarToolbar from 'components/CalendarToolbar/CalendarToolbar';
 import moment from 'moment';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 
 
 const CalendarContainer = () => {
   const {t} = useTranslation();
-  ///Decouple these for testing purposes?
-  ///Also convert these to redux state
-  //The date currently being viewed in the calendar
-  const [focusedDate, setFocusedDate] = useState(moment());
+
   //The current date in real life
   const [todaysDate, setTodaysDate] = useState(moment());
 
-  ///useState(0)? Need to check types
+  //The current month and year on the calendar that is being viewed
+  ///Not updating on calendar probably because focusedDate is not serializable
+  ///Works fine if useEffect includes state.calendar.testValue as a dependency
+  const focusedDate = useSelector(state => state.calendar.focusedDate);
   const [focusedMonth, setFocusedMonth] = useState('');
   const [focusedYear, setFocusedYear] = useState(0);
 
@@ -40,11 +41,12 @@ const CalendarContainer = () => {
   }
 
   useEffect(() => {
-    const month = focusedDate.month();
-    setFocusedMonth(getMonthTranslation(month).toUpperCase());
-    ///Need to translate month using useTranslation
+    console.log("### focusedDate", focusedDate);
 
-    const year = focusedDate.year();
+    const month = focusedDate?.month();
+    setFocusedMonth(getMonthTranslation(month).toUpperCase());
+
+    const year = focusedDate?.year();
     setFocusedYear(year);
     
   }, [focusedDate])
@@ -54,9 +56,5 @@ const CalendarContainer = () => {
     <CalendarGrid calendarDates={[1, 2, 3]}></CalendarGrid>
   </div>)
 };
-
-CalendarContainer.propTypes = {};
-
-CalendarContainer.defaultProps = {};
 
 export default CalendarContainer;

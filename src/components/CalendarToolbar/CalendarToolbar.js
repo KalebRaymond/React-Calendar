@@ -4,7 +4,7 @@ import IconButton from 'components/IconButton/IconButton';
 import { useTranslation } from 'react-i18next';
 
 import { useDispatch } from 'react-redux'
-import { testReducerMethod } from '../../reducers/calendarReducer'
+import { incrementMonth, decrementMonth } from '../../reducers/calendarReducer'
 
 const CalendarToolbar = (props) => {
   const {
@@ -16,12 +16,11 @@ const CalendarToolbar = (props) => {
   const dispatch = useDispatch();
 
   const handleLeftNavClick = () => {
-    console.log('### Navigate Month Left');
-    dispatch(testReducerMethod());
+    dispatch(decrementMonth());
   }
 
   const handleRightNavClick = () => { 
-    console.log('### Navigate Month Right')
+    dispatch(incrementMonth());
   }
 
   return (<div className={"CalendarToolbar"} data-testid="CalendarToolbar">

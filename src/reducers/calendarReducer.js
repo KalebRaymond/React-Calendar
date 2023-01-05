@@ -1,27 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit'
+import moment from 'moment'
 
 export const calendarReducer = createSlice({
     name: 'calendar',
     initialState: {
-        value: 0
+        focusedDate: moment(),
+        testValue: 0
     },
     reducers: {
-        increment: state => {
-            state.value += 1
+        incrementMonth: state => {
+            state.focusedDate.add(1, 'month');
         },
-        decrement: state => {
-            state.value -= 1
-        },
-        incrementByAmount: (state, action) => {
-            state.value += action.payload
-        },
-        testReducerMethod: (state) => {
-            console.log('### REDUX WORKS', state.value);
+        decrementMonth: state => {
+            state.focusedDate.subtract(1, 'month');
         }
     }
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount, testReducerMethod } = calendarReducer.actions
+export const { incrementMonth, decrementMonth } = calendarReducer.actions
 
 export default calendarReducer.reducer
