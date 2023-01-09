@@ -1,38 +1,90 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
-import CalendarToolbar from './CalendarToolbar';
+import "@testing-library/jest-dom/extend-expect";
+import { Provider } from "react-redux";
+import { fireEvent, render, screen } from "@testing-library/react";
+import CalendarToolbar from "./CalendarToolbar";
+import React from "react";
+import { configureStore } from "@reduxjs/toolkit";
+import calendarReducer from "../../reducers/calendarReducer.js";
 
-describe('<CalendarToolbar />', () => {
-  it('should mount', () => {
-    render(<CalendarToolbar />);
-    
-    const calendarToolbar = screen.getByTestId('CalendarToolbar');
+//import store from "../../app/store.js";
 
-    expect(calendarToolbar).toBeInTheDocument();
-  });
-  it('should render month and year', async () =>{
-    const monthName = 'TESTMONTH';
-    const year = 'TESTYEAR';
+let store;
 
-    render(<CalendarToolbar currentMonth={monthName} currentYear={year}/>);
+const createTestStore = () => {
+	return configureStore({
+		reducer: {
+			calendar: calendarReducer,
+		},
+	});
+};
 
-    const monthYear = `${monthName} ${year}`
+describe("<CalendarToolbar />", () => {
+	beforeEach(() => {
+		store = createTestStore();
+	});
 
-    expect(await screen.findByText(monthYear)).toBeVisible();
-  });
-  it('should render two buttons for navigating months', () => {
-    const {container} = render(<CalendarToolbar />);
+	it("should mount", () => {
+		render(
+			<Provider store={store}>
+				<CalendarToolbar />
+			</Provider>
+		);
 
-    const buttons = container.getElementsByTagName('button');
+		const calendarToolbar = screen.getByTestId("CalendarToolbar");
 
-    expect(buttons.length).toBe(2);
-  });
-  it('should display the previous month when the left nav button is clicked', () => {
-    expect(1).toBe(2);
-  });
+		expect(calendarToolbar).toBeInTheDocument();
+	});
+	it("should render month and year", async () => {
+		const monthName = 1;
+		const year = 2023;
 
-  it('should display the next month when the right nav button is clicked', () => {
-    expect(1).toBe(2);
-  });
+		render(
+			<Provider store={store}>
+				<CalendarToolbar currentMonth={monthName} currentYear={year} />
+			</Provider>
+		);
+
+		const monthYear = `${monthName} ${year}`;
+
+		expect(await screen.findByText(monthYear)).toBeVisible();
+	});
+	it.skip("should display the current month and current year upon page load", () => {
+		const todaysDate = moment();
+	});
+	it("should render two buttons for navigating months", () => {
+		const { container } = render(
+			<Provider store={store}>
+				<CalendarToolbar />
+			</Provider>
+		);
+
+		const buttons = container.getElementsByTagName("button");
+
+		expect(buttons.length).toBe(2);
+	});
+	it("should display the previous month when the left nav button is clicked", () => {
+		const { container } = render(
+			<Provider store={store}>
+				<CalendarToolbar />
+			</Provider>
+		);
+
+		const prevMonthBtn = container.querySelector(`button[name="prevMonth"]`);
+		fireEvent.click(prevMonthBtn);
+
+		expect(1).toBe(2);
+	});
+
+	it("should display the next month when the right nav button is clicked", () => {
+		const { container } = render(
+			<Provider store={store}>
+				<CalendarToolbar />
+			</Provider>
+		);
+
+		const nextMonthBtn = container.querySelector(`button[name="nextMonth"]`);
+		fireEvent.click(nextMonthBtn);
+
+		expect(1).toBe(2);
+	});
 });

@@ -1,14 +1,20 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
-import CalendarContainer from './CalendarContainer';
+import "@testing-library/jest-dom/extend-expect";
+import { Provider } from "react-redux";
+import { render, screen } from "@testing-library/react";
+import CalendarContainer from "./CalendarContainer";
+import React from "react";
+import store from "../../app/store.js";
 
-describe('<CalendarContainer />', () => {
-  test('it should mount', () => {
-    render(<CalendarContainer />);
-    
-    const calendarContainer = screen.getByTestId('CalendarContainer');
+describe("<CalendarContainer />", () => {
+	test("it should mount", () => {
+		render(
+			<Provider store={store}>
+				<CalendarContainer />
+			</Provider>
+		);
 
-    expect(calendarContainer).toBeInTheDocument();
-  });
+		const calendarContainer = screen.getByTestId("CalendarContainer");
+
+		expect(calendarContainer).toBeInTheDocument();
+	});
 });

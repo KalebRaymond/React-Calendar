@@ -1,16 +1,16 @@
 .CalendarToolbar {
-    width: 100%;
-    display: flex;
-    align-items: center;
+	width: 100%;
+	display: flex;
+	align-items: center;
 
-    .toolbarSection {
-        &#nav-buttons {
-            display: flex;
-            margin-left: auto;
+	.toolbarSection {
+		&#nav-buttons {
+			display: flex;
+			margin-left: auto;
 
-            button { 
-                margin: .5em; 
-            }
-        }
-    }
+			button {
+				margin: 0.5em;
+			}
+		}
+	}
 }

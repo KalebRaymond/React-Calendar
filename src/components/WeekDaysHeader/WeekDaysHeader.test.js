@@ -1,22 +1,22 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
-import WeekDaysHeader from './WeekDaysHeader';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
+import WeekDaysHeader from "./WeekDaysHeader";
 
-describe('<WeekDaysHeader />', () => {
-  test('it should mount', () => {
-    render(<WeekDaysHeader />);
-    
-    const weekDaysHeader = screen.getByTestId('WeekDaysHeader');
+describe("<WeekDaysHeader />", () => {
+	test("it should mount", () => {
+		render(<WeekDaysHeader />);
 
-    expect(weekDaysHeader).toBeInTheDocument();
-  });
-  it('Should display seven days of the week', async () => {
-    const numDays = 7;
+		const weekDaysHeader = screen.getByTestId("WeekDaysHeader");
 
-    const {container} = render(<WeekDaysHeader />);
-    const days = container.getElementsByClassName("weekDay");
+		expect(weekDaysHeader).toBeInTheDocument();
+	});
+	it("Should display seven days of the week", async () => {
+		const numDays = 7;
 
-    expect(days.length).toBe(numDays);
-  })
+		const { container } = render(<WeekDaysHeader />);
+		const days = container.getElementsByClassName("weekDay");
+
+		expect(days.length).toBe(numDays);
+	});
 });
