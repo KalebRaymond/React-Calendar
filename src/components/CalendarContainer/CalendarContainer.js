@@ -56,7 +56,7 @@ const CalendarContainer = () => {
 				currentMonth={focusedMonth}
 				currentYear={focusedYear}
 			></CalendarToolbar>
-			<CalendarGrid calendarDates={[1, 2, 3]}></CalendarGrid>
+			<CalendarGrid></CalendarGrid>
 		</div>
 	);
 };
