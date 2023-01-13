@@ -11,4 +11,11 @@ describe("<CalendarGridCard />", () => {
 
 		expect(calendarGridCard).toBeInTheDocument();
 	});
+	it("should display date", () => {
+		const date = 5;
+
+		render(<CalendarGridCard date={date} />);
+
+		expect(screen.getByText(date)).toBeInTheDocument();
+	});
 });
