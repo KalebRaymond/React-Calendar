@@ -1,14 +1,27 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import CalendarGrid from "./CalendarGrid";
+import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import store from "../../app/store.js";
+import { render, screen } from "@testing-library/react";
+import CalendarGrid from "./CalendarGrid";
+import calendarReducer from "../../reducers/calendarReducer.js";
+import React from "react";
+
+let store;
+
+const createTestStore = () => {
+	return configureStore({
+		reducer: {
+			calendar: calendarReducer,
+		},
+	});
+};
 
 describe("<CalendarGrid />", () => {
-	it("should mount", () => {
-		const calendarDates = [];
+	beforeEach(() => {
+		store = createTestStore();
+	});
 
+	it("should mount", () => {
 		render(
 			<Provider store={store}>
 				<CalendarGrid />
@@ -19,11 +32,20 @@ describe("<CalendarGrid />", () => {
 
 		expect(calendarGrid).toBeInTheDocument();
 	});
-	it("should render 6 weeks", async () => {
-		///The number of weeks should ideally be 4, 5, or 6 depending
-		///on the month
-
-		const numWeeks = 6;
+	it("should render correct number of weeks", async () => {
+		//October 2022 has 6 weeks
+		const octoberWeeks = 6;
+		store = configureStore({
+			reducer: {
+				calendar: calendarReducer,
+			},
+			preloadedState: {
+				calendar: {
+					focusedMonthIndex: 9, //October is index 9 (zero indexing)
+					focusedYear: 2022,
+				},
+			},
+		});
 
 		render(
 			<Provider store={store}>
@@ -32,7 +54,7 @@ describe("<CalendarGrid />", () => {
 		);
 
 		expect(await screen.findAllByTestId("CalendarGridRow")).toHaveLength(
-			numWeeks
+			octoberWeeks
 		);
 	});
 	it("should render the correct days of the month", async () => {
@@ -52,6 +74,18 @@ describe("<CalendarGrid />", () => {
 			[18, 19, 20, 21, 22, 23, 24],
 			[25, 26, 27, 28, 29, 30, 1],
 		];
+
+		store = configureStore({
+			reducer: {
+				calendar: calendarReducer,
+			},
+			preloadedState: {
+				calendar: {
+					focusedMonthIndex: 8, //September is index 8 (zero indexing)
+					focusedYear: 2022,
+				},
+			},
+		});
 
 		//Render date grid
 		render(

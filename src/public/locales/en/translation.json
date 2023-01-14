@@ -32,5 +32,8 @@
 	"calendarToolbar": {
 		"leftNavButton": "Navigate to previous month",
 		"rightNavButton": "Navigate to next month"
+	},
+	"calendarGridCard": {
+		"todaysDate": "Today's date"
 	}
 }

@@ -1,0 +1,33 @@
+.CalendarGridCard {
+	border: 1px solid #ccc;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+
+	&.grayed {
+		background-color: #efefef;
+	}
+
+	#date-container {
+		align-items: center;
+		display: flex;
+		height: 15%;
+		justify-content: center;
+		margin: 0.75em;
+
+		.date {
+			padding: 0.5rem;
+			width: 2.5rem;
+			border-radius: 0.25rem;
+
+			&.todaysDate {
+				background-color: #9e91ff;
+			}
+		}
+	}
+
+	#card-body {
+		flex-grow: 2;
+	}
+}
