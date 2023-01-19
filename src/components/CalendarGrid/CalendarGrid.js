@@ -75,18 +75,20 @@ const CalendarGrid = () => {
 				<CalendarGridRow keyProp={`row-${focusedMonth}-${focusedYear}-${i}`}>
 					{row.map((day, j) => {
 						const dateIndex = i * 7 + j;
+						const dateInFocusedMonth = !(
+							dateIndex < firstDayOfMonthIndex ||
+							dateIndex >= firstDayOfMonthIndex + numDaysInMonth
+						);
 						return (
 							<CalendarGridCard
 								date={day}
 								keyProp={`date-${focusedMonth}-${focusedYear}-${i}-${j}`}
-								grayed={
-									dateIndex < firstDayOfMonthIndex ||
-									dateIndex >= firstDayOfMonthIndex + numDaysInMonth
-								}
+								grayed={!dateInFocusedMonth}
 								isTodaysDate={
+									dateInFocusedMonth &&
 									focusedMonth === todaysDate.month() &&
 									focusedYear === todaysDate.year() &&
-									day === todaysDate.day()
+									day === todaysDate.date()
 								}
 							></CalendarGridCard>
 						);

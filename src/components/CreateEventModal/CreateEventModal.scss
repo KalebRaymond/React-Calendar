@@ -1,0 +1,18 @@
+.CreateEventModal {
+	background-color: rgba(100, 100, 100, 0.5);
+	height: 100%;
+	left: 0;
+	overflow: auto;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+
+	#modal-body {
+		background-color: #fff;
+		margin: 15% auto;
+		padding: 1rem;
+		border: 1px solid #888;
+		width: 80%;
+	}
+}

@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./CalendarContainer.module.scss";
 
 import CalendarGrid from "components/CalendarGrid/CalendarGrid";
 import CalendarToolbar from "components/CalendarToolbar/CalendarToolbar";
-import moment from "moment";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
@@ -40,9 +39,6 @@ const CalendarContainer = () => {
 				return "";
 		}
 	};
-
-	//The current date in real life
-	const [todaysDate, setTodaysDate] = useState(moment());
 
 	//The current month and year on the calendar that is being viewed
 	const focusedMonth = useSelector((state) =>

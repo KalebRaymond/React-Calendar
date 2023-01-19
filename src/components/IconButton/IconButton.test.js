@@ -11,21 +11,21 @@ describe("<IconButton />", () => {
 
 		expect(iconButton).toBeInTheDocument();
 	});
-	test("it should apply name prop to button child", () => {
-		const btnName = "testName";
+	test("it should apply name prop to button child", async () => {
+		const btnLabel = "btnLabeL";
 
-		const { container } = render(<IconButton name={btnName} />);
+		render(<IconButton ariaLabel={btnLabel} />);
 
-		const btn = container.querySelector(`button[name="${btnName}"]`);
+		const btn = await screen.getByRole("button", { "aria-label": btnLabel });
 
 		expect(btn).toBeInTheDocument();
 	});
-	it("should call onClick method when clicked", () => {
+	it("should call onClick method when clicked", async () => {
 		const mockClickFn = jest.fn();
 
-		const { container } = render(<IconButton onClick={mockClickFn} />);
+		render(<IconButton onClick={mockClickFn} />);
 
-		fireEvent.click(container.getElementsByClassName("btn")[0]);
+		fireEvent.click(await screen.getByRole("button"));
 
 		expect(mockClickFn).toHaveBeenCalled();
 	});

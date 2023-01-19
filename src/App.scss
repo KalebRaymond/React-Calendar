@@ -36,3 +36,22 @@
 		transform: rotate(360deg);
 	}
 }
+
+.visuallyHidden {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.clickable {
+	&:hover {
+		cursor: pointer;
+	}
+
+	&:active {
+		cursor: pointer;
+	}
+}

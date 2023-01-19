@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import calendarReducer from "../../reducers/calendarReducer.js";
 import CalendarToolbar from "./CalendarToolbar";
 import React from "react";
+import i18n from "../../i18n.js";
 
 //import store from "../../app/store.js";
 
@@ -53,13 +54,13 @@ describe("<CalendarToolbar />", () => {
 		const todaysDate = moment();
 	});
 	it("should render two buttons for navigating months", () => {
-		const { container } = render(
+		render(
 			<Provider store={store}>
 				<CalendarToolbar />
 			</Provider>
 		);
 
-		const buttons = container.getElementsByTagName("button");
+		const buttons = screen.getAllByRole("button");
 
 		expect(buttons.length).toBe(2);
 	});
@@ -81,13 +82,13 @@ describe("<CalendarToolbar />", () => {
 			},
 		});
 
-		const { container } = render(
+		render(
 			<Provider store={store}>
 				<CalendarToolbar />
 			</Provider>
 		);
 
-		const prevMonthBtn = container.querySelector(`button[name="prevMonth"]`);
+		const prevMonthBtn = screen.getAllByRole("button")[0];
 		fireEvent.click(prevMonthBtn);
 
 		const focusedMonthIndex = store.getState().calendar.focusedMonthIndex;
@@ -113,13 +114,13 @@ describe("<CalendarToolbar />", () => {
 			},
 		});
 
-		const { container } = render(
+		render(
 			<Provider store={store}>
 				<CalendarToolbar />
 			</Provider>
 		);
 
-		const nextMonthBtn = container.querySelector(`button[name="nextMonth"]`);
+		const nextMonthBtn = screen.getAllByRole("button")[1];
 		fireEvent.click(nextMonthBtn);
 
 		const focusedMonthIndex = store.getState().calendar.focusedMonthIndex;
@@ -145,13 +146,13 @@ describe("<CalendarToolbar />", () => {
 			},
 		});
 
-		const { container } = render(
+		render(
 			<Provider store={store}>
 				<CalendarToolbar />
 			</Provider>
 		);
 
-		const prevMonthBtn = container.querySelector(`button[name="prevMonth"]`);
+		const prevMonthBtn = screen.getAllByRole("button")[0];
 		fireEvent.click(prevMonthBtn);
 
 		const focusedMonthIndex = store.getState().calendar.focusedMonthIndex;
@@ -179,13 +180,13 @@ describe("<CalendarToolbar />", () => {
 			},
 		});
 
-		const { container } = render(
+		render(
 			<Provider store={store}>
 				<CalendarToolbar />
 			</Provider>
 		);
 
-		const nextMonthBtn = container.querySelector(`button[name="nextMonth"]`);
+		const nextMonthBtn = screen.getAllByRole("button")[1];
 		fireEvent.click(nextMonthBtn);
 
 		const focusedMonthIndex = store.getState().calendar.focusedMonthIndex;

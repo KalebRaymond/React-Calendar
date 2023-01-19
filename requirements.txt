@@ -9,6 +9,7 @@
 	- Grayed out dates will still indicate that there is an event on that date if there are any
 	- The calendar will display navigation arrows at the top to allow for navigating forward and backward
 	- The current date should be highlighted in some way to signify that it is the current date
+	- There should be a button to allow jumping back to the current day
 
 [ ] As a user, I want to be able to view event details, so that I can plan for it and be reminded of the location, time, etc.
 	- The calendar should display the name of events on each calendar date
