@@ -35,5 +35,12 @@
 	},
 	"calendarGridCard": {
 		"todaysDate": "Today's date"
+	},
+	"event": {
+		"modal": {
+			"labels": {
+				"closeModal": "Close Event Form modal"
+			}
+		}
 	}
 }
