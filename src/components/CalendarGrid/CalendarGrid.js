@@ -1,13 +1,16 @@
+import { getOrdinal } from "util/calendarUtil";
+import { useSelector } from "react-redux";
+import CalendarGridCard from "components/CalendarGridCard/CalendarGridCard";
+import CalendarGridRow from "components/CalendarGridRow/CalendarGridRow";
+import moment from "moment";
 import React from "react";
 import styles from "./CalendarGrid.module.scss";
-import moment from "moment";
-import CalendarGridRow from "components/CalendarGridRow/CalendarGridRow";
 import WeekDaysHeader from "components/WeekDaysHeader/WeekDaysHeader";
-import CalendarGridCard from "components/CalendarGridCard/CalendarGridCard";
-
-import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const CalendarGrid = () => {
+	const { t } = useTranslation();
+
 	const renderDates = () => {
 		///Kind of an expensive operation?
 		const focusedDateObj = moment();
@@ -82,6 +85,11 @@ const CalendarGrid = () => {
 						return (
 							<CalendarGridCard
 								date={day}
+								cardAriaLabel={t("dateFormats.MDY", {
+									month: "TESTMONTH",
+									day: getOrdinal(day),
+									year: "TESTYEAR",
+								})}
 								keyProp={`date-${focusedMonth}-${focusedYear}-${i}-${j}`}
 								grayed={!dateInFocusedMonth}
 								isTodaysDate={

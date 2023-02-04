@@ -1,19 +1,19 @@
 {
 	"days": {
-		"sunday": "sunday",
-		"sun": "sun",
-		"monday": "monday",
-		"mon": "mon",
-		"tuesday": "tuesday",
-		"tue": "tue",
-		"wednesday": "wednesday",
-		"wed": "wed",
-		"thursday": "thursday",
-		"thu": "thu",
-		"friday": "friday",
-		"fri": "fri",
-		"saturday": "saturday",
-		"sat": "sat"
+		"sunday": "Sunday",
+		"sun": "SUN",
+		"monday": "Monday",
+		"mon": "MON",
+		"tuesday": "Tuesday",
+		"tue": "TUE",
+		"wednesday": "Wednesday",
+		"wed": "WED",
+		"thursday": "Thursday",
+		"thu": "THU",
+		"friday": "Friday",
+		"fri": "FRI",
+		"saturday": "Saturday",
+		"sat": "SAT"
 	},
 	"months": {
 		"january": "january",
@@ -29,7 +29,46 @@
 		"november": "november",
 		"december": "december"
 	},
+	"numbers": {
+		"ordinal": {
+			"1": "1st",
+			"2": "2nd",
+			"3": "3rd",
+			"4": "4th",
+			"5": "5th",
+			"6": "6th",
+			"7": "7th",
+			"8": "8th",
+			"9": "9th",
+			"10": "10th",
+			"11": "11th",
+			"12": "12th",
+			"13": "13th",
+			"14": "14th",
+			"15": "15th",
+			"16": "16th",
+			"17": "17th",
+			"18": "18th",
+			"19": "19th",
+			"20": "20th",
+			"21": "21st",
+			"22": "22nd",
+			"23": "23rd",
+			"24": "24th",
+			"25": "25th",
+			"26": "26th",
+			"27": "27th",
+			"28": "28th",
+			"29": "29th",
+			"30": "30th",
+			"31": "31st"
+		}
+	},
+	"dateFormats": {
+		"MDY": "{{month}} {{day}}, {{year}}"
+	},
 	"calendarToolbar": {
+		"mainControls": "Controls for main calendar",
 		"leftNavButton": "Navigate to previous month",
 		"rightNavButton": "Navigate to next month"
 	},
@@ -39,7 +78,29 @@
 	"event": {
 		"modal": {
 			"labels": {
-				"closeModal": "Close Event Form modal"
+				"creatEventModal": "Create New Event modal",
+				"closeButton": "Close Event Form modal",
+				"formActions": "Event form actions"
+			},
+			"buttons": {
+				"submit": {
+					"text": "Submit",
+					"hat": "Submit event"
+				},
+				"reset": {
+					"text": "Reset",
+					"hat": "Reset event form"
+				}
+			},
+			"form": {
+				"repeat": {
+					"noRepeat": "Does not repeat",
+					"daily": "Daily",
+					"weekly": "Weekly on {{dayOfWeek}}",
+					"monthly": "Monthly on the {{count}} {{dayOfWeek}}",
+					"annually": "Annually on {{date}}",
+					"weekdays": "Every weekday (Monday through Friday)"
+				}
 			}
 		}
 	}

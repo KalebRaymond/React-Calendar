@@ -25,7 +25,12 @@ const CalendarToolbar = (props) => {
 			<div className="toolbarSection" id="month-year">
 				<span>{`${currentMonth} ${currentYear}`}</span>
 			</div>
-			<div className="toolbarSection" id="nav-buttons">
+			<div
+				className="toolbarSection"
+				id="nav-buttons"
+				role="group"
+				aria-label={t("calendarToolbar.mainControls")} /*Necessary?*/
+			>
 				<IconButton
 					name="prevMonth"
 					ariaLabel={t("calendarToolbar.leftNavButton")}
