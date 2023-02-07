@@ -4,7 +4,13 @@ import IconButton from "components/IconButton/IconButton";
 import { useTranslation } from "react-i18next";
 
 import { useDispatch } from "react-redux";
-import { incrementMonth, decrementMonth } from "../../reducers/calendarReducer";
+import {
+	incrementMonth,
+	decrementMonth,
+	fetchEvents,
+	postEvent,
+} from "../../reducers/calendarReducer";
+import axios from "axios";
 
 const CalendarToolbar = (props) => {
 	const { currentMonth, currentYear } = props;
@@ -20,10 +26,21 @@ const CalendarToolbar = (props) => {
 		dispatch(incrementMonth());
 	};
 
+	const testFetchEvents = () => {
+		console.log("### TESTTESTTEST");
+		dispatch(fetchEvents());
+
+		//Testing post real quick
+		dispatch(postEvent("test event"));
+	};
+
 	return (
 		<div className={"CalendarToolbar"} data-testid="CalendarToolbar">
 			<div className="toolbarSection" id="month-year">
 				<span>{`${currentMonth} ${currentYear}`}</span>
+			</div>
+			<div className="toolbarSection">
+				<button onClick={testFetchEvents}>TEST FETCH EVENTS</button>
 			</div>
 			<div
 				className="toolbarSection"

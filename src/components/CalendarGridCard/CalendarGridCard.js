@@ -21,7 +21,7 @@ const CalendarGridCard = (props) => {
 				className={`CalendarGridCard ${props.grayed ? "grayed" : ""}`}
 				key={props.keyProp}
 				data-testid="CalendarGridCard"
-				tabindex="0"
+				tabIndex="0"
 				role="gridcell"
 				aria-label={props.cardAriaLabel}
 			>

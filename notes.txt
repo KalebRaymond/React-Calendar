@@ -1,8 +1,11 @@
-* Navigation
-	> Could just do an API call that
-		1. Gets all the dates that would be visible given a month and year
-		2. Determines which dates that get returned have events
-		3. Replaces all the info on screen instead of doing an animation
+npx json-server --watch events.json
 
-* Google Calendar
-	> 
+* Storing & loading events via JSON
+	> Store events in a json file
+	> Call api via redux actions to perform CRUD operations on json
+	> Fetch & render events on month change
+
+	> Keep all events in memory at time or virtualize based on current view?
+
+* Use ChatGPT somehow?
+	> Translations

@@ -23,7 +23,7 @@ const WeekDaysHeader = () => {
 				<div
 					className="weekDay"
 					role="columnheader"
-					tabindex="0"
+					tabIndex="0"
 					aria-label={day[1]}
 					key={day[0]}
 				>
