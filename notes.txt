@@ -9,3 +9,5 @@ npx json-server --watch events.json
 
 * Use ChatGPT somehow?
 	> Translations
+
+* MSW

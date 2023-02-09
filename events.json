@@ -2,27 +2,27 @@
 	"events": [
 		{
 			"id": "0",
-			"event_name": "Team Meeting",
-			"start_date": "2023-02-08",
-			"end_date": "2023-02-08",
+			"eventName": "Team Meeting",
+			"startDate": "2023-02-08",
+			"endDate": "2023-02-08",
 			"time": "10:00 AM",
 			"location": "Conference Room",
 			"description": "Monthly team meeting to discuss progress and plan for next month."
 		},
 		{
 			"id": "1",
-			"event_name": "Product Launch",
-			"start_date": "2023-02-15",
-			"end_date": "2023-02-15",
+			"eventName": "Product Launch",
+			"startDate": "2023-02-15",
+			"endDate": "2023-02-15",
 			"time": "09:00 AM",
 			"location": "Main Hall",
 			"description": "Launch of the new product line for the year 2023."
 		},
 		{
 			"id": "2",
-			"event_name": "Company Outing",
-			"start_date": "2023-02-20",
-			"end_date": "2023-02-21",
+			"eventName": "Company Outing",
+			"startDate": "2023-02-20",
+			"endDate": "2023-02-21",
 			"time": "09:00 AM",
 			"location": "Beach Resort",
 			"description": "Annual company outing for employees to bond and have fun."

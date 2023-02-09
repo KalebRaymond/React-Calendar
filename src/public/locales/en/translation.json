@@ -78,7 +78,7 @@
 	"event": {
 		"modal": {
 			"labels": {
-				"creatEventModal": "Create New Event modal",
+				"createEventModal": "Create New Event modal",
 				"closeButton": "Close Event Form modal",
 				"formActions": "Event form actions"
 			},
