@@ -1,4 +1,5 @@
 npx json-server --watch events.json
+npx generate-react-cli component MyComponent
 
 * Storing & loading events via JSON
 	> Store events in a json file

@@ -5,7 +5,9 @@
 			"eventName": "Team Meeting",
 			"startDate": "2023-02-08",
 			"endDate": "2023-02-08",
-			"time": "10:00 AM",
+			"startTime": "10:00 AM",
+			"endTime": "",
+			"frequency": "",
 			"location": "Conference Room",
 			"description": "Monthly team meeting to discuss progress and plan for next month."
 		},
@@ -14,7 +16,9 @@
 			"eventName": "Product Launch",
 			"startDate": "2023-02-15",
 			"endDate": "2023-02-15",
-			"time": "09:00 AM",
+			"startTime": "10:00 AM",
+			"endTime": "",
+			"frequency": "",
 			"location": "Main Hall",
 			"description": "Launch of the new product line for the year 2023."
 		},
@@ -23,7 +27,9 @@
 			"eventName": "Company Outing",
 			"startDate": "2023-02-20",
 			"endDate": "2023-02-21",
-			"time": "09:00 AM",
+			"startTime": "10:00 AM",
+			"endTime": "",
+			"frequency": "",
 			"location": "Beach Resort",
 			"description": "Annual company outing for employees to bond and have fun."
 		}

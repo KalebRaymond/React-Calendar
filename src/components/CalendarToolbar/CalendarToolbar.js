@@ -27,11 +27,9 @@ const CalendarToolbar = (props) => {
 	};
 
 	const testFetchEvents = () => {
-		console.log("### TESTTESTTEST");
+		///
+		console.log("### Testing fetchEvents");
 		dispatch(fetchEvents());
-
-		//Testing post real quick
-		dispatch(postEvent("test event"));
 	};
 
 	return (

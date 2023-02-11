@@ -2,15 +2,29 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./EventForm.scss";
 import { useTranslation } from "react-i18next";
+import { postEvent } from "reducers/calendarReducer";
+
+const DEFAULT_FORM_STATE = {
+	eventName: "",
+	startDate: "",
+	endDate: "",
+	startTime: "",
+	endTime: "",
+	frequency: "",
+	location: "",
+	description: "",
+};
 
 const EventForm = () => {
-	const [formState, setFormState] = useState({});
+	const [formState, setFormState] = useState(DEFAULT_FORM_STATE);
 	const { t } = useTranslation();
 
 	const handleSubmit = (event) => {
 		event.preventDefault(); //Prevent page refresh
 
 		console.log("### Event submitted", { formState });
+		//dispatchEvent(postEvent(formState));
+		dispatchEvent(postEvent({ test: "test" }));
 	};
 
 	const handleInputChange = (event) => {
@@ -23,53 +37,58 @@ const EventForm = () => {
 		});
 	};
 
+	const handleResetForm = (event) => {
+		event.preventDefault();
+		setFormState(DEFAULT_FORM_STATE);
+	};
+
 	return (
 		<form onSubmit={handleSubmit}>
-			<div className="formSection" id="event-name-container">
-				<label htmlFor="eventName" id="event-name-label">
+			<div className="formSection" id="name-container">
+				<label htmlFor="eventName" id="name-label">
 					Event Name
 				</label>
 				<input
 					type="text"
 					name="eventName"
-					value={formState.eventName || ""}
+					value={formState.eventName}
 					onChange={handleInputChange}
-					aria-labelledby="event-name-label"
+					aria-labelledby="name-label"
 				/>
 			</div>
-			<div className="formSection" id="event-date-container">
+			<div className="formSection" id="date-container">
 				<label htmlFor="startDate" id="start-date-label">
 					Event Date (WIP)
 				</label>
 				<input
 					type="date"
 					name="startDate"
-					value={formState.startDate || ""}
+					value={formState.startDate}
 					onChange={handleInputChange}
 					aria-labelledby="start-date-label"
 				/>
 			</div>
-			<div className="formSection" id="event-time-container">
-				<label htmlFor="time" id="event-time-label">
+			<div className="formSection" id="time-container">
+				<label htmlFor="time" id="start-time-label">
 					Event Time (WIP) (Need start & optional end time)
 				</label>
 				<input
 					type="text"
-					name="time"
-					value={formState.time || ""}
+					name="startTime"
+					value={formState.startTime}
 					onChange={handleInputChange}
-					aria-labelledby="event-time-label"
+					aria-labelledby="start-time-label"
 				/>
 			</div>
-			<div className="formSection" id="event-frequency-container">
-				<label htmlFor="frequency" id="event-frequency-label">
+			<div className="formSection" id="frequency-container">
+				<label htmlFor="frequency" id="frequency-label">
 					Event Frequency (WIP)
 				</label>
 				<select
 					name="frequency"
 					onChange={handleInputChange}
-					value={formState.frequency || ""}
-					aria-labelledby="event-frequency-label"
+					value={formState.frequency}
+					aria-labelledby="frequency-label"
 				>
 					<option value="noRepeat">
 						{t("event.modal.form.repeat.noRepeat")}
@@ -94,28 +113,28 @@ const EventForm = () => {
 					</option>
 				</select>
 			</div>
-			<div className="formSection" id="event-location">
-				<label htmlFor="location" id="event-location-label">
+			<div className="formSection" id="location">
+				<label htmlFor="location" id="location-label">
 					Event Location
 				</label>
 				<input
 					type="text"
 					name="location"
-					value={formState.location || ""}
+					value={formState.location}
 					onChange={handleInputChange}
-					aria-labelledby="event-location-label"
+					aria-labelledby="location-label"
 				/>
 			</div>
-			<div className="formSection" id="event-description">
-				<label htmlFor="description" id="event-description-label">
+			<div className="formSection" id="description">
+				<label htmlFor="description" id="description-label">
 					Event Description
 				</label>
 				<input
 					type="text"
 					name="description"
-					value={formState.description || ""}
+					value={formState.description}
 					onChange={handleInputChange}
-					aria-labelledby="event-description-label"
+					aria-labelledby="description-label"
 				/>
 			</div>
 			<div
@@ -126,7 +145,10 @@ const EventForm = () => {
 				<button type="submit" aria-label={t("event.modal.buttons.submit.hat")}>
 					{t("event.modal.buttons.submit.text")}
 				</button>
-				<button aria-label={t("event.modal.buttons.reset.hat")}>
+				<button
+					onClick={handleResetForm}
+					aria-label={t("event.modal.buttons.reset.hat")}
+				>
 					{t("event.modal.buttons.reset.text")}
 				</button>
 			</div>
