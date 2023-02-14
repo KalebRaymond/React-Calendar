@@ -12,6 +12,7 @@ const CreateEventModal = (props) => {
 		<div
 			className="CreateEventModal modalBackdrop"
 			data-testid="CreateEventModal"
+			onClick={props.onClose}
 		>
 			<div
 				className="modalContainer"

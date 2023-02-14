@@ -84,9 +84,7 @@ export const postEvent = (event) => async (dispatch) => {
 	axios
 		.post(
 			"http://localhost:8080/events",
-			{
-				test: event,
-			},
+			event,
 			{ headers: { "Content-Type": "application/json" } }
 		)
 		.then((response) => {

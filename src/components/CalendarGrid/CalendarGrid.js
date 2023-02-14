@@ -1,4 +1,3 @@
-import { getOrdinal } from "util/calendarUtil";
 import { useSelector } from "react-redux";
 import CalendarGridCard from "components/CalendarGridCard/CalendarGridCard";
 import CalendarGridRow from "components/CalendarGridRow/CalendarGridRow";
@@ -7,6 +6,7 @@ import React from "react";
 import styles from "./CalendarGrid.module.scss";
 import WeekDaysHeader from "components/WeekDaysHeader/WeekDaysHeader";
 import { useTranslation } from "react-i18next";
+import TranslationService from "services/TranslationService";
 
 const CalendarGrid = () => {
 	const { t } = useTranslation();
@@ -87,7 +87,7 @@ const CalendarGrid = () => {
 								date={day}
 								cardAriaLabel={t("dateFormats.MDY", {
 									month: "TESTMONTH",
-									day: getOrdinal(day),
+									day: TranslationService.getOrdinal(day),
 									year: "TESTYEAR",
 								})}
 								keyProp={`date-${focusedMonth}-${focusedYear}-${i}-${j}`}

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styles from "./EventForm.scss";
 import { useTranslation } from "react-i18next";
 import { postEvent } from "reducers/calendarReducer";
+import { useDispatch } from "react-redux";
 
 const DEFAULT_FORM_STATE = {
 	eventName: "",
@@ -18,13 +19,13 @@ const DEFAULT_FORM_STATE = {
 const EventForm = () => {
 	const [formState, setFormState] = useState(DEFAULT_FORM_STATE);
 	const { t } = useTranslation();
+	const dispatch = useDispatch();
 
 	const handleSubmit = (event) => {
 		event.preventDefault(); //Prevent page refresh
 
 		console.log("### Event submitted", { formState });
-		//dispatchEvent(postEvent(formState));
-		dispatchEvent(postEvent({ test: "test" }));
+		dispatch(postEvent(formState));
 	};
 
 	const handleInputChange = (event) => {

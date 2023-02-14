@@ -12,3 +12,15 @@ npx generate-react-cli component MyComponent
 	> Translations
 
 * MSW
+
+* Rendering the events
+	> Get the dates that are visible on the calendar
+		- Need to rewrite the logic that draws the CalendarGridCards
+		- Have an API just for getting calendar dates
+		- Return an array of objects where each object is a visible date, object contains day, month, year so that they can be passed down to other components ex. the CreateEventModal
+	> Get the events that fall on those dates
+		- axios get params
+	> Render the events on the screen in the appropriate place*
+		- This is going to be the most difficult probably lol
+		- EventBuilder returns single/multi/split (goes into prev/next month) events depending on date range of event
+
