@@ -8,11 +8,18 @@ import { useSelector } from "react-redux";
 
 const CalendarContainer = () => {
 	//The current month and year on the calendar that is being viewed
-	const focusedMonth = useSelector((state) =>
-		TranslationService.getMonthTranslation(
+	const focusedMonth = useSelector((state) => {
+		console.log(
+			"###",
+			state.calendar.focusedMonthIndex,
+			TranslationService.getMonthTranslation(0),
+			TranslationService.getMonthTranslation(state.calendar.focusedMonthIndex)
+		);
+
+		return TranslationService.getMonthTranslation(
 			state.calendar.focusedMonthIndex
-		).toUpperCase()
-	);
+		).toUpperCase();
+	});
 	const focusedYear = useSelector((state) => state.calendar.focusedYear);
 
 	return (

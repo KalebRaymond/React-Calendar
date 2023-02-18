@@ -1,8 +1,8 @@
 import i18n from "i18next";
 
 const TranslationService = {
-	getMonthTranslation: function (month) {
-		switch (month) {
+	getMonthTranslation: function (monthIndex) {
+		switch (monthIndex) {
 			case 0:
 				return i18n.t("months.january");
 			case 1:

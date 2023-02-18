@@ -5,9 +5,6 @@ import { Provider } from "react-redux";
 import calendarReducer from "../../reducers/calendarReducer.js";
 import CalendarToolbar from "./CalendarToolbar";
 import React from "react";
-import i18n from "../../i18n.js";
-
-//import store from "../../app/store.js";
 
 let store;
 

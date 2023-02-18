@@ -27,7 +27,6 @@ const CalendarToolbar = (props) => {
 	};
 
 	const testFetchEvents = () => {
-		///
 		console.log("### Testing fetchEvents");
 		dispatch(fetchEvents());
 	};
@@ -36,9 +35,6 @@ const CalendarToolbar = (props) => {
 		<div className={"CalendarToolbar"} data-testid="CalendarToolbar">
 			<div className="toolbarSection" id="month-year">
 				<span>{`${currentMonth} ${currentYear}`}</span>
-			</div>
-			<div className="toolbarSection">
-				<button onClick={testFetchEvents}>TEST FETCH EVENTS</button>
 			</div>
 			<div
 				className="toolbarSection"
