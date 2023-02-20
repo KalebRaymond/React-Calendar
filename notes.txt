@@ -1,4 +1,5 @@
 npx json-server --watch events.json
+npx json-server --watch events.json --middlewares filterByDate.js
 npx generate-react-cli component MyComponent
 
 * Storing & loading events via JSON
@@ -20,6 +21,11 @@ npx generate-react-cli component MyComponent
 		- Return an array of objects where each object is a visible date, object contains day, month, year so that they can be passed down to other components ex. the CreateEventModal
 	> Get the events that fall on those dates
 		- axios get params
+		- If A > Y or B < X then the lines AB and XY don't intersect -> take inverse of this to find events that do have dates that fall in current view
+		- NO -> Fetch all events and filter them on client side ❤️
+		- Complex query params using not operator
+		- Middleware?
+		- Need to figure out how to store dates -> Need month year and date info
 	> Render the events on the screen in the appropriate place*
 		- This is going to be the most difficult probably lol
 		- EventBuilder returns single/multi/split (goes into prev/next month) events depending on date range of event

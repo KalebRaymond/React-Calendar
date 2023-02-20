@@ -4,13 +4,7 @@ import IconButton from "components/IconButton/IconButton";
 import { useTranslation } from "react-i18next";
 
 import { useDispatch } from "react-redux";
-import {
-	incrementMonth,
-	decrementMonth,
-	fetchEvents,
-	postEvent,
-} from "../../reducers/calendarReducer";
-import axios from "axios";
+import { incrementMonth, decrementMonth } from "../../reducers/calendarReducer";
 
 const CalendarToolbar = (props) => {
 	const { currentMonth, currentYear } = props;
@@ -24,11 +18,6 @@ const CalendarToolbar = (props) => {
 
 	const handleRightNavClick = () => {
 		dispatch(incrementMonth());
-	};
-
-	const testFetchEvents = () => {
-		console.log("### Testing fetchEvents");
-		dispatch(fetchEvents());
 	};
 
 	return (

@@ -4,41 +4,32 @@ import axios from "axios";
 
 //Initialize focused date to today's date
 const focusedDate = moment();
-const focusedMonthIndex = focusedDate?.month();
-const focusedYear = focusedDate?.year();
 
 export const calendarReducer = createSlice({
 	name: "calendar",
 	initialState: {
-		focusedMonthIndex: focusedMonthIndex,
-		focusedYear: focusedYear,
+		focusedDate: focusedDate.format(),
+		visibleDates: [],
 		loadingEvents: "idle",
 		events: [],
 	},
 	reducers: {
 		incrementMonth: (state) => {
-			state.focusedMonthIndex = state.focusedMonthIndex + 1;
-
-			if (state.focusedMonthIndex === 12) {
-				state.focusedMonthIndex = 0;
-				state.focusedYear = state.focusedYear + 1;
-			}
+			const momentObj = state.focusedMonth;
+			momentObj.add(1, "months");
+			state.focusedDate = momentObj.format();
 		},
 		decrementMonth: (state) => {
-			state.focusedMonthIndex = state.focusedMonthIndex - 1;
-
-			if (state.focusedMonthIndex < 0) {
-				state.focusedMonthIndex = 11;
-				state.focusedYear = state.focusedYear - 1;
-			}
+			const momentObj = state.focusedMonth;
+			momentObj.subtract(1, "months");
+			state.focusedDate = momentObj.format();
 		},
 		loadEvents: (state) => {
 			state.loadingEvents = "loading";
-			console.log("### Fetching events");
 		},
 		loadEventsSuccess: (state, action) => {
 			state.loadingEvents = "idle";
-			console.log("### Events fetched successfully", action.payload);
+			state.events = action.payload;
 		},
 		loadEventsFailure: (state, action) => {
 			state.loadingEvents = "idle";
@@ -65,13 +56,17 @@ export const {
 } = calendarReducer.actions;
 
 /* CRUD Operations */
-export const fetchEvents = () => async (dispatch) => {
+export const fetchEvents = (startDate, endDate) => async (dispatch) => {
 	dispatch(loadEvents());
 
 	///TODO: Abstract server url into env variable or whatever
-	///Fix CORS issue better than "withCredentials: false,"
 	await axios
-		.get("http://localhost:8080/events")
+		.get("http://localhost:8080/events", {
+			params: {
+				startDate,
+				endDate,
+			},
+		})
 		.then((response) => {
 			dispatch(loadEventsSuccess(response.data));
 		})
@@ -82,11 +77,9 @@ export const fetchEvents = () => async (dispatch) => {
 
 export const postEvent = (event) => async (dispatch) => {
 	axios
-		.post(
-			"http://localhost:8080/events",
-			event,
-			{ headers: { "Content-Type": "application/json" } }
-		)
+		.post("http://localhost:8080/events", event, {
+			headers: { "Content-Type": "application/json" },
+		})
 		.then((response) => {
 			dispatch(createEventSuccess(response.data));
 		})

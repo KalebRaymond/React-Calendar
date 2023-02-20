@@ -56,8 +56,12 @@ const CalendarGrid = () => {
 		return calendarContent;
 	};
 
-	const focusedMonth = useSelector((state) => state.calendar.focusedMonthIndex);
-	const focusedYear = useSelector((state) => state.calendar.focusedYear);
+	const focusedMonth = useSelector((state) =>
+		moment(state.calendar.focusedDate).month()
+	);
+	const focusedYear = useSelector((state) =>
+		moment(state.calendar.focusedDate).year()
+	);
 	const todaysDate = moment();
 
 	return (
