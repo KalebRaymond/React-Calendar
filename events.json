@@ -2,9 +2,9 @@
 	"events": [
 		{
 			"id": "0",
-			"eventName": "Team Meeting",
-			"startDate": "2023-02-08",
-			"endDate": "2023-02-08",
+			"eventName": "July Event 1",
+			"startDate": "2023 07 15",
+			"endDate": "2023 07 16",
 			"startTime": "10:00 AM",
 			"endTime": "",
 			"frequency": "",
@@ -13,9 +13,9 @@
 		},
 		{
 			"id": "1",
-			"eventName": "Product Launch",
-			"startDate": "2023-02-15",
-			"endDate": "2023-02-15",
+			"eventName": "July Event 2",
+			"startDate": "2023 07 20",
+			"endDate": "2023 07 25",
 			"startTime": "10:00 AM",
 			"endTime": "",
 			"frequency": "",
@@ -24,9 +24,9 @@
 		},
 		{
 			"id": "2",
-			"eventName": "Company Outing",
-			"startDate": "2023-02-20",
-			"endDate": "2023-02-21",
+			"eventName": "October event",
+			"startDate": "2023 10 02",
+			"endDate": "2023 10 03",
 			"startTime": "10:00 AM",
 			"endTime": "",
 			"frequency": "",
@@ -34,15 +34,15 @@
 			"description": "Annual company outing for employees to bond and have fun."
 		},
 		{
-			"eventName": "TESTEVENT",
-			"startDate": "TEST",
-			"endDate": "TEST",
-			"startTime": "TEST",
-			"endTime": "TEST",
-			"frequency": "TEST",
-			"location": "TEST",
-			"description": "TEST",
-			"id": "7q1p_I7"
+			"id": "3",
+			"eventName": "Starts September, ends October",
+			"startDate": "2023 09 15",
+			"endDate": "2023 10 15",
+			"startTime": "10:00 AM",
+			"endTime": "",
+			"frequency": "",
+			"location": "Beach Resort",
+			"description": "Annual company outing for employees to bond and have fun."
 		}
 	]
 }

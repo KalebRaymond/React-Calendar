@@ -21,24 +21,23 @@ const CalendarContainer = () => {
 
 	const dispatch = useDispatch();
 
-	useEffect(() => {
-		console.log("### Fetching events");
-		dispatch(fetchEvents("A", "B"));
-	}, [focusedMonth]);
-
 	const events = useSelector((state) => state.calendar.events);
+	const [firstVisibleDate, lastVisibleDate] = useSelector((state) => [
+		state.calendar.visibleDates[0],
+		state.calendar.visibleDates[state.calendar.visibleDates.length - 1],
+	]);
 
 	useEffect(() => {
-		console.log("### Success", { events });
-	}, [events]);
+		dispatch(fetchEvents(firstVisibleDate, lastVisibleDate));
+	}, [firstVisibleDate]);
 
 	///=========================///
 
 	return (
 		<div className={styles.CalendarContainer} data-testid="CalendarContainer">
 			<CalendarToolbar
-				currentMonth={focusedMonth}
-				currentYear={focusedYear}
+				focusedMonth={focusedMonth}
+				focusedYear={focusedYear}
 			></CalendarToolbar>
 			<CalendarGrid></CalendarGrid>
 		</div>

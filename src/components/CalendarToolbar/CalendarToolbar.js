@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { incrementMonth, decrementMonth } from "../../reducers/calendarReducer";
 
 const CalendarToolbar = (props) => {
-	const { currentMonth, currentYear } = props;
+	const { focusedMonth, focusedYear } = props;
 
 	const { t } = useTranslation();
 	const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const CalendarToolbar = (props) => {
 	return (
 		<div className={"CalendarToolbar"} data-testid="CalendarToolbar">
 			<div className="toolbarSection" id="month-year">
-				<span>{`${currentMonth} ${currentYear}`}</span>
+				<span>{`${focusedMonth} ${focusedYear}`}</span>
 			</div>
 			<div
 				className="toolbarSection"

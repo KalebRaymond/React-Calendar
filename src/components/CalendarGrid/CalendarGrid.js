@@ -4,17 +4,28 @@ import CalendarGridCard from "components/CalendarGridCard/CalendarGridCard";
 import CalendarGridRow from "components/CalendarGridRow/CalendarGridRow";
 import CalendarService from "services/CalendarService";
 import moment from "moment";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./CalendarGrid.module.scss";
 import TranslationService from "services/TranslationService";
 import WeekDaysHeader from "components/WeekDaysHeader/WeekDaysHeader";
+import { setVisibleDates } from "../../reducers/calendarReducer";
+import { useDispatch } from "react-redux";
 
 const CalendarGrid = () => {
 	const { t } = useTranslation();
+	const dispatch = useDispatch();
+	const [calendarContent, setCalendarContent] = useState();
 
-	const renderDates = () => {
-		const dates = CalendarService.getVisibleDates(focusedMonth, focusedYear);
+	const focusedMonth = useSelector((state) =>
+		moment(state.calendar.focusedDate).month()
+	);
+	const focusedYear = useSelector((state) =>
+		moment(state.calendar.focusedDate).year()
+	);
+	const todaysDate = moment();
 
+	///Shallow copy of dates object - performance hit?
+	const renderCalendarContent = ([...dates]) => {
 		let calendarContent = [];
 		let rowIndex = 0;
 
@@ -56,18 +67,16 @@ const CalendarGrid = () => {
 		return calendarContent;
 	};
 
-	const focusedMonth = useSelector((state) =>
-		moment(state.calendar.focusedDate).month()
-	);
-	const focusedYear = useSelector((state) =>
-		moment(state.calendar.focusedDate).year()
-	);
-	const todaysDate = moment();
+	useEffect(() => {
+		const dates = CalendarService.getVisibleDates(focusedMonth, focusedYear);
+		setCalendarContent(renderCalendarContent(dates));
+		dispatch(setVisibleDates(dates));
+	}, [focusedMonth, focusedYear]);
 
 	return (
 		<div className={styles.CalendarGrid} data-testid="CalendarGrid">
 			<WeekDaysHeader></WeekDaysHeader>
-			{renderDates()}
+			{calendarContent}
 		</div>
 	);
 };
