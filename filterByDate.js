@@ -24,15 +24,6 @@ module.exports = (req, res, next) => {
 					? moment(event.endDate)
 					: moment(event.startDate);
 
-			/*
-			console.log({
-				eventStartDate: eventStartDate.format("YYYY-MM-DD"),
-				eventEndDate: eventEndDate.format("YYYY-MM-DD"),
-				monthStartDate: startDate.format("YYYY-MM-DD"),
-				monthEndDate: endDate.format("YYYY-MM-DD"),
-			});
-			*/
-
 			return (
 				!eventStartDate.isAfter(endDate) && !eventEndDate.isBefore(startDate)
 			);

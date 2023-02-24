@@ -102,11 +102,9 @@ export const fetchEvents = (startDate, endDate) => async (dispatch) => {
 		});
 };
 
-export const postEvent = (event) => async (dispatch) => {
-	console.log("### formContent", { event });
-
+export const postEvent = (eventFormContent) => async (dispatch) => {
 	axios
-		.post("http://localhost:8080/events", event, {
+		.post("http://localhost:8080/events", eventFormContent, {
 			headers: { "Content-Type": "application/json" },
 		})
 		.then((response) => {

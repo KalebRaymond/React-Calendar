@@ -10,28 +10,29 @@ import { useDispatch } from "react-redux";
 import moment from "moment";
 
 const CalendarContainer = () => {
+	const dispatch = useDispatch();
 	//The current month and year on the calendar that is being viewed
 	const focusedMonth = useSelector((state) => {
 		const monthIndex = moment(state.calendar.focusedDate).month();
 		return TranslationService.getMonthTranslation(monthIndex).toUpperCase();
 	});
-	const focusedYear = useSelector((state) => moment(state.calendar).year());
 
-	///=========================///
+	const focusedYear = useSelector((state) =>
+		moment(state.calendar.focusedDate).year()
+	);
 
-	const dispatch = useDispatch();
-
-	const events = useSelector((state) => state.calendar.events);
-	const [firstVisibleDate, lastVisibleDate] = useSelector((state) => [
-		state.calendar.visibleDates[0],
-		state.calendar.visibleDates[state.calendar.visibleDates.length - 1],
-	]);
+	const [firstVisibleDate, lastVisibleDate] = useSelector((state) => {
+		return [
+			state.calendar.visibleDates[0],
+			state.calendar.visibleDates[state.calendar.visibleDates.length - 1],
+		];
+	});
 
 	useEffect(() => {
-		dispatch(fetchEvents(firstVisibleDate, lastVisibleDate));
-	}, [firstVisibleDate]);
-
-	///=========================///
+		if (firstVisibleDate && lastVisibleDate) {
+			dispatch(fetchEvents(firstVisibleDate, lastVisibleDate));
+		}
+	}, [firstVisibleDate, lastVisibleDate]);
 
 	return (
 		<div className={styles.CalendarContainer} data-testid="CalendarContainer">
