@@ -17,6 +17,7 @@ const CreateEventModal = (props) => {
 			<div
 				className="modalContainer"
 				aria-label={t("event.modal.labels.createEventModal")}
+				onClick={(e) => e.stopPropagation()}
 			>
 				<div className="modalHeader">
 					<IconButton
