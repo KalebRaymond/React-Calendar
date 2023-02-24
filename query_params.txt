@@ -1,0 +1,12 @@
+AB XY
+A: startDate
+B: endDate
+
+X: firstDateInView
+Y: lastDateInView
+
+Return dates where !(A > Y || B < X) -> !(A > Y) && !(B < X)
+!(startDate > lastDateInView) && !(endDate < firstDateInView)
+
+startDate_not_gt: lastDateInView
+endDate_not_lt: firstDateInView

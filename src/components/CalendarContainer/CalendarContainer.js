@@ -1,25 +1,43 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./CalendarContainer.module.scss";
 
 import CalendarGrid from "components/CalendarGrid/CalendarGrid";
 import CalendarToolbar from "components/CalendarToolbar/CalendarToolbar";
 import TranslationService from "services/TranslationService";
 import { useSelector } from "react-redux";
+import { fetchEvents } from "../../reducers/calendarReducer";
+import { useDispatch } from "react-redux";
+import moment from "moment";
 
 const CalendarContainer = () => {
 	//The current month and year on the calendar that is being viewed
-	const focusedMonth = useSelector((state) =>
-		TranslationService.getMonthTranslation(
-			state.calendar.focusedMonthIndex
-		).toUpperCase()
-	);
-	const focusedYear = useSelector((state) => state.calendar.focusedYear);
+	const focusedMonth = useSelector((state) => {
+		const monthIndex = moment(state.calendar.focusedDate).month();
+		return TranslationService.getMonthTranslation(monthIndex).toUpperCase();
+	});
+	const focusedYear = useSelector((state) => moment(state.calendar).year());
+
+	///=========================///
+
+	const dispatch = useDispatch();
+
+	const events = useSelector((state) => state.calendar.events);
+	const [firstVisibleDate, lastVisibleDate] = useSelector((state) => [
+		state.calendar.visibleDates[0],
+		state.calendar.visibleDates[state.calendar.visibleDates.length - 1],
+	]);
+
+	useEffect(() => {
+		dispatch(fetchEvents(firstVisibleDate, lastVisibleDate));
+	}, [firstVisibleDate]);
+
+	///=========================///
 
 	return (
 		<div className={styles.CalendarContainer} data-testid="CalendarContainer">
 			<CalendarToolbar
-				currentMonth={focusedMonth}
-				currentYear={focusedYear}
+				focusedMonth={focusedMonth}
+				focusedYear={focusedYear}
 			></CalendarToolbar>
 			<CalendarGrid></CalendarGrid>
 		</div>

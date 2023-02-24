@@ -1,48 +1,48 @@
 {
-  "events": [
-    {
-      "id": "0",
-      "eventName": "Team Meeting",
-      "startDate": "2023-02-08",
-      "endDate": "2023-02-08",
-      "startTime": "10:00 AM",
-      "endTime": "",
-      "frequency": "",
-      "location": "Conference Room",
-      "description": "Monthly team meeting to discuss progress and plan for next month."
-    },
-    {
-      "id": "1",
-      "eventName": "Product Launch",
-      "startDate": "2023-02-15",
-      "endDate": "2023-02-15",
-      "startTime": "10:00 AM",
-      "endTime": "",
-      "frequency": "",
-      "location": "Main Hall",
-      "description": "Launch of the new product line for the year 2023."
-    },
-    {
-      "id": "2",
-      "eventName": "Company Outing",
-      "startDate": "2023-02-20",
-      "endDate": "2023-02-21",
-      "startTime": "10:00 AM",
-      "endTime": "",
-      "frequency": "",
-      "location": "Beach Resort",
-      "description": "Annual company outing for employees to bond and have fun."
-    },
-    {
-      "eventName": "",
-      "startDate": "",
-      "endDate": "",
-      "startTime": "",
-      "endTime": "",
-      "frequency": "",
-      "location": "",
-      "description": "",
-      "id": "7q1p_I7"
-    }
-  ]
+	"events": [
+		{
+			"id": "0",
+			"eventName": "July Event 1",
+			"startDate": "2023 07 15",
+			"endDate": "2023 07 16",
+			"startTime": "10:00 AM",
+			"endTime": "",
+			"frequency": "",
+			"location": "Conference Room",
+			"description": "Monthly team meeting to discuss progress and plan for next month."
+		},
+		{
+			"id": "1",
+			"eventName": "July Event 2",
+			"startDate": "2023 07 20",
+			"endDate": "2023 07 25",
+			"startTime": "10:00 AM",
+			"endTime": "",
+			"frequency": "",
+			"location": "Main Hall",
+			"description": "Launch of the new product line for the year 2023."
+		},
+		{
+			"id": "2",
+			"eventName": "October event",
+			"startDate": "2023 10 02",
+			"endDate": "2023 10 03",
+			"startTime": "10:00 AM",
+			"endTime": "",
+			"frequency": "",
+			"location": "Beach Resort",
+			"description": "Annual company outing for employees to bond and have fun."
+		},
+		{
+			"id": "3",
+			"eventName": "Starts September, ends October",
+			"startDate": "2023 09 15",
+			"endDate": "2023 10 15",
+			"startTime": "10:00 AM",
+			"endTime": "",
+			"frequency": "",
+			"location": "Beach Resort",
+			"description": "Annual company outing for employees to bond and have fun."
+		}
+	]
 }

@@ -4,6 +4,7 @@ import { render, screen } from "@testing-library/react";
 import CalendarContainer from "./CalendarContainer";
 import React from "react";
 import store from "../../app/store.js";
+import i18n from "i18n"; //Required because CalendarContainer uses TranslationService
 
 describe("<CalendarContainer />", () => {
 	test("it should mount", () => {

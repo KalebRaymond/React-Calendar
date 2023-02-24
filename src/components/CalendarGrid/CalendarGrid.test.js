@@ -5,6 +5,7 @@ import { render, screen } from "@testing-library/react";
 import CalendarGrid from "./CalendarGrid";
 import calendarReducer from "../../reducers/calendarReducer.js";
 import React from "react";
+import i18n from "i18n"; //Required because CalendarGrid uses TranslationService
 
 let store;
 

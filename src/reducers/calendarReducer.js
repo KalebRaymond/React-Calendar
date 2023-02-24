@@ -4,51 +4,46 @@ import axios from "axios";
 
 //Initialize focused date to today's date
 const focusedDate = moment();
-const focusedMonthIndex = focusedDate?.month();
-const focusedYear = focusedDate?.year();
 
 export const calendarReducer = createSlice({
 	name: "calendar",
 	initialState: {
-		focusedMonthIndex: focusedMonthIndex,
-		focusedYear: focusedYear,
+		focusedDate: focusedDate.format("YYYY MM DD"),
+		visibleDates: [],
 		loadingEvents: "idle",
 		events: [],
 	},
 	reducers: {
 		incrementMonth: (state) => {
-			state.focusedMonthIndex = state.focusedMonthIndex + 1;
-
-			if (state.focusedMonthIndex === 12) {
-				state.focusedMonthIndex = 0;
-				state.focusedYear = state.focusedYear + 1;
-			}
+			const momentObj = moment(state.focusedDate);
+			momentObj.add(1, "months");
+			state.focusedDate = momentObj.format("YYYY MM DD");
 		},
 		decrementMonth: (state) => {
-			state.focusedMonthIndex = state.focusedMonthIndex - 1;
-
-			if (state.focusedMonthIndex < 0) {
-				state.focusedMonthIndex = 11;
-				state.focusedYear = state.focusedYear - 1;
-			}
+			const momentObj = moment(state.focusedDate);
+			momentObj.subtract(1, "months");
+			state.focusedDate = momentObj.format("YYYY MM DD");
 		},
 		loadEvents: (state) => {
 			state.loadingEvents = "loading";
-			console.log("### Fetching events");
 		},
 		loadEventsSuccess: (state, action) => {
 			state.loadingEvents = "idle";
-			console.log("### Events fetched successfully", action.payload);
+			console.log("### Events loaded successfully", { events: action.payload });
+			state.events = action.payload;
 		},
 		loadEventsFailure: (state, action) => {
 			state.loadingEvents = "idle";
-			console.error("### Events failed to fetch", action.payload);
+			console.error("Events failed to fetch.", action.payload);
 		},
 		createEventSuccess: (state, action) => {
 			console.log("### Event created successfully", action.payload);
 		},
 		createEventFailure: (state, action) => {
 			console.error("### Events failed to create", action.payload);
+		},
+		setVisibleDates: (state, action) => {
+			state.visibleDates = action.payload;
 		},
 	},
 });
@@ -62,16 +57,43 @@ export const {
 	loadEventsSuccess,
 	createEventFailure,
 	createEventSuccess,
+	setVisibleDates,
 } = calendarReducer.actions;
 
 /* CRUD Operations */
-export const fetchEvents = () => async (dispatch) => {
+export const fetchEvents = (startDate, endDate) => async (dispatch) => {
 	dispatch(loadEvents());
 
+	if (!startDate || !endDate) {
+		dispatch(loadEventsFailure(`Undefined argument passed into fetchEvents.`));
+
+		return;
+	}
+
+	const startDateSerial = moment()
+		.set({
+			date: startDate.date,
+			month: startDate.month,
+			year: startDate.year,
+		})
+		.format("YYYY MM DD");
+
+	const endDateSerial = moment()
+		.set({
+			date: endDate.date,
+			month: endDate.month,
+			year: endDate.year,
+		})
+		.format("YYYY MM DD");
+
 	///TODO: Abstract server url into env variable or whatever
-	///Fix CORS issue better than "withCredentials: false,"
 	await axios
-		.get("http://localhost:8080/events")
+		.get("http://localhost:8080/events", {
+			params: {
+				startDateSerial,
+				endDateSerial,
+			},
+		})
 		.then((response) => {
 			dispatch(loadEventsSuccess(response.data));
 		})
@@ -82,11 +104,9 @@ export const fetchEvents = () => async (dispatch) => {
 
 export const postEvent = (event) => async (dispatch) => {
 	axios
-		.post(
-			"http://localhost:8080/events",
-			event,
-			{ headers: { "Content-Type": "application/json" } }
-		)
+		.post("http://localhost:8080/events", event, {
+			headers: { "Content-Type": "application/json" },
+		})
 		.then((response) => {
 			dispatch(createEventSuccess(response.data));
 		})
