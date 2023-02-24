@@ -23,8 +23,6 @@ const EventForm = () => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault(); //Prevent page refresh
-
-		console.log("### Event submitted", { formState });
 		dispatch(postEvent(formState));
 	};
 

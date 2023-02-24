@@ -16,14 +16,13 @@ module.exports = (req, res, next) => {
 		const events = req.app.db.value().events;
 		const filteredEvents = events.filter((event) => {
 			const eventStartDate = moment(event.startDate);
-			const eventEndDate = moment(event.endDate);
-
-			console.log({
-				eventStartDate: eventStartDate.format("YYYY MM DD"),
-				eventEndDate: eventEndDate.format("YYYY MM DD"),
-				monthStartDate: startDate.format("YYYY MM DD"),
-				monthEndDate: endDate.format("YYYY MM DD"),
-			});
+			//eventEndDate is optional - if not defined or is empty string,
+			//set eventEndDate equal to startDate to signify that this event
+			//is a single day event
+			const eventEndDate =
+				event.endDate && event.endDate.length
+					? moment(event.endDate)
+					: moment(event.startDate);
 
 			return (
 				!eventStartDate.isAfter(endDate) && !eventEndDate.isBefore(startDate)

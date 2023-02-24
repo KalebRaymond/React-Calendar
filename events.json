@@ -3,8 +3,8 @@
 		{
 			"id": "0",
 			"eventName": "July Event 1",
-			"startDate": "2023 07 15",
-			"endDate": "2023 07 16",
+			"startDate": "2023-07-15",
+			"endDate": "2023-07-16",
 			"startTime": "10:00 AM",
 			"endTime": "",
 			"frequency": "",
@@ -14,8 +14,8 @@
 		{
 			"id": "1",
 			"eventName": "July Event 2",
-			"startDate": "2023 07 20",
-			"endDate": "2023 07 25",
+			"startDate": "2023-07-20",
+			"endDate": "2023-07-25",
 			"startTime": "10:00 AM",
 			"endTime": "",
 			"frequency": "",
@@ -25,8 +25,8 @@
 		{
 			"id": "2",
 			"eventName": "October event",
-			"startDate": "2023 10 02",
-			"endDate": "2023 10 03",
+			"startDate": "2023-10-02",
+			"endDate": "2023-10-03",
 			"startTime": "10:00 AM",
 			"endTime": "",
 			"frequency": "",
@@ -36,13 +36,24 @@
 		{
 			"id": "3",
 			"eventName": "Starts September, ends October",
-			"startDate": "2023 09 15",
-			"endDate": "2023 10 15",
+			"startDate": "2023-09-15",
+			"endDate": "2023-10-15",
 			"startTime": "10:00 AM",
 			"endTime": "",
 			"frequency": "",
 			"location": "Beach Resort",
 			"description": "Annual company outing for employees to bond and have fun."
+		},
+		{
+			"eventName": "Test",
+			"startDate": "2023-02-22",
+			"endDate": "",
+			"startTime": "10:00PM",
+			"endTime": "",
+			"frequency": "daily",
+			"location": "Here",
+			"description": "Stuff",
+			"id": "arOkjt8"
 		}
 	]
 }

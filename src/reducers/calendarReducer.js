@@ -8,7 +8,7 @@ const focusedDate = moment();
 export const calendarReducer = createSlice({
 	name: "calendar",
 	initialState: {
-		focusedDate: focusedDate.format("YYYY MM DD"),
+		focusedDate: focusedDate.format("YYYY-MM-DD"),
 		visibleDates: [],
 		loadingEvents: "idle",
 		events: [],
@@ -17,12 +17,12 @@ export const calendarReducer = createSlice({
 		incrementMonth: (state) => {
 			const momentObj = moment(state.focusedDate);
 			momentObj.add(1, "months");
-			state.focusedDate = momentObj.format("YYYY MM DD");
+			state.focusedDate = momentObj.format("YYYY-MM-DD");
 		},
 		decrementMonth: (state) => {
 			const momentObj = moment(state.focusedDate);
 			momentObj.subtract(1, "months");
-			state.focusedDate = momentObj.format("YYYY MM DD");
+			state.focusedDate = momentObj.format("YYYY-MM-DD");
 		},
 		loadEvents: (state) => {
 			state.loadingEvents = "loading";
@@ -76,7 +76,7 @@ export const fetchEvents = (startDate, endDate) => async (dispatch) => {
 			month: startDate.month,
 			year: startDate.year,
 		})
-		.format("YYYY MM DD");
+		.format("YYYY-MM-DD");
 
 	const endDateSerial = moment()
 		.set({
@@ -84,7 +84,7 @@ export const fetchEvents = (startDate, endDate) => async (dispatch) => {
 			month: endDate.month,
 			year: endDate.year,
 		})
-		.format("YYYY MM DD");
+		.format("YYYY-MM-DD");
 
 	///TODO: Abstract server url into env variable or whatever
 	await axios
@@ -102,9 +102,9 @@ export const fetchEvents = (startDate, endDate) => async (dispatch) => {
 		});
 };
 
-export const postEvent = (event) => async (dispatch) => {
+export const postEvent = (eventFormContent) => async (dispatch) => {
 	axios
-		.post("http://localhost:8080/events", event, {
+		.post("http://localhost:8080/events", eventFormContent, {
 			headers: { "Content-Type": "application/json" },
 		})
 		.then((response) => {
