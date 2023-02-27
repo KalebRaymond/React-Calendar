@@ -1,5 +1,5 @@
 npx json-server --watch events.json
-npx json-server --watch events.json --middlewares filterByDate.js
+npx json-server --watch events.json --middlewares eventMiddleware.js
 npx generate-react-cli component MyComponent
 
 * Storing & loading events via JSON
@@ -16,9 +16,7 @@ npx generate-react-cli component MyComponent
 
 * Rendering the events
 	> Get the dates that are visible on the calendar
-		- Need to rewrite the logic that draws the CalendarGridCards
-		- Have an API just for getting calendar dates
-		- Return an array of objects where each object is a visible date, object contains day, month, year so that they can be passed down to other components ex. the CreateEventModal
+		- Need to rewrite the backend so that events are saved per day
 	> Get the events that fall on those dates
 		- axios get params
 		- If A > Y or B < X then the lines AB and XY don't intersect -> take inverse of this to find events that do have dates that fall in current view

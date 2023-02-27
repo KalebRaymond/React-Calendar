@@ -11,7 +11,7 @@ export const calendarReducer = createSlice({
 		focusedDate: focusedDate.format("YYYY-MM-DD"),
 		visibleDates: [],
 		loadingEvents: "idle",
-		events: [],
+		events: {},
 	},
 	reducers: {
 		incrementMonth: (state) => {
@@ -103,8 +103,18 @@ export const fetchEvents = (startDate, endDate) => async (dispatch) => {
 };
 
 export const postEvent = (eventFormContent) => async (dispatch) => {
+	const test = {
+		description: "",
+		endDate: "2023-03-18",
+		endTime: "",
+		eventName: "TEST",
+		frequency: "",
+		location: "",
+		startDate: "2023-03-14",
+		startTime: "TEST",
+	};
 	axios
-		.post("http://localhost:8080/events", eventFormContent, {
+		.post("http://localhost:8080/events", test, {
 			headers: { "Content-Type": "application/json" },
 		})
 		.then((response) => {
