@@ -73,7 +73,7 @@ const EventForm = () => {
 						Event Time (WIP) (Need start & optional end time)
 					</label>
 					<input
-						type="text"
+						type="time"
 						name="startTime"
 						value={formState.startTime}
 						onChange={handleInputChange}

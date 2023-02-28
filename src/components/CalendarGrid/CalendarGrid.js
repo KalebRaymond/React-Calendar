@@ -39,7 +39,11 @@ const CalendarGrid = () => {
 					{row.map((dateObject, i) => {
 						return (
 							<CalendarGridCard
-								date={dateObject.date}
+								date={moment().set({
+									date: dateObject.date,
+									month: dateObject.month,
+									year: dateObject.year,
+								})}
 								cardAriaLabel={t("dateFormats.MDY", {
 									month: TranslationService.getMonthTranslation(
 										dateObject.month

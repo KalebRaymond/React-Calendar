@@ -29,7 +29,6 @@ export const calendarReducer = createSlice({
 		},
 		loadEventsSuccess: (state, action) => {
 			state.loadingEvents = "idle";
-			console.log("### Events loaded successfully", { events: action.payload });
 			state.events = action.payload;
 		},
 		loadEventsFailure: (state, action) => {
@@ -103,18 +102,8 @@ export const fetchEvents = (startDate, endDate) => async (dispatch) => {
 };
 
 export const postEvent = (eventFormContent) => async (dispatch) => {
-	const test = {
-		description: "",
-		endDate: "2023-03-18",
-		endTime: "",
-		eventName: "TEST",
-		frequency: "",
-		location: "",
-		startDate: "2023-03-14",
-		startTime: "TEST",
-	};
 	axios
-		.post("http://localhost:8080/events", test, {
+		.post("http://localhost:8080/events", eventFormContent, {
 			headers: { "Content-Type": "application/json" },
 		})
 		.then((response) => {

@@ -1,27 +1,81 @@
 {
 	"events": {
-		"2023-07-15": [
+		"2023-07-03": [
 			{
-				"eventName": "July Event 1",
-				"startDate": "2023-07-15",
-				"endDate": "2023-07-16",
-				"startTime": "10:00 AM",
+				"eventName": "July 3",
+				"startDate": "2023-07-03",
+				"endDate": "",
+				"startTime": "14:12",
 				"endTime": "",
 				"frequency": "",
-				"location": "Conference Room",
-				"description": "Monthly team meeting to discuss progress and plan for next month."
+				"location": "",
+				"description": ""
+			},
+			{
+				"eventName": "July 1",
+				"startDate": "2023-07-03",
+				"endDate": "",
+				"startTime": "10:12",
+				"endTime": "",
+				"frequency": "",
+				"location": "",
+				"description": ""
+			},
+			{
+				"eventName": "July 2",
+				"startDate": "2023-07-03",
+				"endDate": "",
+				"startTime": "13:12",
+				"endTime": "",
+				"frequency": "",
+				"location": "",
+				"description": ""
 			}
 		],
-		"2023-07-16": [
+		"2023-07-10": [
 			{
-				"eventName": "July Event 1",
-				"startDate": "2023-07-15",
-				"endDate": "2023-07-16",
-				"startTime": "10:00 AM",
+				"eventName": "JM1",
+				"startDate": "2023-07-10",
+				"endDate": "2023-07-11",
+				"startTime": "",
 				"endTime": "",
 				"frequency": "",
-				"location": "Conference Room",
-				"description": "Monthly team meeting to discuss progress and plan for next month."
+				"location": "",
+				"description": ""
+			}
+		],
+		"2023-07-11": [
+			{
+				"eventName": "JM1",
+				"startDate": "2023-07-10",
+				"endDate": "2023-07-11",
+				"startTime": "",
+				"endTime": "",
+				"frequency": "",
+				"location": "",
+				"description": ""
+			},
+			{
+				"eventName": "JM2",
+				"startDate": "2023-07-11",
+				"endDate": "2023-07-12",
+				"startTime": "",
+				"endTime": "",
+				"frequency": "",
+				"location": "",
+				"description": ""
+			}
+		],
+		"2023-07-12": [
+			{
+				"eventName": "JM2",
+				"startDate": "2023-07-11",
+				"endDate": "2023-07-12",
+				"startTime": "",
+				"endTime": "",
+				"frequency": "",
+				"location": "",
+				"description": ""
 			}
 		]
 	}

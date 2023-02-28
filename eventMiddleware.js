@@ -51,10 +51,6 @@ postEvent = (req, res, next) => {
 
 	let eventDb = db.get("events").value();
 
-	console.log("### eventDb", eventDb);
-	console.log("### event startDate", event.startDate);
-	console.log("### eventDb startDate", eventDb[event.startDate]);
-
 	//Add the event into the database
 	const startDate = moment(event.startDate);
 	const endDate =
@@ -79,8 +75,6 @@ postEvent = (req, res, next) => {
 
 	db.set("events", eventDb).write();
 
-	console.log({ eventDb });
-
 	// send response back to client
-	//res.send("Data updated successfully");
+	res.send("Event saved successfully");
 };
