@@ -1,5 +1,29 @@
 .SingleDateEvent {
-	&:hover {
-		background-color: #eee;
+	margin: 0.15rem;
+
+	.content {
+		float: left;
+
+		.bullet {
+			background-color: #7f0;
+			border-radius: 100%;
+			display: inline-block;
+			height: 0.5rem;
+			margin-left: 0.15rem;
+			margin-right: 0.3rem;
+			width: 0.5rem;
+		}
+
+		.eventTime {
+			margin-left: 0.3rem;
+		}
+
+		.eventName {
+			margin-left: 0.3rem;
+		}
+
+		&:hover {
+			background-color: #eee;
+		}
 	}
 }

@@ -16,13 +16,13 @@ const CreateEventModal = (props) => {
 		>
 			<div
 				className="modalContainer"
-				aria-label={t("event.modal.labels.createEventModal")}
+				aria-label={t("eventModal.labels.createEventModal")}
 				onClick={(e) => e.stopPropagation()}
 			>
 				<div className="modalHeader">
 					<IconButton
 						name="closeModal"
-						ariaLabel={t("event.modal.labels.closeButton")}
+						ariaLabel={t("eventModal.labels.closeButton")}
 						onClick={props.onClose}
 					>
 						<i className="bi bi-x-lg"></i>

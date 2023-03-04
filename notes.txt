@@ -28,3 +28,11 @@ npx generate-react-cli component MyComponent
 		- This is going to be the most difficult probably lol
 		- EventBuilder returns single/multi/split (goes into prev/next month) events depending on date range of event
 
+For each event date
+	> Get any events that start on that date
+	> Calculate length of event
+	> Add event to first blank index in array
+	> Go through each event in array
+	> Decrement event length
+	> If event length is 0, remove from array
+	> Use chatGPT to improve run time

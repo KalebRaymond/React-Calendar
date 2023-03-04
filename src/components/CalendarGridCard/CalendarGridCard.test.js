@@ -63,7 +63,7 @@ describe("<CalendarGridCard />", () => {
 		expect(modal).toBeInTheDocument();
 
 		const modalCloseButton = screen.getByRole("button", {
-			name: i18n.t("event.modal.labels.closeButton"),
+			name: i18n.t("eventModal.labels.closeButton"),
 		});
 
 		fireEvent.click(modalCloseButton);

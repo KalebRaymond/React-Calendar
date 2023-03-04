@@ -7,15 +7,10 @@ import { use } from "i18next";
 import EventListContainer from "components/EventListContainer/EventListContainer";
 
 const CalendarGridCard = (props) => {
-	const { cardAriaLabel, date, grayed, isTodaysDate, keyProp } = props;
+	const { cardAriaLabel, date, events, grayed, isTodaysDate, keyProp } = props;
 
 	const { t } = useTranslation();
 	const [showModal, setShowModal] = useState(false);
-	const events = useSelector((state) =>
-		state.calendar.events[date.format("YYYY-MM-DD")]
-			? state.calendar.events[date.format("YYYY-MM-DD")]
-			: []
-	);
 
 	const handleOpenModal = () => {
 		setShowModal(true);
@@ -25,7 +20,9 @@ const CalendarGridCard = (props) => {
 		setShowModal(false);
 	};
 
+	/*
 	useEffect(() => {}, [events]);
+	*/
 
 	return (
 		<>
@@ -53,7 +50,10 @@ const CalendarGridCard = (props) => {
 					role="region"
 					onClick={handleOpenModal}
 				>
-					<EventListContainer events={events}></EventListContainer>
+					<EventListContainer
+						multiDateEvents={events.multiDateEvents}
+						singleDateEvents={events.singleDateEvents}
+					></EventListContainer>
 				</div>
 			</div>
 			{showModal && (

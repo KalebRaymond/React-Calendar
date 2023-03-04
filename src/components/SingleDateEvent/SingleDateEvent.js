@@ -18,7 +18,11 @@ const SingleDateEvent = (props) => {
 				handleOnClick();
 			}}
 		>
-			{event.eventName}
+			<div className="content">
+				<div className="bullet"></div>
+				<span className="eventTime">{event.startTime}</span>
+				<strong className="eventName">{event.eventName}</strong>
+			</div>
 		</div>
 	);
 };

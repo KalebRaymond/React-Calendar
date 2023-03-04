@@ -9,16 +9,29 @@ const MultipleDateEvent = (props) => {
 		console.log("###", { event });
 	};
 
+	const renderEventButton = () => {
+		return event.isStartOfButton ? (
+			<div
+				className="eventBtn multiDateEventBtn"
+				style={{ width: `calc((100% * ${event.buttonLength}  - 0.15rem)` }} //Need to subtract 2 * 0.15rem margin
+			>
+				<span className="eventName">{event.eventName}</span>
+			</div>
+		) : (
+			<div className="eventBtn placeholderEventBtn"></div>
+		);
+	};
+
 	return (
 		<div
-			className={"SingleDateEvent"}
-			data-testid="SingleDateEvent"
+			className={"MultipleDateEvent"}
+			data-testid="MultipleDateEvent"
 			onClick={(e) => {
 				e.stopPropagation();
 				handleOnClick();
 			}}
 		>
-			{event.eventName}
+			{renderEventButton()}
 		</div>
 	);
 };

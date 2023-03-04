@@ -1,33 +1,79 @@
 {
+	"calendarGridCard": {
+		"todaysDate": "Today's date"
+	},
+	"calendarToolbar": {
+		"leftNavButton": "Navigate to previous month",
+		"mainControls": "Controls for main calendar",
+		"rightNavButton": "Navigate to next month"
+	},
+	"dateFormats": {
+		"MDY": "{{month}} {{day}}, {{year}}"
+	},
 	"days": {
-		"sunday": "Sunday",
-		"sun": "SUN",
-		"monday": "Monday",
-		"mon": "MON",
-		"tuesday": "Tuesday",
-		"tue": "TUE",
-		"wednesday": "Wednesday",
-		"wed": "WED",
-		"thursday": "Thursday",
-		"thu": "THU",
-		"friday": "Friday",
 		"fri": "FRI",
+		"friday": "Friday",
+		"mon": "MON",
+		"monday": "Monday",
+		"sat": "SAT",
 		"saturday": "Saturday",
-		"sat": "SAT"
+		"sun": "SUN",
+		"sunday": "Sunday",
+		"thu": "THU",
+		"thursday": "Thursday",
+		"tue": "TUE",
+		"tuesday": "Tuesday",
+		"wed": "WED",
+		"wednesday": "Wednesday"
+	},
+	"eventForm": {
+		"labels": {
+			"eventDate": "Event Date (WIP)",
+			"eventDescription": "Event Description",
+			"eventName": "Event Name",
+			"eventStartTime": "Event Time (WIP) (Need start & optional end time)"
+		}
+	},
+	"eventModal": {
+		"buttons": {
+			"reset": {
+				"hat": "Reset event form",
+				"text": "Reset"
+			},
+			"submit": {
+				"hat": "Submit event",
+				"text": "Submit"
+			}
+		},
+		"form": {
+			"repeat": {
+				"annually": "Annually on {{date}}",
+				"daily": "Daily",
+				"monthly": "Monthly on the {{count}} {{dayOfWeek}}",
+				"noRepeat": "Does not repeat",
+				"weekdays": "Every weekday (Monday through Friday)",
+				"weekly": "Weekly on {{dayOfWeek}}"
+			}
+		},
+		"labels": {
+			"closeButton": "Close Event Form modal",
+			"createEventModal": "Create New Event modal",
+			"formActions": "Event form actions"
+		}
 	},
 	"months": {
-		"january": "january",
-		"february": "february",
-		"march": "march",
 		"april": "april",
-		"may": "may",
-		"june": "june",
-		"july": "july",
 		"august": "august",
-		"september": "september",
-		"october": "october",
+		"december": "december",
+		"february": "february",
+		"january": "january",
+		"july": "july",
+		"june": "june",
+		"march": "march",
+		"may": "may",
 		"november": "november",
-		"december": "december"
+		"october": "october",
+		"september": "september"
 	},
 	"numbers": {
 		"ordinal": {
@@ -62,46 +108,6 @@
 			"29": "29th",
 			"30": "30th",
 			"31": "31st"
-		}
-	},
-	"dateFormats": {
-		"MDY": "{{month}} {{day}}, {{year}}"
-	},
-	"calendarToolbar": {
-		"mainControls": "Controls for main calendar",
-		"leftNavButton": "Navigate to previous month",
-		"rightNavButton": "Navigate to next month"
-	},
-	"calendarGridCard": {
-		"todaysDate": "Today's date"
-	},
-	"event": {
-		"modal": {
-			"labels": {
-				"createEventModal": "Create New Event modal",
-				"closeButton": "Close Event Form modal",
-				"formActions": "Event form actions"
-			},
-			"buttons": {
-				"submit": {
-					"text": "Submit",
-					"hat": "Submit event"
-				},
-				"reset": {
-					"text": "Reset",
-					"hat": "Reset event form"
-				}
-			},
-			"form": {
-				"repeat": {
-					"noRepeat": "Does not repeat",
-					"daily": "Daily",
-					"weekly": "Weekly on {{dayOfWeek}}",
-					"monthly": "Monthly on the {{count}} {{dayOfWeek}}",
-					"annually": "Annually on {{date}}",
-					"weekdays": "Every weekday (Monday through Friday)"
-				}
-			}
 		}
 	}
 }

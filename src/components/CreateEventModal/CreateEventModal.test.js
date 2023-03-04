@@ -28,7 +28,7 @@ describe("<CreateEventModal />", () => {
 		);
 
 		const closeButton = screen.getByRole("button", {
-			name: i18n.t("event.modal.labels.closeButton"),
+			name: i18n.t("eventModal.labels.closeButton"),
 		});
 
 		fireEvent.click(closeButton);

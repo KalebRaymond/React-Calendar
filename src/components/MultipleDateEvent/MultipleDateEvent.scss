@@ -1,5 +1,21 @@
 .MultipleDateEvent {
-	&:hover {
-		background-color: #eee;
+	.eventBtn {
+		height: 1.5rem;
+		margin: 0.15rem;
+		position: relative;
+
+		&.multiDateEventBtn {
+			background-color: #f00;
+			border-radius: 0.35rem;
+			padding-left: 0.5rem;
+
+			&:hover {
+				opacity: 0.6;
+			}
+
+			span {
+				float: left;
+			}
+		}
 	}
 }

@@ -24,6 +24,14 @@ const CalendarGrid = () => {
 	);
 	const todaysDate = moment();
 
+	const eventMatrix = useSelector((state) => {
+		console.log(
+			"### eventMatrix",
+			CalendarService.generateEventMatrix(state.calendar.events)
+		);
+		return CalendarService.generateEventMatrix(state.calendar.events);
+	});
+
 	///Shallow copy of dates object - performance hit?
 	const renderCalendarContent = ([...dates]) => {
 		let calendarContent = [];
@@ -39,11 +47,6 @@ const CalendarGrid = () => {
 					{row.map((dateObject, i) => {
 						return (
 							<CalendarGridCard
-								date={moment().set({
-									date: dateObject.date,
-									month: dateObject.month,
-									year: dateObject.year,
-								})}
 								cardAriaLabel={t("dateFormats.MDY", {
 									month: TranslationService.getMonthTranslation(
 										dateObject.month
@@ -51,13 +54,19 @@ const CalendarGrid = () => {
 									day: TranslationService.getOrdinal(dateObject.date),
 									year: dateObject.year,
 								})}
-								keyProp={`date-${dateObject.month}-${dateObject.date}-${dateObject.year}`}
+								date={moment().set({
+									date: dateObject.date,
+									month: dateObject.month,
+									year: dateObject.year,
+								})}
+								events={eventMatrix[rowIndex][i]}
 								grayed={dateObject.month !== focusedMonth}
 								isTodaysDate={
 									dateObject.month === todaysDate.month() &&
 									dateObject.year === todaysDate.year() &&
 									dateObject.date === todaysDate.date()
 								}
+								keyProp={`date-${dateObject.month}-${dateObject.date}-${dateObject.year}`}
 							></CalendarGridCard>
 						);
 					})}

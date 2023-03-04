@@ -1,6 +1,11 @@
 import moment from "moment";
 
 const CalendarService = {
+	/* 	Given a month and year, returns an array of objects representing
+	 *	the dates that are visible on the calendar for that specific month.
+	 *	This includes any days from the previous or next month that "spill over".
+	 *	Each date object contains the month index, year, date, and day of week index
+	 */
 	getVisibleDates: function (monthIndex, year) {
 		const focusedDateObj = moment();
 		focusedDateObj.set("month", monthIndex);
@@ -63,6 +68,199 @@ const CalendarService = {
 		}
 
 		return calendar;
+	},
+
+	/*	Given an object where each key maps a date to an array of objects
+	 *	representing the events that start on that date, returns a nested array
+	 *	that represents how the events should be displayed on the calendar.
+	 *
+	 * 	Returns an array containing an array for each calendar row, which contains
+	 * 	objects that have a "multiDateEvents" array and a "singleDateEvents" array
+	 */
+	generateEventMatrix: function (events) {
+		return [
+			[
+				{
+					multiDateEvents: [
+						{
+							eventName: "A",
+							startDate: "2023-07-11",
+							endDate: "2023-07-12",
+							startTime: "",
+							endTime: "",
+							description: "",
+							isStartOfButton: true,
+							buttonLength: 2,
+						},
+					],
+					singleDateEvents: [],
+				},
+				{
+					multiDateEvents: [
+						{
+							eventName: "A",
+							startDate: "2023-07-11",
+							endDate: "2023-07-12",
+							startTime: "",
+							endTime: "",
+							description: "",
+							isStartOfButton: false,
+							buttonLength: 1,
+						},
+						{
+							eventName: "B",
+							startDate: "2023-07-11",
+							endDate: "2023-07-12",
+							startTime: "",
+							endTime: "",
+							description: "",
+							isStartOfButton: true,
+							buttonLength: 2,
+						},
+					],
+					singleDateEvents: [],
+				},
+				{
+					multiDateEvents: [
+						{
+							eventName: "C",
+							startDate: "2023-07-11",
+							endDate: "2023-07-12",
+							startTime: "",
+							endTime: "",
+							description: "",
+							isStartOfButton: true,
+							buttonLength: 2,
+						},
+						{
+							eventName: "B",
+							startDate: "2023-07-11",
+							endDate: "2023-07-12",
+							startTime: "",
+							endTime: "",
+							description: "",
+							isStartOfButton: false,
+							buttonLength: 1,
+						},
+					],
+					singleDateEvents: [],
+				},
+				{
+					multiDateEvents: [
+						{
+							eventName: "C",
+							startDate: "2023-07-11",
+							endDate: "2023-07-12",
+							startTime: "",
+							endTime: "",
+							description: "",
+							isStartOfButton: false,
+							buttonLength: 1,
+						},
+						{
+							eventName: "D",
+							startDate: "2023-07-11",
+							endDate: "2023-07-12",
+							startTime: "",
+							endTime: "",
+							description: "",
+							isStartOfButton: true,
+							buttonLength: 2,
+						},
+					],
+					singleDateEvents: [],
+				},
+				{
+					multiDateEvents: [
+						{
+							eventName: "D",
+							startDate: "2023-07-11",
+							endDate: "2023-07-12",
+							startTime: "",
+							endTime: "",
+							description: "",
+							isStartOfButton: false,
+							buttonLength: 1,
+						},
+					],
+					singleDateEvents: [],
+				},
+				{
+					multiDateEvents: [],
+					singleDateEvents: [],
+				},
+				{
+					multiDateEvents: [],
+					singleDateEvents: [
+						{
+							eventName: "Single 1",
+							startDate: "2023-07-11",
+							endDate: "2023-07-12",
+							startTime: "03:00",
+							endTime: "",
+							description: "",
+							isStartOfButton: false,
+							buttonLength: 1,
+						},
+						{
+							eventName: "Single 2",
+							startDate: "2023-07-11",
+							endDate: "2023-07-12",
+							startTime: "14:15",
+							endTime: "",
+							description: "",
+							isStartOfButton: false,
+							buttonLength: 1,
+						},
+					],
+				},
+			],
+			[
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+			],
+			[
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+			],
+			[
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+			],
+			[
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+			],
+			[
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+				{ multiDateEvents: [], singleDateEvents: [] },
+			],
+		];
 	},
 };
 

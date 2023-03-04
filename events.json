@@ -1,5 +1,15 @@
 {
 	"events": {
+		"2023-06-30": [
+			{
+				"eventName": "June 1",
+				"startDate": "2023-06-30",
+				"endDate": "2023-07-10",
+				"startTime": "14:12",
+				"endTime": "",
+				"description": ""
+			}
+		],
 		"2023-07-03": [
 			{
 				"eventName": "July 3",
@@ -7,8 +17,6 @@
 				"endDate": "",
 				"startTime": "14:12",
 				"endTime": "",
-				"frequency": "",
-				"location": "",
 				"description": ""
 			},
 			{
@@ -17,8 +25,6 @@
 				"endDate": "",
 				"startTime": "10:12",
 				"endTime": "",
-				"frequency": "",
-				"location": "",
 				"description": ""
 			},
 			{
@@ -27,8 +33,6 @@
 				"endDate": "",
 				"startTime": "13:12",
 				"endTime": "",
-				"frequency": "",
-				"location": "",
 				"description": ""
 			}
 		],
@@ -39,8 +43,6 @@
 				"endDate": "2023-07-11",
 				"startTime": "",
 				"endTime": "",
-				"frequency": "",
-				"location": "",
 				"description": ""
 			}
 		],
@@ -51,8 +53,6 @@
 				"endDate": "2023-07-11",
 				"startTime": "",
 				"endTime": "",
-				"frequency": "",
-				"location": "",
 				"description": ""
 			},
 			{
@@ -61,8 +61,6 @@
 				"endDate": "2023-07-12",
 				"startTime": "",
 				"endTime": "",
-				"frequency": "",
-				"location": "",
 				"description": ""
 			}
 		],
@@ -73,8 +71,6 @@
 				"endDate": "2023-07-12",
 				"startTime": "",
 				"endTime": "",
-				"frequency": "",
-				"location": "",
 				"description": ""
 			}
 		]

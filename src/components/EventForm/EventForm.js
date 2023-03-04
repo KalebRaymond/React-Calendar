@@ -11,8 +11,6 @@ const DEFAULT_FORM_STATE = {
 	endDate: "",
 	startTime: "",
 	endTime: "",
-	frequency: "",
-	location: "",
 	description: "",
 };
 
@@ -46,7 +44,7 @@ const EventForm = () => {
 			<form onSubmit={handleSubmit}>
 				<div className="formSection" id="name-container">
 					<label htmlFor="eventName" id="name-label">
-						Event Name
+						{t("eventForm.labels.eventName")}
 					</label>
 					<input
 						type="text"
@@ -58,7 +56,7 @@ const EventForm = () => {
 				</div>
 				<div className="formSection" id="date-container">
 					<label htmlFor="startDate" id="start-date-label">
-						Event Date (WIP)
+						{t("eventForm.labels.eventDate")}
 					</label>
 					<input
 						type="date"
@@ -70,7 +68,7 @@ const EventForm = () => {
 				</div>
 				<div className="formSection" id="time-container">
 					<label htmlFor="time" id="start-time-label">
-						Event Time (WIP) (Need start & optional end time)
+						{t("eventForm.labels.eventName")}
 					</label>
 					<input
 						type="time"
@@ -80,54 +78,9 @@ const EventForm = () => {
 						aria-labelledby="start-time-label"
 					/>
 				</div>
-				<div className="formSection" id="frequency-container">
-					<label htmlFor="frequency" id="frequency-label">
-						Event Frequency (WIP)
-					</label>
-					<select
-						name="frequency"
-						onChange={handleInputChange}
-						value={formState.frequency}
-						aria-labelledby="frequency-label"
-					>
-						<option value="noRepeat">
-							{t("event.modal.form.repeat.noRepeat")}
-						</option>
-						<option value="daily">{t("event.modal.form.repeat.daily")}</option>
-						<option value="weekly">
-							{t("event.modal.form.repeat.weekly", {
-								dayOfWeek: "TESTDAY",
-							})}
-						</option>
-						<option value="monthly">
-							{t("event.modal.form.repeat.monthly", {
-								count: "1st",
-								dayOfWeek: "TESTDAY",
-							})}
-						</option>
-						<option value="annually">
-							{t("event.modal.form.repeat.annually", { date: "TESTDATE" })}
-						</option>
-						<option value="weekdays">
-							{t("event.modal.form.repeat.weekdays")}
-						</option>
-					</select>
-				</div>
-				<div className="formSection" id="location">
-					<label htmlFor="location" id="location-label">
-						Event Location
-					</label>
-					<input
-						type="text"
-						name="location"
-						value={formState.location}
-						onChange={handleInputChange}
-						aria-labelledby="location-label"
-					/>
-				</div>
 				<div className="formSection" id="description">
 					<label htmlFor="description" id="description-label">
-						Event Description
+						{t("eventForm.labels.eventDescription")}
 					</label>
 					<input
 						type="text"
@@ -139,20 +92,17 @@ const EventForm = () => {
 				</div>
 				<div
 					className="formSection buttonBar"
-					aria-label={t("event.modal.labels.formActions")}
+					aria-label={t("eventModal.labels.formActions")}
 					role="group"
 				>
-					<button
-						type="submit"
-						aria-label={t("event.modal.buttons.submit.hat")}
-					>
-						{t("event.modal.buttons.submit.text")}
+					<button type="submit" aria-label={t("eventModal.buttons.submit.hat")}>
+						{t("eventModal.buttons.submit.text")}
 					</button>
 					<button
 						onClick={handleResetForm}
-						aria-label={t("event.modal.buttons.reset.hat")}
+						aria-label={t("eventModal.buttons.reset.hat")}
 					>
-						{t("event.modal.buttons.reset.text")}
+						{t("eventModal.buttons.reset.text")}
 					</button>
 				</div>
 			</form>

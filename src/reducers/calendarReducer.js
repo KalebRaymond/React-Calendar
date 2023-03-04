@@ -29,6 +29,7 @@ export const calendarReducer = createSlice({
 		},
 		loadEventsSuccess: (state, action) => {
 			state.loadingEvents = "idle";
+			console.log("### Load events success", { events: action.payload });
 			state.events = action.payload;
 		},
 		loadEventsFailure: (state, action) => {

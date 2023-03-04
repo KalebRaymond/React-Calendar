@@ -1,14 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./EventListContainer.module.scss";
+import styles from "./EventListContainer.scss";
 import moment from "moment";
 import SingleDateEvent from "components/SingleDateEvent/SingleDateEvent";
 import MultipleDateEvent from "components/MultipleDateEvent/MultipleDateEvent";
 
 const EventListContainer = (props) => {
-	const { events } = props;
+	const { multiDateEvents, singleDateEvents } = props;
 
 	const renderEvents = () => {
+		/*
 		//Separate events by multiple day and single day events
 		const multipleDateEvents = [];
 		const singleDateEvents = [];
@@ -47,10 +48,25 @@ const EventListContainer = (props) => {
 				))}
 			</ul>
 		);
+		*/
+		return (
+			<ul class="eventList">
+				{multiDateEvents.map((event) => (
+					<li>
+						<MultipleDateEvent event={event} />
+					</li>
+				))}
+				{singleDateEvents.map((event) => (
+					<li>
+						<SingleDateEvent event={event} />
+					</li>
+				))}
+			</ul>
+		);
 	};
 
 	return (
-		<div className={styles.EventListContainer} data-testid="EventListContainer">
+		<div className={"EventListContainer"} data-testid="EventListContainer">
 			{renderEvents()}
 		</div>
 	);
