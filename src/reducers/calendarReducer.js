@@ -1,15 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 import moment from "moment";
 import axios from "axios";
+import CalendarService from "../services/CalendarService";
 
 //Initialize focused date to today's date
 const focusedDate = moment();
+//Initialize visible dates to the current month
+const visibleDates = CalendarService.getVisibleDates(
+	focusedDate.month(),
+	focusedDate.year()
+);
 
 export const calendarReducer = createSlice({
 	name: "calendar",
 	initialState: {
 		focusedDate: focusedDate.format("YYYY-MM-DD"),
-		visibleDates: [],
+		visibleDates: visibleDates,
 		loadingEvents: "idle",
 		events: {},
 	},
@@ -18,11 +24,19 @@ export const calendarReducer = createSlice({
 			const momentObj = moment(state.focusedDate);
 			momentObj.add(1, "months");
 			state.focusedDate = momentObj.format("YYYY-MM-DD");
+			state.visibleDates = CalendarService.getVisibleDates(
+				momentObj.month(),
+				momentObj.year()
+			);
 		},
 		decrementMonth: (state) => {
 			const momentObj = moment(state.focusedDate);
 			momentObj.subtract(1, "months");
 			state.focusedDate = momentObj.format("YYYY-MM-DD");
+			state.visibleDates = CalendarService.getVisibleDates(
+				momentObj.month(),
+				momentObj.year()
+			);
 		},
 		loadEvents: (state) => {
 			state.loadingEvents = "loading";
@@ -66,7 +80,6 @@ export const fetchEvents = (startDate, endDate) => async (dispatch) => {
 
 	if (!startDate || !endDate) {
 		dispatch(loadEventsFailure(`Undefined argument passed into fetchEvents.`));
-
 		return;
 	}
 

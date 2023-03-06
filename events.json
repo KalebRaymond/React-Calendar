@@ -4,36 +4,40 @@
 			{
 				"eventName": "June 1",
 				"startDate": "2023-06-30",
-				"endDate": "2023-07-10",
+				"endDate": "2023-07-03",
 				"startTime": "14:12",
 				"endTime": "",
-				"description": ""
+				"description": "",
+				"numDays": "10"
 			}
 		],
 		"2023-07-03": [
 			{
 				"eventName": "July 3",
 				"startDate": "2023-07-03",
-				"endDate": "",
+				"endDate": "2023-07-03",
 				"startTime": "14:12",
 				"endTime": "",
-				"description": ""
+				"description": "",
+				"numDays": "1"
 			},
 			{
 				"eventName": "July 1",
 				"startDate": "2023-07-03",
-				"endDate": "",
+				"endDate": "2023-07-03",
 				"startTime": "10:12",
 				"endTime": "",
-				"description": ""
+				"description": "",
+				"numDays": "1"
 			},
 			{
 				"eventName": "July 2",
 				"startDate": "2023-07-03",
-				"endDate": "",
+				"endDate": "2023-07-03",
 				"startTime": "13:12",
 				"endTime": "",
-				"description": ""
+				"description": "",
+				"numDays": "1"
 			}
 		],
 		"2023-07-10": [
@@ -43,7 +47,8 @@
 				"endDate": "2023-07-11",
 				"startTime": "",
 				"endTime": "",
-				"description": ""
+				"description": "",
+				"numDays": "2"
 			}
 		],
 		"2023-07-11": [
@@ -53,7 +58,8 @@
 				"endDate": "2023-07-11",
 				"startTime": "",
 				"endTime": "",
-				"description": ""
+				"description": "",
+				"numDays": "2"
 			},
 			{
 				"eventName": "JM2",
@@ -61,7 +67,8 @@
 				"endDate": "2023-07-12",
 				"startTime": "",
 				"endTime": "",
-				"description": ""
+				"description": "",
+				"numDays": "2"
 			}
 		],
 		"2023-07-12": [
@@ -71,7 +78,48 @@
 				"endDate": "2023-07-12",
 				"startTime": "",
 				"endTime": "",
-				"description": ""
+				"description": "",
+				"numDays": "2"
+			},
+			{
+				"eventName": "JM3",
+				"startDate": "2023-07-12",
+				"endDate": "2023-07-13",
+				"startTime": "",
+				"endTime": "",
+				"description": "",
+				"numDays": "2"
+			}
+		],
+		"2023-07-13": [
+			{
+				"eventName": "JM3",
+				"startDate": "2023-07-12",
+				"endDate": "2023-07-13",
+				"startTime": "",
+				"endTime": "",
+				"description": "",
+				"numDays": "2"
+			},
+			{
+				"eventName": "JM4",
+				"startDate": "2023-07-13",
+				"endDate": "2023-07-14",
+				"startTime": "",
+				"endTime": "",
+				"description": "",
+				"numDays": "2"
+			}
+		],
+		"2023-07-14": [
+			{
+				"eventName": "JM4",
+				"startDate": "2023-07-13",
+				"endDate": "2023-07-14",
+				"startTime": "",
+				"endTime": "",
+				"description": "",
+				"numDays": "2"
 			}
 		]
 	}

@@ -57,12 +57,12 @@ postEvent = (req, res, next) => {
 		event.endDate && event.endDate.length
 			? moment(event.endDate)
 			: moment(event.startDate);
+
+	const numDays = endDate.diff(startDate, "days");
+	event = { ...event, [numDays]: numDays };
+
 	//Iterate over the days that the event takes place on
-	for (
-		let eventDate = moment(startDate);
-		eventDate.isSameOrBefore(endDate);
-		eventDate.add(1, "days")
-	) {
+	for (let i = 0; i <= numDays; i++) {
 		const eventDateSerial = eventDate.format("YYYY-MM-DD");
 		//Add event to the array of events for this date
 		eventDb = {

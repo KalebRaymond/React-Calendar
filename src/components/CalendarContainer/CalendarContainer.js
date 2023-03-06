@@ -21,10 +21,12 @@ const CalendarContainer = () => {
 		moment(state.calendar.focusedDate).year()
 	);
 
+	///Map this out... when is visibleDates updated?
+	///I think in CalendarGrid, maybe move to this component?
 	const [firstVisibleDate, lastVisibleDate] = useSelector((state) => {
 		return [
-			state.calendar.visibleDates[0],
-			state.calendar.visibleDates[state.calendar.visibleDates.length - 1],
+			state.calendar.visibleDates[0][0],
+			state.calendar.visibleDates[state.calendar.visibleDates.length - 1][6],
 		];
 	});
 

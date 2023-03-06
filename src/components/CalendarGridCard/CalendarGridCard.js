@@ -20,15 +20,14 @@ const CalendarGridCard = (props) => {
 		setShowModal(false);
 	};
 
-	/*
-	useEffect(() => {}, [events]);
-	*/
+	useEffect(() => {
+		console.log("###", events);
+	}, [events]);
 
 	return (
 		<>
 			<div
 				className={`CalendarGridCard ${grayed ? "grayed" : ""}`}
-				key={keyProp}
 				data-testid="CalendarGridCard"
 				tabIndex="0"
 				role="gridcell"

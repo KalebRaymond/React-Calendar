@@ -50,14 +50,15 @@ const EventListContainer = (props) => {
 		);
 		*/
 		return (
-			<ul class="eventList">
-				{multiDateEvents.map((event) => (
-					<li>
+			<ul className="eventList">
+				{multiDateEvents.map((event, i) => (
+					///This key should use a uuid instead
+					<li key={`${event.eventName}-${i}`}>
 						<MultipleDateEvent event={event} />
 					</li>
 				))}
-				{singleDateEvents.map((event) => (
-					<li>
+				{singleDateEvents.map((event, i) => (
+					<li key={`${event.eventName}-${i}`}>
 						<SingleDateEvent event={event} />
 					</li>
 				))}

@@ -13,8 +13,6 @@ import { useDispatch } from "react-redux";
 
 const CalendarGrid = () => {
 	const { t } = useTranslation();
-	const dispatch = useDispatch();
-	const [calendarContent, setCalendarContent] = useState();
 
 	const focusedMonth = useSelector((state) =>
 		moment(state.calendar.focusedDate).month()
@@ -24,72 +22,53 @@ const CalendarGrid = () => {
 	);
 	const todaysDate = moment();
 
+	const visibleDates = useSelector((state) => state.calendar.visibleDates);
+
 	const eventMatrix = useSelector((state) => {
-		console.log(
-			"### eventMatrix",
-			CalendarService.generateEventMatrix(state.calendar.events)
+		return CalendarService.generateEventMatrix(
+			state.calendar.events,
+			state.calendar.visibleDates
 		);
-		return CalendarService.generateEventMatrix(state.calendar.events);
 	});
 
 	///Shallow copy of dates object - performance hit?
 	const renderCalendarContent = ([...dates]) => {
 		let calendarContent = [];
-		let rowIndex = 0;
 
-		while (dates.length) {
-			const row = dates.splice(0, 7);
-
-			const gridRow = (
-				<CalendarGridRow
-					keyProp={`row-${focusedMonth}-${focusedYear}-${rowIndex}`}
-				>
-					{row.map((dateObject, i) => {
-						return (
-							<CalendarGridCard
-								cardAriaLabel={t("dateFormats.MDY", {
-									month: TranslationService.getMonthTranslation(
-										dateObject.month
-									),
-									day: TranslationService.getOrdinal(dateObject.date),
-									year: dateObject.year,
-								})}
-								date={moment().set({
-									date: dateObject.date,
-									month: dateObject.month,
-									year: dateObject.year,
-								})}
-								events={eventMatrix[rowIndex][i]}
-								grayed={dateObject.month !== focusedMonth}
-								isTodaysDate={
-									dateObject.month === todaysDate.month() &&
-									dateObject.year === todaysDate.year() &&
-									dateObject.date === todaysDate.date()
-								}
-								keyProp={`date-${dateObject.month}-${dateObject.date}-${dateObject.year}`}
-							></CalendarGridCard>
-						);
-					})}
-				</CalendarGridRow>
-			);
-
-			calendarContent.push(gridRow);
-			rowIndex = rowIndex + 1;
-		}
+		calendarContent = dates.map((row, i) => (
+			<CalendarGridRow key={`row-${focusedMonth}-${focusedYear}-${i}`}>
+				{row.map((dateObject, j) => (
+					<CalendarGridCard
+						cardAriaLabel={t("dateFormats.MDY", {
+							month: TranslationService.getMonthTranslation(dateObject.month),
+							day: TranslationService.getOrdinal(dateObject.date),
+							year: dateObject.year,
+						})}
+						date={moment().set({
+							date: dateObject.date,
+							month: dateObject.month,
+							year: dateObject.year,
+						})}
+						events={eventMatrix[i][j]}
+						grayed={dateObject.month !== focusedMonth}
+						isTodaysDate={
+							dateObject.month === todaysDate.month() &&
+							dateObject.year === todaysDate.year() &&
+							dateObject.date === todaysDate.date()
+						}
+						key={`date-${dateObject.month}-${dateObject.date}-${dateObject.year}`}
+					></CalendarGridCard>
+				))}
+			</CalendarGridRow>
+		));
 
 		return calendarContent;
 	};
 
-	useEffect(() => {
-		const dates = CalendarService.getVisibleDates(focusedMonth, focusedYear);
-		setCalendarContent(renderCalendarContent(dates));
-		dispatch(setVisibleDates(dates));
-	}, [focusedMonth, focusedYear]);
-
 	return (
 		<div className={styles.CalendarGrid} data-testid="CalendarGrid">
 			<WeekDaysHeader></WeekDaysHeader>
-			{calendarContent}
+			{renderCalendarContent(visibleDates)}
 		</div>
 	);
 };

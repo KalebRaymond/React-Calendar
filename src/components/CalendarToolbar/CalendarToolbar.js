@@ -4,7 +4,11 @@ import IconButton from "components/IconButton/IconButton";
 import { useTranslation } from "react-i18next";
 
 import { useDispatch } from "react-redux";
-import { incrementMonth, decrementMonth } from "../../reducers/calendarReducer";
+import {
+	incrementMonth,
+	decrementMonth,
+	setVisibleDates,
+} from "../../reducers/calendarReducer";
 
 const CalendarToolbar = (props) => {
 	const { focusedMonth, focusedYear } = props;
