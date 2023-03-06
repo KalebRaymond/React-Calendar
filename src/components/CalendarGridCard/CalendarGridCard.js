@@ -20,10 +20,6 @@ const CalendarGridCard = (props) => {
 		setShowModal(false);
 	};
 
-	useEffect(() => {
-		console.log("###", events);
-	}, [events]);
-
 	return (
 		<>
 			<div

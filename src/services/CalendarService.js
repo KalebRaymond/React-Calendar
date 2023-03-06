@@ -131,8 +131,6 @@ const CalendarService = {
 					  })
 					: [];
 
-				console.log("### unseenEvents", unseenEvents);
-
 				//Add events into first availble slot in curEventPositions
 				for (let i = 0; i < unseenEvents.length; i++) {
 					this.insertIntoFirstNullIndex(curEventPositions, unseenEvents[i]);
@@ -150,11 +148,18 @@ const CalendarService = {
 						}
 						//If the event is a multi date event, add it to the multiDateEvents array
 						else {
-							//If the event starts on this day, set isStartOfButton to true
-							//and set buttonLength to the number of days the event lasts
-							if (event.startDate === curDate) {
+							//If the event starts on this day or curDate is the first
+							//day of the week, set isStartOfButton to true
+							if (event.startDate === curDate || day === 0) {
 								event.isStartOfButton = true;
-								event.buttonLength = event.numDays;
+
+								//set buttonLength to the number of days the event lasts
+								//or the number of days left in the week, whichever is smaller
+								const daysLeftInWeek = 7 - day;
+								const daysLeftInEvent =
+									moment(event.endDate).diff(moment(curDate), "days") + 1;
+
+								event.buttonLength = Math.min(daysLeftInWeek, daysLeftInEvent);
 							}
 							//If the event does not start on this day, set isStartOfButton to false
 							else {
