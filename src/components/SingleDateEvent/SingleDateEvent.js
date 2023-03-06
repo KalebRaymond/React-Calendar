@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./SingleDateEvent.scss";
+import CalendarService from "../../services/CalendarService";
 
 const SingleDateEvent = (props) => {
 	const { event } = props;
@@ -20,7 +21,9 @@ const SingleDateEvent = (props) => {
 		>
 			<div className="content">
 				<div className="bullet"></div>
-				<span className="eventTime">{event.startTime}</span>
+				<span className="eventTime">
+					{CalendarService.convertTo12HourTime(event.startTime)}
+				</span>
 				<strong className="eventName">{event.eventName}</strong>
 			</div>
 		</div>

@@ -28,10 +28,12 @@
 	},
 	"eventForm": {
 		"labels": {
-			"eventDate": "Event Date (WIP)",
-			"eventDescription": "Event Description",
-			"eventName": "Event Name",
-			"eventStartTime": "Event Time (WIP) (Need start & optional end time)"
+			"startDate": "Start Date",
+			"endDate": "End Date",
+			"description": "Description",
+			"name": "Name",
+			"startTime": "Start Time",
+			"endTime": "End Time"
 		}
 	},
 	"eventModal": {

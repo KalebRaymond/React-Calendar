@@ -52,6 +52,7 @@ export const calendarReducer = createSlice({
 		},
 		createEventSuccess: (state, action) => {
 			console.log("### Event created successfully", action.payload);
+			state.events = action.payload;
 		},
 		createEventFailure: (state, action) => {
 			console.error("### Events failed to create", action.payload);

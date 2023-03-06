@@ -44,19 +44,19 @@ const EventForm = () => {
 			<form onSubmit={handleSubmit}>
 				<div className="formSection" id="name-container">
 					<label htmlFor="eventName" id="name-label">
-						{t("eventForm.labels.eventName")}
+						{t("eventForm.labels.name")}
 					</label>
 					<input
 						type="text"
 						name="eventName"
-						value={formState.eventName}
+						value={formState.Name}
 						onChange={handleInputChange}
 						aria-labelledby="name-label"
 					/>
 				</div>
-				<div className="formSection" id="date-container">
+				<div className="formSection" id="start-date-container">
 					<label htmlFor="startDate" id="start-date-label">
-						{t("eventForm.labels.eventDate")}
+						{t("eventForm.labels.startDate")}
 					</label>
 					<input
 						type="date"
@@ -66,9 +66,21 @@ const EventForm = () => {
 						aria-labelledby="start-date-label"
 					/>
 				</div>
-				<div className="formSection" id="time-container">
+				<div className="formSection" id="end-date-container">
+					<label htmlFor="startDate" id="end-date-label">
+						{t("eventForm.labels.endDate")}
+					</label>
+					<input
+						type="date"
+						name="endDate"
+						value={formState.endDate}
+						onChange={handleInputChange}
+						aria-labelledby="end-date-label"
+					/>
+				</div>
+				<div className="formSection" id="start-time-container">
 					<label htmlFor="time" id="start-time-label">
-						{t("eventForm.labels.eventName")}
+						{t("eventForm.labels.startTime")}
 					</label>
 					<input
 						type="time"
@@ -78,9 +90,21 @@ const EventForm = () => {
 						aria-labelledby="start-time-label"
 					/>
 				</div>
+				<div className="formSection" id="end-time-container">
+					<label htmlFor="time" id="end-time-label">
+						{t("eventForm.labels.endTime")}
+					</label>
+					<input
+						type="time"
+						name="endTime"
+						value={formState.endTime}
+						onChange={handleInputChange}
+						aria-labelledby="end-time-label"
+					/>
+				</div>
 				<div className="formSection" id="description">
 					<label htmlFor="description" id="description-label">
-						{t("eventForm.labels.eventDescription")}
+						{t("eventForm.labels.description")}
 					</label>
 					<input
 						type="text"

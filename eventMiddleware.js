@@ -47,9 +47,14 @@ getEvents = (req, res, next) => {
 };
 
 postEvent = (req, res, next) => {
-	const event = req.body;
+	let event = req.body;
 
 	let eventDb = db.get("events").value();
+
+	if (!eventDb) {
+		next();
+		return;
+	}
 
 	//Add the event into the database
 	const startDate = moment(event.startDate);
@@ -58,11 +63,15 @@ postEvent = (req, res, next) => {
 			? moment(event.endDate)
 			: moment(event.startDate);
 
-	const numDays = endDate.diff(startDate, "days");
-	event = { ...event, [numDays]: numDays };
+	const numDays = endDate.diff(startDate, "days") + 1;
+	event = { ...event, ["numDays"]: numDays };
 
 	//Iterate over the days that the event takes place on
-	for (let i = 0; i <= numDays; i++) {
+	for (
+		let eventDate = startDate;
+		eventDate.isSameOrBefore(endDate);
+		eventDate.add(1, "days")
+	) {
 		const eventDateSerial = eventDate.format("YYYY-MM-DD");
 		//Add event to the array of events for this date
 		eventDb = {
@@ -73,8 +82,7 @@ postEvent = (req, res, next) => {
 		};
 	}
 
+	//Update database and send back to client
 	db.set("events", eventDb).write();
-
-	// send response back to client
-	res.send("Event saved successfully");
+	res.json(eventDb);
 };

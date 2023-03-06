@@ -153,7 +153,7 @@ const CalendarService = {
 							if (event.startDate === curDate || day === 0) {
 								event.isStartOfButton = true;
 
-								//set buttonLength to the number of days the event lasts
+								//Set buttonLength to the number of days the event lasts
 								//or the number of days left in the week, whichever is smaller
 								const daysLeftInWeek = 7 - day;
 								const daysLeftInEvent =
@@ -200,6 +200,14 @@ const CalendarService = {
 		}
 
 		arr.push(val);
+	},
+
+	convertTo12HourTime: function (time) {
+		const [hour, minute] = time.split(":");
+		const ampm = hour >= 12 ? "PM" : "AM";
+		const hour12 = hour % 12 || 12;
+
+		return `${hour12}:${minute} ${ampm}`;
 	},
 };
 
