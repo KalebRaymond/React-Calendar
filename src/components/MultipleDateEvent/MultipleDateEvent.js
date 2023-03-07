@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./MultipleDateEvent.scss";
+import EditEventModal from "../EditEventModal/EditEventModal";
 
 const MultipleDateEvent = (props) => {
 	const { event } = props;
+	const [showModal, setShowModal] = useState(false);
 
 	const handleOnClick = () => {
-		console.log("###", { event });
+		setShowModal(true);
+	};
+
+	const handleCloseModal = () => {
+		setShowModal(false);
 	};
 
 	const renderEventButton = () => {
@@ -32,6 +38,13 @@ const MultipleDateEvent = (props) => {
 			}}
 		>
 			{renderEventButton()}
+			{showModal && (
+				<EditEventModal
+					initialStartDate={event.startDate}
+					initialEndDate={event.endDate}
+					onClose={handleCloseModal}
+				></EditEventModal>
+			)}
 		</div>
 	);
 };

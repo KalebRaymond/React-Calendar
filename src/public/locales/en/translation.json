@@ -38,9 +38,17 @@
 	},
 	"eventModal": {
 		"buttons": {
+			"delete": {
+				"hat": "Delete event",
+				"text": "Delete"
+			},
 			"reset": {
 				"hat": "Reset event form",
 				"text": "Reset"
+			},
+			"save": {
+				"hat": "Save changes to event",
+				"text": "Save"
 			},
 			"submit": {
 				"hat": "Submit event",
@@ -60,6 +68,7 @@
 		"labels": {
 			"closeButton": "Close Event Form modal",
 			"createEventModal": "Create New Event modal",
+			"editEventModal": "Edit Event modal",
 			"formActions": "Event form actions"
 		}
 	},

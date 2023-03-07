@@ -566,6 +566,28 @@
         "description": "",
         "numDays": 1
       }
+    ],
+    "2023-05-01": [
+      {
+        "eventName": "g",
+        "startDate": "2023-05-01",
+        "endDate": "2023-05-01",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 1
+      }
+    ],
+    "2023-05-02": [
+      {
+        "eventName": "Test",
+        "startDate": "2023-05-02",
+        "endDate": "2023-05-02",
+        "startTime": "10:00",
+        "endTime": "15:00",
+        "description": "",
+        "numDays": 1
+      }
     ]
   }
 }

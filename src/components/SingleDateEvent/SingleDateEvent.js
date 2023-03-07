@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./SingleDateEvent.scss";
 import CalendarService from "../../services/CalendarService";
+import EditEventModal from "../EditEventModal/EditEventModal";
 
 const SingleDateEvent = (props) => {
 	const { event } = props;
+	const [showModal, setShowModal] = useState(false);
 
 	const handleOnClick = () => {
-		console.log("###", { event });
+		setShowModal(true);
+	};
+
+	const handleCloseModal = () => {
+		setShowModal(false);
 	};
 
 	return (
@@ -25,6 +31,13 @@ const SingleDateEvent = (props) => {
 					{CalendarService.convertTo12HourTime(event.startTime)}
 				</span>
 				<strong className="eventName">{event.eventName}</strong>
+				{showModal && (
+					<EditEventModal
+						initialStartDate={event.startDate}
+						initialEndDate={event.endDate}
+						onClose={handleCloseModal}
+					></EditEventModal>
+				)}
 			</div>
 		</div>
 	);

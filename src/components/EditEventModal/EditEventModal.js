@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import styles from "./CreateEventModal.scss";
+import styles from "./EditEventModal.scss";
 import IconButton from "components/IconButton/IconButton";
 import { useTranslation } from "react-i18next";
 import EventForm from "components/EventForm/EventForm";
-import { postEvent } from "reducers/calendarReducer";
 import { useDispatch } from "react-redux";
 
-const CreateEventModal = (props) => {
+const EditEventModal = (props) => {
 	const { t } = useTranslation();
 	const dispatch = useDispatch();
 	const defaultFormState = {
@@ -39,16 +38,23 @@ const CreateEventModal = (props) => {
 		setFormState(defaultFormState);
 	};
 
-	const handleFormSubmit = () => {
-		dispatch(postEvent(formState));
+	const handleFormSubmit = (formState) => {
+		console.log("### update event", formState);
+		///dispatch(updateEvent(formState));
+		props.onClose();
+	};
+
+	const handleDeleteEvent = (formState) => {
+		console.log("### delete event", formState);
+		///dispatch(deleteEvent(formState));
 		props.onClose();
 	};
 
 	const buttonContent = [
 		{
 			type: "submit",
-			ariaLabel: t("eventModal.buttons.submit.hat"),
-			text: t("eventModal.buttons.submit.text"),
+			ariaLabel: t("eventModal.buttons.save.hat"),
+			text: t("eventModal.buttons.save.text"),
 			onClick: handleFormSubmit,
 		},
 		{
@@ -57,17 +63,23 @@ const CreateEventModal = (props) => {
 			text: t("eventModal.buttons.reset.text"),
 			onClick: handleResetForm,
 		},
+		{
+			type: "button",
+			ariaLabel: t("eventModal.buttons.delete.hat"),
+			text: t("eventModal.buttons.delete.text"),
+			onClick: handleDeleteEvent,
+		},
 	];
 
 	return (
 		<div
-			className="CreateEventModal modalBackdrop"
-			data-testid="CreateEventModal"
+			className="EditEventModal modalBackdrop"
+			data-testid="EditEventModal"
 			onClick={props.onClose}
 		>
 			<div
 				className="modalContainer"
-				aria-label={t("eventModal.labels.createEventModal")}
+				aria-label={t("eventModal.labels.EditEventModal")}
 				onClick={(e) => e.stopPropagation()}
 			>
 				<div className="modalHeader">
@@ -91,10 +103,10 @@ const CreateEventModal = (props) => {
 	);
 };
 
-CreateEventModal.propTypes = {
+EditEventModal.propTypes = {
 	onClose: PropTypes.func.isRequired,
 };
 
-CreateEventModal.defaultProps = {};
+EditEventModal.defaultProps = {};
 
-export default CreateEventModal;
+export default EditEventModal;

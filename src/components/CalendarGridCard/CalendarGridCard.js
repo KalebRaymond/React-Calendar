@@ -53,7 +53,8 @@ const CalendarGridCard = (props) => {
 			</div>
 			{showModal && (
 				<CreateEventModal
-					initialDate={date}
+					initialStartDate={date.format("YYYY-MM-DD")}
+					initialEndDate={date.format("YYYY-MM-DD")}
 					onClose={handleCloseModal}
 				></CreateEventModal>
 			)}

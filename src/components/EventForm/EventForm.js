@@ -37,7 +37,7 @@ const EventForm = (props) => {
 					<input
 						type="text"
 						name="eventName"
-						value={props.formState.Name}
+						value={props.formState.eventName}
 						onChange={props.handleInputChange}
 						aria-labelledby="name-label"
 					/>
