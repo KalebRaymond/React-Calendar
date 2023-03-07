@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import EventForm from "components/EventForm/EventForm";
 
 const CreateEventModal = (props) => {
+	const { initialDate, onClose } = props;
 	const { t } = useTranslation();
 
 	return (
@@ -23,13 +24,16 @@ const CreateEventModal = (props) => {
 					<IconButton
 						name="closeModal"
 						ariaLabel={t("eventModal.labels.closeButton")}
-						onClick={props.onClose}
+						onClick={onClose}
 					>
 						<i className="bi bi-x-lg"></i>
 					</IconButton>
 				</div>
 				<div className="modalBody">
-					<EventForm></EventForm>
+					<EventForm
+						initialDate={initialDate}
+						handleCloseModal={props.onClose}
+					></EventForm>
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./EventForm.scss";
 import { useTranslation } from "react-i18next";
@@ -14,14 +14,20 @@ const DEFAULT_FORM_STATE = {
 	description: "",
 };
 
-const EventForm = () => {
-	const [formState, setFormState] = useState(DEFAULT_FORM_STATE);
+const EventForm = (props) => {
+	const { initialDate, handleCloseModal } = props;
+	const [formState, setFormState] = useState({
+		...DEFAULT_FORM_STATE,
+		startDate: initialDate.format("YYYY-MM-DD"),
+		endDate: initialDate.format("YYYY-MM-DD"),
+	});
 	const { t } = useTranslation();
 	const dispatch = useDispatch();
 
 	const handleSubmit = (event) => {
 		event.preventDefault(); //Prevent page refresh
 		dispatch(postEvent(formState));
+		handleCloseModal();
 	};
 
 	const handleInputChange = (event) => {

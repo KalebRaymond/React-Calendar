@@ -489,6 +489,28 @@
         "description": "",
         "numDays": 31
       }
+    ],
+    "2023-04-21": [
+      {
+        "eventName": "Test",
+        "startDate": "2023-04-21",
+        "endDate": "2023-04-21",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 1
+      }
+    ],
+    "2023-04-03": [
+      {
+        "eventName": "Hehe",
+        "startDate": "2023-04-03",
+        "endDate": "2023-04-03",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 1
+      }
     ]
   }
 }

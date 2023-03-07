@@ -184,7 +184,7 @@ const CalendarService = {
 			}
 		}
 
-		console.log("### eventMatrix", eventMatrix);
+		///console.log("### eventMatrix", eventMatrix);
 
 		return eventMatrix;
 	},
