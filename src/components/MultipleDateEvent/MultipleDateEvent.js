@@ -40,8 +40,7 @@ const MultipleDateEvent = (props) => {
 			{renderEventButton()}
 			{showModal && (
 				<EditEventModal
-					initialStartDate={event.startDate}
-					initialEndDate={event.endDate}
+					event={event}
 					onClose={handleCloseModal}
 				></EditEventModal>
 			)}

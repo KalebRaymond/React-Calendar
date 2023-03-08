@@ -5,6 +5,7 @@ import IconButton from "components/IconButton/IconButton";
 import { useTranslation } from "react-i18next";
 import EventForm from "components/EventForm/EventForm";
 import { useDispatch } from "react-redux";
+import { deleteEvent, updateEvent } from "../../reducers/calendarReducer";
 
 const EditEventModal = (props) => {
 	const { t } = useTranslation();
@@ -18,10 +19,10 @@ const EditEventModal = (props) => {
 		description: "",
 	};
 
+	//Initialize formState with existing data from props.event
 	const [formState, setFormState] = useState({
 		...defaultFormState,
-		startDate: props.initialStartDate,
-		endDate: props.initialEndDate,
+		...props.event,
 	});
 
 	const handleInputChange = (event) => {
@@ -38,15 +39,20 @@ const EditEventModal = (props) => {
 		setFormState(defaultFormState);
 	};
 
-	const handleFormSubmit = (formState) => {
+	const handleFormSubmit = () => {
 		console.log("### update event", formState);
-		///dispatch(updateEvent(formState));
+		dispatch(
+			updateEvent({
+				...formState,
+				...props.event,
+			})
+		);
 		props.onClose();
 	};
 
-	const handleDeleteEvent = (formState) => {
-		console.log("### delete event", formState);
-		///dispatch(deleteEvent(formState));
+	const handleDeleteEvent = () => {
+		console.log("### delete event", props.event);
+		dispatch(deleteEvent(props.event));
 		props.onClose();
 	};
 
@@ -79,7 +85,7 @@ const EditEventModal = (props) => {
 		>
 			<div
 				className="modalContainer"
-				aria-label={t("eventModal.labels.EditEventModal")}
+				aria-label={t("eventModal.labels.editEventModal")}
 				onClick={(e) => e.stopPropagation()}
 			>
 				<div className="modalHeader">

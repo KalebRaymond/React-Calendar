@@ -1,593 +1,131 @@
 {
   "events": {
-    "2023-06-30": [
-      {
-        "eventName": "June 1",
-        "startDate": "2023-06-30",
-        "endDate": "2023-07-03",
-        "startTime": "14:12",
-        "endTime": "",
-        "description": "",
-        "numDays": "10"
-      }
-    ],
-    "2023-07-03": [
-      {
-        "eventName": "July 3",
-        "startDate": "2023-07-03",
-        "endDate": "2023-07-03",
-        "startTime": "14:12",
-        "endTime": "",
-        "description": "",
-        "numDays": "1"
-      },
-      {
-        "eventName": "July 1",
-        "startDate": "2023-07-03",
-        "endDate": "2023-07-03",
-        "startTime": "10:12",
-        "endTime": "",
-        "description": "",
-        "numDays": "1"
-      },
-      {
-        "eventName": "July 2",
-        "startDate": "2023-07-03",
-        "endDate": "2023-07-03",
-        "startTime": "13:12",
-        "endTime": "",
-        "description": "",
-        "numDays": "1"
-      }
-    ],
-    "2023-07-10": [
-      {
-        "eventName": "JM1",
-        "startDate": "2023-07-10",
-        "endDate": "2023-07-11",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": "2"
-      }
-    ],
-    "2023-07-11": [
-      {
-        "eventName": "JM1",
-        "startDate": "2023-07-10",
-        "endDate": "2023-07-11",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": "2"
-      },
-      {
-        "eventName": "JM2",
-        "startDate": "2023-07-11",
-        "endDate": "2023-07-12",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": "2"
-      }
-    ],
-    "2023-07-12": [
-      {
-        "eventName": "JM2",
-        "startDate": "2023-07-11",
-        "endDate": "2023-07-12",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": "2"
-      },
-      {
-        "eventName": "JM3",
-        "startDate": "2023-07-12",
-        "endDate": "2023-07-13",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": "2"
-      }
-    ],
-    "2023-07-13": [
-      {
-        "eventName": "JM3",
-        "startDate": "2023-07-12",
-        "endDate": "2023-07-13",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": "2"
-      },
-      {
-        "eventName": "JM4",
-        "startDate": "2023-07-13",
-        "endDate": "2023-07-14",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": "2"
-      }
-    ],
-    "2023-07-14": [
-      {
-        "eventName": "JM4",
-        "startDate": "2023-07-13",
-        "endDate": "2023-07-14",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": "2"
-      }
-    ],
-    "2023-03-07": [
-      {
-        "eventName": "Test",
-        "startDate": "2023-03-07",
-        "endDate": "2023-03-07",
-        "startTime": "21:00",
-        "endTime": "",
-        "description": "",
-        "numDays": 1
-      },
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-08": [
-      {
-        "eventName": "Test",
-        "startDate": "2023-03-08",
-        "endDate": "2023-03-08",
-        "startTime": "10:00",
-        "endTime": "",
-        "description": "",
-        "numDays": 1
-      },
-      {
-        "eventName": "Test",
-        "startDate": "2023-03-08",
-        "endDate": "2023-03-08",
-        "startTime": "22:00",
-        "endTime": "",
-        "description": "",
-        "numDays": 1
-      },
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-01": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-02": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-03": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-04": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-05": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-06": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-09": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-10": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-11": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-12": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-13": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-14": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-15": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-16": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
+    "2023-03-01": [],
+    "2023-03-13": [],
+    "2023-03-14": [],
+    "2023-03-15": [],
+    "2023-03-16": [],
     "2023-03-17": [
       {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
+        "eventName": "",
+        "startDate": "2023-03-14",
+        "endDate": "2023-03-25",
         "startTime": "",
         "endTime": "",
         "description": "",
-        "numDays": 31
+        "numDays": 12,
+        "id": "5xOSGsw9PULfVzXz"
+      },
+      {
+        "eventName": "",
+        "startDate": "2023-03-16",
+        "endDate": "2023-03-17",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 2,
+        "id": "rvHQKP6grk9ADP4y"
       }
     ],
     "2023-03-18": [
       {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
+        "eventName": "",
+        "startDate": "2023-03-14",
+        "endDate": "2023-03-25",
         "startTime": "",
         "endTime": "",
         "description": "",
-        "numDays": 31
+        "numDays": 12,
+        "id": "5xOSGsw9PULfVzXz"
       }
     ],
     "2023-03-19": [
       {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
+        "eventName": "",
+        "startDate": "2023-03-14",
+        "endDate": "2023-03-25",
         "startTime": "",
         "endTime": "",
         "description": "",
-        "numDays": 31
+        "numDays": 12,
+        "id": "5xOSGsw9PULfVzXz"
       }
     ],
     "2023-03-20": [
       {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
+        "eventName": "",
+        "startDate": "2023-03-14",
+        "endDate": "2023-03-25",
         "startTime": "",
         "endTime": "",
         "description": "",
-        "numDays": 31
+        "numDays": 12,
+        "id": "5xOSGsw9PULfVzXz"
       }
     ],
     "2023-03-21": [
       {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
+        "eventName": "",
+        "startDate": "2023-03-14",
+        "endDate": "2023-03-25",
         "startTime": "",
         "endTime": "",
         "description": "",
-        "numDays": 31
+        "numDays": 12,
+        "id": "5xOSGsw9PULfVzXz"
       }
     ],
     "2023-03-22": [
       {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
+        "eventName": "",
+        "startDate": "2023-03-14",
+        "endDate": "2023-03-25",
         "startTime": "",
         "endTime": "",
         "description": "",
-        "numDays": 31
+        "numDays": 12,
+        "id": "5xOSGsw9PULfVzXz"
       }
     ],
     "2023-03-23": [
       {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
+        "eventName": "",
+        "startDate": "2023-03-14",
+        "endDate": "2023-03-25",
         "startTime": "",
         "endTime": "",
         "description": "",
-        "numDays": 31
+        "numDays": 12,
+        "id": "5xOSGsw9PULfVzXz"
       }
     ],
     "2023-03-24": [
       {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
+        "eventName": "",
+        "startDate": "2023-03-14",
+        "endDate": "2023-03-25",
         "startTime": "",
         "endTime": "",
         "description": "",
-        "numDays": 31
+        "numDays": 12,
+        "id": "5xOSGsw9PULfVzXz"
       }
     ],
     "2023-03-25": [
       {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
+        "eventName": "",
+        "startDate": "2023-03-14",
+        "endDate": "2023-03-25",
         "startTime": "",
         "endTime": "",
         "description": "",
-        "numDays": 31
+        "numDays": 12,
+        "id": "5xOSGsw9PULfVzXz"
       }
     ],
-    "2023-03-26": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-27": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-28": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-29": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-30": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-03-31": [
-      {
-        "eventName": "Long Event",
-        "startDate": "2023-03-01",
-        "endDate": "2023-03-31",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 31
-      }
-    ],
-    "2023-04-21": [
-      {
-        "eventName": "Test",
-        "startDate": "2023-04-21",
-        "endDate": "2023-04-21",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 1
-      }
-    ],
-    "2023-04-03": [
-      {
-        "eventName": "Hehe",
-        "startDate": "2023-04-03",
-        "endDate": "2023-04-03",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 1
-      }
-    ],
-    "2023-04-05": [
-      {
-        "eventName": "Test",
-        "startDate": "2023-04-05",
-        "endDate": "2023-04-05",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 1
-      }
-    ],
-    "2023-04-06": [
-      {
-        "eventName": "WW",
-        "startDate": "2023-04-06",
-        "endDate": "2023-04-06",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 1
-      }
-    ],
-    "2023-04-18": [
-      {
-        "eventName": "Cool",
-        "startDate": "2023-04-18",
-        "endDate": "2023-04-18",
-        "startTime": "10:00",
-        "endTime": "",
-        "description": "",
-        "numDays": 1
-      }
-    ],
-    "2023-04-07": [
-      {
-        "eventName": "yay",
-        "startDate": "2023-04-07",
-        "endDate": "2023-04-07",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 1
-      }
-    ],
-    "2023-04-10": [
-      {
-        "eventName": "yay",
-        "startDate": "2023-04-10",
-        "endDate": "2023-04-10",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 1
-      }
-    ],
-    "2023-05-01": [
-      {
-        "eventName": "g",
-        "startDate": "2023-05-01",
-        "endDate": "2023-05-01",
-        "startTime": "",
-        "endTime": "",
-        "description": "",
-        "numDays": 1
-      }
-    ],
-    "2023-05-02": [
-      {
-        "eventName": "Test",
-        "startDate": "2023-05-02",
-        "endDate": "2023-05-02",
-        "startTime": "10:00",
-        "endTime": "15:00",
-        "description": "",
-        "numDays": 1
-      }
-    ]
+    "2023-03-06": [],
+    "2023-03-07": [],
+    "2023-03-08": [],
+    "2023-03-09": []
   }
 }

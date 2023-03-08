@@ -60,6 +60,20 @@ export const calendarReducer = createSlice({
 		setVisibleDates: (state, action) => {
 			state.visibleDates = action.payload;
 		},
+		deleteEventFailure: (state, action) => {
+			console.error("### Events failed to delete", action.payload);
+		},
+		deleteEventSuccess: (state, action) => {
+			console.log("### Event deleted successfully", action.payload);
+			state.events = action.payload;
+		},
+		updateEventFailure: (state, action) => {
+			console.error("### Events failed to update", action.payload);
+		},
+		updateEventSuccess: (state, action) => {
+			console.log("### Event updated successfully", action.payload);
+			state.events = action.payload;
+		},
 	},
 });
 
@@ -73,6 +87,10 @@ export const {
 	createEventFailure,
 	createEventSuccess,
 	setVisibleDates,
+	deleteEventFailure,
+	deleteEventSuccess,
+	updateEventFailure,
+	updateEventSuccess,
 } = calendarReducer.actions;
 
 /* CRUD Operations */
@@ -126,6 +144,36 @@ export const postEvent = (eventFormContent) => async (dispatch) => {
 		})
 		.catch((error) => {
 			dispatch(createEventFailure(error));
+		});
+};
+
+export const deleteEvent = (event) => async (dispatch) => {
+	axios
+		.delete(`http://localhost:8080/events/`, {
+			params: {
+				event,
+			},
+		})
+		.then((response) => {
+			dispatch(deleteEventSuccess(response.data));
+		})
+		.catch((error) => {
+			dispatch(deleteEventFailure(error));
+		});
+};
+
+export const updateEvent = (event) => async (dispatch) => {
+	axios
+		.put(`http://localhost:8080/events/`, {
+			params: {
+				event,
+			},
+		})
+		.then((response) => {
+			dispatch(updateEventSuccess(response.data));
+		})
+		.catch((error) => {
+			dispatch(updateEventFailure(error));
 		});
 };
 

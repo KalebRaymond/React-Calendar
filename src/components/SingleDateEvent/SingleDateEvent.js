@@ -33,8 +33,7 @@ const SingleDateEvent = (props) => {
 				<strong className="eventName">{event.eventName}</strong>
 				{showModal && (
 					<EditEventModal
-						initialStartDate={event.startDate}
-						initialEndDate={event.endDate}
+						event={event}
 						onClose={handleCloseModal}
 					></EditEventModal>
 				)}

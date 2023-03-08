@@ -3,14 +3,39 @@ const FileSync = require("lowdb/adapters/FileSync");
 const adapter = new FileSync("events.json");
 const db = low(adapter);
 const moment = require("moment");
+const crypto = require("crypto");
+
+//Insecure quick id generator for proof of concept
+const generateId = () => {
+	return crypto.randomBytes(12).toString("base64");
+};
 
 module.exports = (req, res, next) => {
-	if (req.method === "GET" && req.path === "/events") {
-		getEvents(req, res, next);
-	} else if (req.method === "POST" && req.path === "/events") {
-		postEvent(req, res, next);
-	} else {
-		next();
+	if (!db.has("events").value()) {
+		return;
+	}
+
+	if (!req.path === "/events") {
+		return;
+	}
+
+	switch (req.method) {
+		case "GET": {
+			getEvents(req, res, next);
+			break;
+		}
+		case "POST": {
+			postEvent(req, res, next);
+			break;
+		}
+		case "DELETE": {
+			deleteEvent(req, res, next);
+			break;
+		}
+		default: {
+			next();
+			break;
+		}
 	}
 };
 
@@ -64,7 +89,9 @@ postEvent = (req, res, next) => {
 			: moment(event.startDate);
 
 	const numDays = endDate.diff(startDate, "days") + 1;
-	event = { ...event, ["numDays"]: numDays };
+	const id = generateId();
+
+	event = { ...event, ["numDays"]: numDays, ["id"]: id };
 
 	//Iterate over the days that the event takes place on
 	for (
@@ -85,4 +112,34 @@ postEvent = (req, res, next) => {
 	//Update database and send back to client
 	db.set("events", eventDb).write();
 	res.json(eventDb);
+};
+
+deleteEvent = (req, res, next) => {
+	const { event } = req.query;
+	const startDate = moment(event.startDate);
+	const endDate = moment(event.endDate);
+
+	let eventDb = db.get("events").value();
+
+	//Iterate over the days that the event takes place on
+	for (
+		let eventDate = startDate;
+		eventDate.isSameOrBefore(endDate);
+		eventDate.add(1, "days")
+	) {
+		//Remove event from the array of events for this date
+		const eventDateSerial = eventDate.format("YYYY-MM-DD");
+		eventDb[eventDateSerial] = eventDb[eventDateSerial].filter(
+			(e) => e.id !== event.id
+		);
+	}
+
+	//Update database and send back to client
+	db.set("events", eventDb).write();
+	res.json(eventDb);
+};
+
+updateEvent = (req, res, next) => {
+	const { event } = req.query;
+	console.log("### update event", event);
 };

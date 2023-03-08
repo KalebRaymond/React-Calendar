@@ -40,7 +40,7 @@
 		"buttons": {
 			"delete": {
 				"hat": "Delete event",
-				"text": "Delete"
+				"text": "Delete event"
 			},
 			"reset": {
 				"hat": "Reset event form",
