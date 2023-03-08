@@ -40,18 +40,18 @@ const EditEventModal = (props) => {
 	};
 
 	const handleFormSubmit = () => {
-		console.log("### update event", formState);
-		dispatch(
-			updateEvent({
-				...formState,
-				...props.event,
-			})
-		);
+		const updatedEvent = {
+			...props.event,
+			...formState,
+		};
+		delete updatedEvent.isStartOfButton;
+		delete updatedEvent.buttonLength;
+
+		dispatch(updateEvent(props.event, updatedEvent));
 		props.onClose();
 	};
 
 	const handleDeleteEvent = () => {
-		console.log("### delete event", props.event);
 		dispatch(deleteEvent(props.event));
 		props.onClose();
 	};

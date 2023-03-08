@@ -149,7 +149,7 @@ export const postEvent = (eventFormContent) => async (dispatch) => {
 
 export const deleteEvent = (event) => async (dispatch) => {
 	axios
-		.delete(`http://localhost:8080/events/`, {
+		.delete("http://localhost:8080/events/", {
 			params: {
 				event,
 			},
@@ -162,13 +162,15 @@ export const deleteEvent = (event) => async (dispatch) => {
 		});
 };
 
-export const updateEvent = (event) => async (dispatch) => {
+export const updateEvent = (oldEvent, updatedEvent) => async (dispatch) => {
 	axios
-		.put(`http://localhost:8080/events/`, {
-			params: {
-				event,
-			},
-		})
+		.put(
+			"http://localhost:8080/events",
+			{ oldEvent, updatedEvent },
+			{
+				headers: { "Content-Type": "application/json" },
+			}
+		)
 		.then((response) => {
 			dispatch(updateEventSuccess(response.data));
 		})

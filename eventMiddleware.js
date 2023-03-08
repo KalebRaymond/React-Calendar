@@ -32,6 +32,10 @@ module.exports = (req, res, next) => {
 			deleteEvent(req, res, next);
 			break;
 		}
+		case "PUT": {
+			updateEvent(req, res, next);
+			break;
+		}
 		default: {
 			next();
 			break;
@@ -140,6 +144,49 @@ deleteEvent = (req, res, next) => {
 };
 
 updateEvent = (req, res, next) => {
-	const { event } = req.query;
-	console.log("### update event", event);
+	const oldEvent = req.body.oldEvent;
+	let updatedEvent = req.body.updatedEvent;
+	const eventId = oldEvent.id;
+
+	let eventDb = db.get("events").value();
+
+	//Remove the event from the database
+	const startDate = moment(oldEvent.startDate);
+	const endDate = moment(oldEvent.endDate);
+	for (
+		let eventDate = startDate;
+		eventDate.isSameOrBefore(endDate);
+		eventDate.add(1, "days")
+	) {
+		//Remove old event from the array of events for this date
+		const eventDateSerial = eventDate.format("YYYY-MM-DD");
+		eventDb[eventDateSerial] = eventDb[eventDateSerial].filter(
+			(e) => e.id !== eventId
+		);
+	}
+
+	//Add the updated event to the database
+	const newStartDate = moment(updatedEvent.startDate);
+	const newEndDate = moment(updatedEvent.endDate);
+	const numDays = newEndDate.diff(newStartDate, "days") + 1;
+	updatedEvent = { ...updatedEvent, ["numDays"]: numDays, ["id"]: eventId };
+
+	for (
+		let eventDate = newStartDate;
+		eventDate.isSameOrBefore(newEndDate);
+		eventDate.add(1, "days")
+	) {
+		const eventDateSerial = eventDate.format("YYYY-MM-DD");
+		//Add event to the array of events for this date
+		eventDb = {
+			...eventDb,
+			[eventDateSerial]: eventDb[eventDateSerial]
+				? [...eventDb[eventDateSerial], updatedEvent]
+				: [updatedEvent],
+		};
+	}
+
+	//Update database and send back to client
+	db.set("events", eventDb).write();
+	res.json(eventDb);
 };
