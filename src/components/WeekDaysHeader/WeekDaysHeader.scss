@@ -4,12 +4,18 @@
 	height: 2rem;
 	width: 100%;
 
-	div[class="weekDay"] {
+	.weekDay {
 		align-items: center;
 		border: 1px solid black;
 		display: flex;
 		height: 100%;
 		justify-content: center;
 		width: 100%;
+		min-width: 2.5rem;
+		padding: 0.5rem;
+
+		span {
+			margin: 0.75rem;
+		}
 	}
 }

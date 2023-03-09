@@ -4,12 +4,9 @@ import CalendarGridCard from "components/CalendarGridCard/CalendarGridCard";
 import CalendarGridRow from "components/CalendarGridRow/CalendarGridRow";
 import CalendarService from "services/CalendarService";
 import moment from "moment";
-import React, { useEffect, useState } from "react";
 import styles from "./CalendarGrid.module.scss";
 import TranslationService from "services/TranslationService";
 import WeekDaysHeader from "components/WeekDaysHeader/WeekDaysHeader";
-import { setVisibleDates } from "../../reducers/calendarReducer";
-import { useDispatch } from "react-redux";
 
 const CalendarGrid = () => {
 	const { t } = useTranslation();

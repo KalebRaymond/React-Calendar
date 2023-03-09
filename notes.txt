@@ -2,37 +2,16 @@ npx json-server --watch events.json
 npx json-server --watch events.json --middlewares eventMiddleware.js
 npx generate-react-cli component MyComponent
 
-* Storing & loading events via JSON
-	> Store events in a json file
-	> Call api via redux actions to perform CRUD operations on json
-	> Fetch & render events on month change
+Todo
+[_] Styling
+	> Improve layout
+	> Improve codebase structure
+	> CSS
+	> Responsiveness
+[_] Testing
+	> MSW
+[_] Theme Provider
+[_] Accessibility
+[_] i18n
 
-	> Keep all events in memory at time or virtualize based on current view?
 
-* Use ChatGPT somehow?
-	> Translations
-
-* MSW
-
-* Rendering the events
-	> Get the dates that are visible on the calendar
-		- Need to rewrite the backend so that events are saved per day
-	> Get the events that fall on those dates
-		- axios get params
-		- If A > Y or B < X then the lines AB and XY don't intersect -> take inverse of this to find events that do have dates that fall in current view
-		- NO -> Fetch all events and filter them on client side ❤️
-		- Complex query params using not operator
-		- Middleware?
-		- Need to figure out how to store dates -> Need month year and date info
-	> Render the events on the screen in the appropriate place*
-		- This is going to be the most difficult probably lol
-		- EventBuilder returns single/multi/split (goes into prev/next month) events depending on date range of event
-
-For each event date
-	> Get any events that start on that date
-	> Calculate length of event
-	> Add event to first blank index in array
-	> Go through each event in array
-	> Decrement event length
-	> If event length is 0, remove from array
-	> Use chatGPT to improve run time

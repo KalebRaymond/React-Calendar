@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import styles from "./WeekDaysHeader.module.scss";
+import styles from "./WeekDaysHeader.scss";
 
 const WeekDaysHeader = () => {
 	///Refactor this component to use CalendarGridRow
@@ -27,14 +27,14 @@ const WeekDaysHeader = () => {
 					aria-label={day[1]}
 					key={day[0]}
 				>
-					{day[0]}
+					<span>{day[0]}</span>
 				</div>
 			);
 		});
 	};
 
 	return (
-		<div className={styles.WeekDaysHeader} data-testid="WeekDaysHeader">
+		<div className={"WeekDaysHeader"} data-testid="WeekDaysHeader">
 			{renderDays()}
 		</div>
 	);

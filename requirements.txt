@@ -2,41 +2,41 @@
 	[X] The calendar displays the name of the month
 	[X] The calendar displays the year
 	[X] Calendar dates in the top row of the calendar should display days of the week above the card date number, in order of Sunday to Saturday
-	[_] Each day of the month will indicate that there is an event on that date if there are any
+	[X] Each day of the month will indicate that there is an event on that date if there are any
 
-[_] As a user, I want to be able to navigate to past and future months in the calendar, so that I can see what events are in the past and future
+[X] As a user, I want to be able to navigate to past and future months in the calendar, so that I can see what events are in the past and future
 	[X] Calendar dates in the current month view that are part of previous/future months are grayed out
-	[_] Grayed out dates will still indicate that there is an event on that date if there are any
+	[X] Grayed out dates will still indicate that there is an event on that date if there are any
 	- The calendar will display navigation arrows at the top to allow for navigating forward and backward
 	[X] The current date should be highlighted in some way to signify that it is the current date
 	[_] There should be a button to allow jumping back to the current day
 
-[_] As a user, I want to be able to view event details, so that I can plan for it and be reminded of the location, time, etc.
-	[_] The calendar should display the name of events on each calendar date
-	[_] Clicking on an event should display the event details
+[X] As a user, I want to be able to view event details, so that I can plan for it and be reminded of the location, time, etc.
+	[X] The calendar should display the name of events on each calendar date
+	[X] Clicking on an event should display the event details
 		> Time
 		> Location
 		> Name
 
-[_] As a user, I want to be able to add new events to my calendar, so that I can keep track of events coming up in my life
+[X] As a user, I want to be able to add new events to my calendar, so that I can keep track of events coming up in my life
 	[X] Clicking on a calendar date should allow the user to enter details for a new event
 		> Time
 		> Location
 		> Name
 	[X] User should be able to cancel the form without creating a new event
 	[X] Submitting the form should create a new event
-	[_] The new event should be displayed on the calendar on the date specified by the user
+	[X] The new event should be displayed on the calendar on the date specified by the user
 
-[_] As a user, I want to be able to delete events, so that I can manage space on my calendar and remove events that have been cancelled in real life
-	[_] Clicking on an event should display an option for deleting the event
+[X] As a user, I want to be able to delete events, so that I can manage space on my calendar and remove events that have been cancelled in real life
+	[X] Clicking on an event should display an option for deleting the event
 	[_] Clicking delete should produce an "Are you sure" confirmation
-	[_] Deleting an event should remove it from the calendar
+	[X] Deleting an event should remove it from the calendar
 
-[_] As a user, I want to be able to edit events, so that I can update information in case the event changes
-	[_] Clicking on an event should display the event details
-	[_] Clicking on the fields for the event details (ex. the title field) should allow the user to change the name
-	[_] Removing focus from the field (ex. by clicking elsewhere or tabbing out of the field) should automatically save any changes
-	[_] Changes to the event (ex. date, name) should be automatically reflected on the calendar
+[X] As a user, I want to be able to edit events, so that I can update information in case the event changes
+	[X] Clicking on an event should display the event details
+	[X] Clicking on the fields for the event details (ex. the title field) should allow the user to change the name
+	[X] Removing focus from the field (ex. by clicking elsewhere or tabbing out of the field) should automatically save any changes
+	[X] Changes to the event (ex. date, name) should be automatically reflected on the calendar
 
 
 ==============
