@@ -30,29 +30,35 @@ const CalendarToolbar = () => {
 
 	return (
 		<div className={"CalendarToolbar"} data-testid="CalendarToolbar">
-			<div className="toolbarSection" id="month-year">
-				<span>{`${focusedMonth} ${focusedYear}`}</span>
+			<div className="toolbarSection" id="calendarLabelContainer">
+				<div id="calendarLabel">
+					<span>{t("calendarToolbar.calendarLabel")}</span>
+				</div>
 			</div>
-			<div
-				className="toolbarSection"
-				id="nav-buttons"
-				role="group"
-				aria-label={t("calendarToolbar.mainControls")} /*Necessary?*/
-			>
-				<IconButton
-					name="prevMonth"
-					ariaLabel={t("calendarToolbar.leftNavButton")}
-					onClick={handleLeftNavClick}
+			<div className="toolbarSection" id="controlsContainer">
+				<div id="monthYear">
+					<span>{`${focusedMonth} ${focusedYear}`}</span>
+				</div>
+				<div
+					id="navButtons"
+					role="group"
+					aria-label={t("calendarToolbar.mainControls")} /*Necessary?*/
 				>
-					<i className="bi bi-chevron-left"></i>
-				</IconButton>
-				<IconButton
-					name="nextMonth"
-					ariaLabel={t("calendarToolbar.rightNavButton")}
-					onClick={handleRightNavClick}
-				>
-					<i className="bi bi-chevron-right"></i>
-				</IconButton>
+					<IconButton
+						name="prevMonth"
+						ariaLabel={t("calendarToolbar.leftNavButton")}
+						onClick={handleLeftNavClick}
+					>
+						<i className="bi bi-chevron-left"></i>
+					</IconButton>
+					<IconButton
+						name="nextMonth"
+						ariaLabel={t("calendarToolbar.rightNavButton")}
+						onClick={handleRightNavClick}
+					>
+						<i className="bi bi-chevron-right"></i>
+					</IconButton>
+				</div>
 			</div>
 		</div>
 	);

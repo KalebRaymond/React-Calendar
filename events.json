@@ -1,22 +1,55 @@
 {
   "events": {
-    "2023-03-06": [],
-    "2023-03-07": [],
-    "2023-03-08": [
+    "2023-03-06": [
       {
-        "eventName": "gee",
-        "startDate": "2023-03-08",
-        "endDate": "2023-03-09",
+        "eventName": "Test",
+        "startDate": "2023-03-06",
+        "endDate": "2023-03-08",
         "startTime": "",
         "endTime": "",
         "description": "",
-        "numDays": 2,
-        "id": "dMQcnWp63RB87esI"
+        "numDays": 3,
+        "id": "d/V/WcmiYKy3RkdC"
+      }
+    ],
+    "2023-03-07": [
+      {
+        "eventName": "Test",
+        "startDate": "2023-03-06",
+        "endDate": "2023-03-08",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 3,
+        "id": "d/V/WcmiYKy3RkdC"
+      }
+    ],
+    "2023-03-08": [
+      {
+        "eventName": "Test",
+        "startDate": "2023-03-06",
+        "endDate": "2023-03-08",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 3,
+        "id": "d/V/WcmiYKy3RkdC"
       }
     ],
     "2023-03-12": [],
     "2023-03-13": [],
-    "2023-03-14": [],
+    "2023-03-14": [
+      {
+        "eventName": "Test",
+        "startDate": "2023-03-14",
+        "endDate": "2023-03-14",
+        "startTime": "10:00",
+        "endTime": "",
+        "description": "",
+        "numDays": 1,
+        "id": "WsJRlagD9tuH32aA"
+      }
+    ],
     "2023-03-15": [],
     "2023-03-16": [],
     "2023-03-17": [],
@@ -26,16 +59,54 @@
     "2023-03-21": [],
     "2023-03-22": [],
     "2023-03-23": [],
-    "2023-03-09": [
+    "2023-03-09": [],
+    "2023-04-03": [],
+    "2023-05-04": [
       {
-        "eventName": "gee",
-        "startDate": "2023-03-08",
-        "endDate": "2023-03-09",
+        "eventName": "HEe",
+        "startDate": "2023-05-04",
+        "endDate": "2023-05-04",
         "startTime": "",
         "endTime": "",
         "description": "",
-        "numDays": 2,
-        "id": "dMQcnWp63RB87esI"
+        "numDays": 1,
+        "id": "Eeak5loPcV/ihpUx"
+      }
+    ],
+    "2023-05-09": [
+      {
+        "eventName": "Hmm",
+        "startDate": "2023-05-09",
+        "endDate": "2023-05-11",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 3,
+        "id": "5X1Xl+2WG6JBS3q4"
+      }
+    ],
+    "2023-05-10": [
+      {
+        "eventName": "Hmm",
+        "startDate": "2023-05-09",
+        "endDate": "2023-05-11",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 3,
+        "id": "5X1Xl+2WG6JBS3q4"
+      }
+    ],
+    "2023-05-11": [
+      {
+        "eventName": "Hmm",
+        "startDate": "2023-05-09",
+        "endDate": "2023-05-11",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 3,
+        "id": "5X1Xl+2WG6JBS3q4"
       }
     ]
   }

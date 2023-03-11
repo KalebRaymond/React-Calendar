@@ -1,15 +1,96 @@
 import { createSlice } from "@reduxjs/toolkit";
 import moment from "moment";
 import axios from "axios";
-import CalendarService from "../services/CalendarService";
+
+/* 	Given a month and year, returns an array of objects representing
+ *	the dates that are visible on the calendar for that specific month.
+ *	This includes any days from the previous or next month that "spill over".
+ *	Each date object contains the month index, year, date, and day of week index
+ */
+const getVisibleDates = (monthIndex, year) => {
+	const focusedDateObj = moment();
+	focusedDateObj.set("month", monthIndex);
+	focusedDateObj.set("year", year);
+
+	const daysInMonth = Number(focusedDateObj.daysInMonth());
+	//Index of the day of the week of the first day of the month
+	//Ex. first day of month lands on a wednesday, index is 3
+	const firstDayOfMonthIndex = Number(
+		focusedDateObj.startOf("month").format("d")
+	);
+	//Index of the day of the week of the last day of the month
+	//Need to clone since endOf mutates the moment object
+	const lastDayOfMonthIndex = Number(
+		moment(focusedDateObj).endOf("month").format("d")
+	);
+
+	const visibleDates = [];
+	let curRow = [];
+
+	//Generate dates for previous month
+	const prevMonth = moment(focusedDateObj).subtract(1, "months");
+	const prevMonthIndex = prevMonth.month();
+	const prevMonthYear = prevMonth.year();
+	let prevMonthDate = prevMonth.daysInMonth() - firstDayOfMonthIndex + 1;
+	for (let i = 0; i < firstDayOfMonthIndex; i++) {
+		curRow.push({
+			month: prevMonthIndex,
+			date: prevMonthDate,
+			year: prevMonthYear,
+			dayOfWeek: i,
+		});
+		prevMonthDate = prevMonthDate + 1;
+
+		if (curRow.length === 7) {
+			visibleDates.push(curRow);
+			curRow = [];
+		}
+	}
+
+	//Generate dates for current month
+	for (let i = 1; i <= daysInMonth; i++) {
+		focusedDateObj.set("date", i);
+
+		curRow.push({
+			month: monthIndex,
+			date: i,
+			year: year,
+			dayOfWeek: focusedDateObj.day(),
+		});
+
+		if (curRow.length === 7) {
+			visibleDates.push(curRow);
+			curRow = [];
+		}
+	}
+
+	//Generate dates for next month
+	const nextMonth = moment(focusedDateObj).add(1, "months");
+	const nextMonthIndex = nextMonth.month();
+	const nextMonthYear = nextMonth.year();
+	let nextMonthDate = 1;
+	for (let i = lastDayOfMonthIndex + 1; i < 7; i++) {
+		curRow.push({
+			month: nextMonthIndex,
+			date: nextMonthDate,
+			year: nextMonthYear,
+			dayOfWeek: i,
+		});
+		nextMonthDate++;
+
+		if (curRow.length === 7) {
+			visibleDates.push(curRow);
+			curRow = [];
+		}
+	}
+
+	return visibleDates;
+};
 
 //Initialize focused date to today's date
 const focusedDate = moment();
-//Initialize visible dates to the current month
-const visibleDates = CalendarService.getVisibleDates(
-	focusedDate.month(),
-	focusedDate.year()
-);
+//Initialize visible dates to the current month's dates
+const visibleDates = getVisibleDates(focusedDate.month(), focusedDate.year());
 
 export const calendarReducer = createSlice({
 	name: "calendar",
@@ -24,19 +105,13 @@ export const calendarReducer = createSlice({
 			const momentObj = moment(state.focusedDate);
 			momentObj.add(1, "months");
 			state.focusedDate = momentObj.format("YYYY-MM-DD");
-			state.visibleDates = CalendarService.getVisibleDates(
-				momentObj.month(),
-				momentObj.year()
-			);
+			state.visibleDates = getVisibleDates(momentObj.month(), momentObj.year());
 		},
 		decrementMonth: (state) => {
 			const momentObj = moment(state.focusedDate);
 			momentObj.subtract(1, "months");
 			state.focusedDate = momentObj.format("YYYY-MM-DD");
-			state.visibleDates = CalendarService.getVisibleDates(
-				momentObj.month(),
-				momentObj.year()
-			);
+			state.visibleDates = getVisibleDates(momentObj.month(), momentObj.year());
 		},
 		loadEvents: (state) => {
 			state.loadingEvents = "loading";

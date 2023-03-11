@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./CalendarGridCard.scss";
 import { useTranslation } from "react-i18next";
 import CreateEventModal from "components/CreateEventModal/CreateEventModal";
-import { useSelector } from "react-redux";
-import { use } from "i18next";
 import EventListContainer from "components/EventListContainer/EventListContainer";
 
 const CalendarGridCard = (props) => {

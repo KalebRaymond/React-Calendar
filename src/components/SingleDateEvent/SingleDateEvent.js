@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./SingleDateEvent.scss";
-import CalendarService from "../../services/CalendarService";
 import EditEventModal from "../EditEventModal/EditEventModal";
+import { useTranslation } from "react-i18next";
 
 const SingleDateEvent = (props) => {
 	const { event } = props;
 	const [showModal, setShowModal] = useState(false);
+	const { t } = useTranslation();
 
 	const handleOnClick = () => {
 		setShowModal(true);
@@ -14,6 +15,14 @@ const SingleDateEvent = (props) => {
 
 	const handleCloseModal = () => {
 		setShowModal(false);
+	};
+
+	const convertTo12HourTime = (time) => {
+		const [hour, minute] = time.split(":");
+		const ampm = hour >= 12 ? t("time.am") : t("time.pm");
+		const hour12 = hour % 12 || 12;
+
+		return `${hour12}:${minute} ${ampm}`;
 	};
 
 	return (
@@ -28,16 +37,16 @@ const SingleDateEvent = (props) => {
 			<div className="content">
 				<div className="bullet"></div>
 				<span className="eventTime">
-					{CalendarService.convertTo12HourTime(event.startTime)}
+					{convertTo12HourTime(event.startTime)}
 				</span>
 				<strong className="eventName">{event.eventName}</strong>
-				{showModal && (
-					<EditEventModal
-						event={event}
-						onClose={handleCloseModal}
-					></EditEventModal>
-				)}
 			</div>
+			{showModal && (
+				<EditEventModal
+					event={event}
+					onClose={handleCloseModal}
+				></EditEventModal>
+			)}
 		</div>
 	);
 };

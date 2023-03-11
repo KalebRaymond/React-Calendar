@@ -4,12 +4,27 @@
 	align-items: center;
 
 	.toolbarSection {
-		&#nav-buttons {
-			display: flex;
-			margin-left: auto;
+		display: flex;
 
-			button {
-				margin: 0.5em;
+		&#calendarLabelContainer {
+			width: 250px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		&#controlsContainer {
+			display: flex;
+			align-items: center;
+			width: 100%;
+
+			#navButtons {
+				display: flex;
+				margin-left: auto;
+				margin-right: 0.5rem;
+				button {
+					margin: 0.25em;
+				}
 			}
 		}
 	}

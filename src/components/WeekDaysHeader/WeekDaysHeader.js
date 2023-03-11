@@ -3,8 +3,6 @@ import { useTranslation } from "react-i18next";
 import styles from "./WeekDaysHeader.scss";
 
 const WeekDaysHeader = () => {
-	///Refactor this component to use CalendarGridRow
-
 	const { t } = useTranslation();
 
 	const days = [

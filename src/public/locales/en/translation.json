@@ -3,6 +3,7 @@
 		"todaysDate": "Today's date"
 	},
 	"calendarToolbar": {
+		"calendarLabel": "Calendar",
 		"leftNavButton": "Navigate to previous month",
 		"mainControls": "Controls for main calendar",
 		"rightNavButton": "Navigate to next month"
@@ -120,5 +121,9 @@
 			"30": "30th",
 			"31": "31st"
 		}
+	},
+	"time": {
+		"am": "AM",
+		"pm": "PM"
 	}
 }
