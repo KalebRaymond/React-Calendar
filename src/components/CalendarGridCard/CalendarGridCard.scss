@@ -1,10 +1,11 @@
 .CalendarGridCard {
-	border: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-	width: 100%;
 	min-width: 2.5rem;
+	width: 100%;
 
 	&.grayed {
 		background-color: #efefef;

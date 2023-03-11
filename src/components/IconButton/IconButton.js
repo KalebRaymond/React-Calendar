@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./IconButton.module.scss";
+import styles from "./IconButton.scss";
 
 const IconButton = (props) => (
-	<div className={styles.IconButton} data-testid="IconButton">
+	<div className="IconButton" data-testid="IconButton">
 		<button
 			name={props.name}
 			aria-label={props.ariaLabel}

@@ -5,6 +5,7 @@
 		align-items: center;
 		border-radius: 0.35rem;
 		display: flex;
+		flex-wrap: nowrap;
 		width: 100%;
 
 		.bullet {
@@ -12,17 +13,19 @@
 			border-radius: 100%;
 			display: inline-block;
 			height: 0.5rem;
-			margin-left: 0.15rem;
-			margin-right: 0.3rem;
+			min-height: 0.5rem;
+			min-width: 0.5rem;
 			width: 0.5rem;
+			margin-right: 0.3rem;
 		}
 
-		.eventTime {
-			margin-left: 0.3rem;
-		}
+		.eventDetails {
+			display: flex;
+			overflow: hidden;
 
-		.eventName {
-			margin-left: 0.3rem;
+			.eventTime {
+				margin-right: 0.3rem;
+			}
 		}
 
 		&:hover {

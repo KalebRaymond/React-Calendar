@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./CalendarGridRow.module.scss";
+import styles from "./CalendarGridRow.scss";
 
 const CalendarGridRow = (props) => (
-	<div className={styles.CalendarGridRow} data-testid="CalendarGridRow">
+	<div className="CalendarGridRow" data-testid="CalendarGridRow">
 		{props.children}
 	</div>
 );

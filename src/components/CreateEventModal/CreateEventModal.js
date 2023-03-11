@@ -65,12 +65,11 @@ const CreateEventModal = (props) => {
 			data-testid="CreateEventModal"
 			onClick={props.onClose}
 		>
-			<div
-				className="modalContainer"
-				aria-label={t("eventModal.labels.createEventModal")}
-				onClick={(e) => e.stopPropagation()}
-			>
+			<div className="modalContainer" onClick={(e) => e.stopPropagation()}>
 				<div className="modalHeader">
+					<span className="modalTitle">
+						{t("eventModal.labels.createEventModal")}
+					</span>
 					<IconButton
 						name="closeModal"
 						ariaLabel={t("eventModal.labels.closeButton")}

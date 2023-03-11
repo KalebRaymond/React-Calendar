@@ -19,10 +19,10 @@ const SingleDateEvent = (props) => {
 
 	const convertTo12HourTime = (time) => {
 		const [hour, minute] = time.split(":");
-		const ampm = hour >= 12 ? t("time.am") : t("time.pm");
+		const ampm = hour >= 12 ? t("time.pm") : t("time.am");
 		const hour12 = hour % 12 || 12;
 
-		return `${hour12}:${minute} ${ampm}`;
+		return `${hour12}:${minute}${ampm}`;
 	};
 
 	return (
@@ -36,10 +36,12 @@ const SingleDateEvent = (props) => {
 		>
 			<div className="content">
 				<div className="bullet"></div>
-				<span className="eventTime">
-					{convertTo12HourTime(event.startTime)}
+				<span className="eventDetails">
+					<span className="eventTime">
+						{convertTo12HourTime(event.startTime)}
+					</span>
+					<strong className="eventName">{event.eventName}</strong>
 				</span>
-				<strong className="eventName">{event.eventName}</strong>
 			</div>
 			{showModal && (
 				<EditEventModal

@@ -13,7 +13,7 @@ const CalendarToolbar = () => {
 
 	const focusedMonth = useSelector((state) => {
 		const monthIndex = moment(state.calendar.focusedDate).month();
-		return TranslationService.getMonthTranslation(monthIndex).toUpperCase();
+		return TranslationService.getMonthTranslation(monthIndex);
 	});
 
 	const focusedYear = useSelector((state) =>

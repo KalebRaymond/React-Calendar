@@ -4,6 +4,8 @@
 		margin: 0.15rem;
 		position: relative;
 		overflow: clip;
+		display: flex;
+		align-items: center;
 
 		&.multiDateEventBtn {
 			background-color: #f00;

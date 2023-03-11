@@ -36,7 +36,18 @@
         "id": "d/V/WcmiYKy3RkdC"
       }
     ],
-    "2023-03-12": [],
+    "2023-03-12": [
+      {
+        "eventName": "Test",
+        "startDate": "2023-03-12",
+        "endDate": "2023-03-12",
+        "startTime": "10:00",
+        "endTime": "",
+        "description": "",
+        "numDays": 1,
+        "id": "6Z1l0b7igcXV6QSP"
+      }
+    ],
     "2023-03-13": [],
     "2023-03-14": [
       {
@@ -48,11 +59,43 @@
         "description": "",
         "numDays": 1,
         "id": "WsJRlagD9tuH32aA"
+      },
+      {
+        "eventName": "Test",
+        "startDate": "2023-03-14",
+        "endDate": "2023-03-14",
+        "startTime": "12:00",
+        "endTime": "",
+        "description": "",
+        "numDays": 1,
+        "id": "4glY/RscYCGKpiZl"
       }
     ],
     "2023-03-15": [],
-    "2023-03-16": [],
-    "2023-03-17": [],
+    "2023-03-16": [
+      {
+        "eventName": "Midnight",
+        "startDate": "2023-03-16",
+        "endDate": "2023-03-16",
+        "startTime": "12:00",
+        "endTime": "",
+        "description": "",
+        "numDays": 1,
+        "id": "XibQe00H3MDMHpx+"
+      }
+    ],
+    "2023-03-17": [
+      {
+        "eventName": "Early",
+        "startDate": "2023-03-17",
+        "endDate": "2023-03-17",
+        "startTime": "00:00",
+        "endTime": "",
+        "description": "",
+        "numDays": 1,
+        "id": "uC3c27KAgllIk7C1"
+      }
+    ],
     "2023-03-18": [],
     "2023-03-19": [],
     "2023-03-20": [],

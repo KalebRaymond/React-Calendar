@@ -5,7 +5,7 @@ npx generate-react-cli component MyComponent
 * Todo
 [_] Styling
 	> [X] Improve layout 
-	> [_] Improve codebase structure (smart/dumb components)
+	> [X] Improve codebase structure (smart/dumb components)
 	> [_] CSS
 	> [X] Responsiveness
 [_] Testing

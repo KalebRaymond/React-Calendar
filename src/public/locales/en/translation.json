@@ -67,25 +67,25 @@
 			}
 		},
 		"labels": {
-			"closeButton": "Close Event Form modal",
-			"createEventModal": "Create New Event modal",
-			"editEventModal": "Edit Event modal",
+			"closeButton": "Close Event Form",
+			"createEventModal": "Create New Event",
+			"editEventModal": "Edit Event",
 			"formActions": "Event form actions"
 		}
 	},
 	"months": {
-		"april": "april",
-		"august": "august",
-		"december": "december",
-		"february": "february",
-		"january": "january",
-		"july": "july",
-		"june": "june",
-		"march": "march",
-		"may": "may",
-		"november": "november",
-		"october": "october",
-		"september": "september"
+		"april": "April",
+		"august": "August",
+		"december": "December",
+		"february": "February",
+		"january": "January",
+		"july": "July",
+		"june": "June",
+		"march": "March",
+		"may": "May",
+		"november": "November",
+		"october": "October",
+		"september": "September"
 	},
 	"numbers": {
 		"ordinal": {
@@ -123,7 +123,7 @@
 		}
 	},
 	"time": {
-		"am": "AM",
-		"pm": "PM"
+		"am": "am",
+		"pm": "pm"
 	}
 }
