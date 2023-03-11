@@ -3,10 +3,10 @@ npx json-server --watch events.json --middlewares eventMiddleware.js
 npx generate-react-cli component MyComponent
 
 * Todo
-[_] Styling
+[X] Styling
 	> [X] Improve layout 
 	> [X] Improve codebase structure (smart/dumb components)
-	> [_] CSS
+	> [X] CSS
 	> [X] Responsiveness
 [_] Testing
 	> MSW

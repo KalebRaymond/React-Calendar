@@ -29,7 +29,14 @@
 		}
 
 		&:hover {
-			background-color: #eee;
+			&.light {
+				background-color: #eee;
+			}
+
+			&.dark {
+				background-color: #111;
+				color: #fff;
+			}
 		}
 	}
 }

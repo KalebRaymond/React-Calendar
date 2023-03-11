@@ -5,14 +5,16 @@ import CalendarGrid from "components/CalendarGrid/CalendarGrid";
 import CalendarGridCard from "components/CalendarGridCard/CalendarGridCard";
 import CalendarGridRow from "components/CalendarGridRow/CalendarGridRow";
 import moment from "moment";
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "./CalendarContainer.scss";
 import TranslationService from "services/TranslationService";
+import { ThemeContext } from "context/ThemeContext";
 
 ///What is the point of this component? Delete it?
 const CalendarContainer = () => {
 	const { t } = useTranslation();
 	const dispatch = useDispatch();
+	const { theme } = useContext(ThemeContext);
 
 	///Make these two hooks into a custom hook?
 	//Keep track of first and last visible dates when the focused date changes
@@ -204,7 +206,10 @@ const CalendarContainer = () => {
 	);
 
 	return (
-		<div className={"CalendarContainer"} data-testid="CalendarContainer">
+		<div
+			className={`CalendarContainer ${theme === "light" ? "light" : "dark"}`}
+			data-testid="CalendarContainer"
+		>
 			<CalendarGrid>{calendarContent}</CalendarGrid>
 		</div>
 	);

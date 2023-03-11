@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import styles from "./SidePanel.scss";
+import { ThemeContext } from "context/ThemeContext";
 
-const SidePanel = () => (
-	<div className={"SidePanel"} data-testid="SidePanel"></div>
-);
+const SidePanel = () => {
+	const { theme } = useContext(ThemeContext);
+
+	return (
+		<div
+			className={`SidePanel ${theme === "light" ? "light" : "dark"}`}
+			data-testid="SidePanel"
+		></div>
+	);
+};
 
 SidePanel.propTypes = {};
 

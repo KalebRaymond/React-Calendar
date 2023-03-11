@@ -5,27 +5,48 @@
 	border-bottom: 1px solid #ccc;
 	font-size: 1.2rem;
 
+	&.light {
+		background-color: #fff;
+	}
+
+	&.dark {
+		background-color: #333;
+		color: #fff;
+	}
+
 	.toolbarSection {
 		display: flex;
+		align-items: center;
 
 		&#calendarLabelContainer {
 			width: 250px;
-			display: flex;
-			align-items: center;
 			justify-content: center;
 		}
 
 		&#controlsContainer {
-			display: flex;
-			align-items: center;
 			width: 100%;
 
-			#navButtons {
+			.monthYear {
+				margin-left: 0.25rem;
+			}
+
+			.calendarButtons {
 				display: flex;
+				align-items: center;
 				margin-left: auto;
-				margin-right: 0.5rem;
-				button {
-					margin: 0.25em;
+
+				.toggleThemeButton {
+					margin-left: auto;
+					margin-right: 1rem;
+				}
+
+				.navButtons {
+					display: flex;
+					margin-left: auto;
+					margin-right: 0.25rem;
+					button {
+						margin: 0.25em;
+					}
 				}
 			}
 		}

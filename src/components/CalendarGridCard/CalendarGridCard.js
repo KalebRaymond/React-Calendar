@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import "./CalendarGridCard.scss";
 import { useTranslation } from "react-i18next";
 import CreateEventModal from "components/CreateEventModal/CreateEventModal";
 import EventListContainer from "components/EventListContainer/EventListContainer";
+import { ThemeContext } from "context/ThemeContext";
 
 const CalendarGridCard = (props) => {
 	const { cardAriaLabel, date, events, grayed, isTodaysDate } = props;
-
 	const { t } = useTranslation();
+	const { theme } = useContext(ThemeContext);
 	const [showModal, setShowModal] = useState(false);
 
 	const handleOpenModal = () => {
@@ -21,7 +22,9 @@ const CalendarGridCard = (props) => {
 	return (
 		<>
 			<div
-				className={`CalendarGridCard ${grayed ? "grayed" : ""}`}
+				className={`CalendarGridCard ${grayed ? "grayed" : ""} ${
+					theme === "light" ? "light" : "dark"
+				}`}
 				data-testid="CalendarGridCard"
 				tabIndex="0"
 				role="gridcell"

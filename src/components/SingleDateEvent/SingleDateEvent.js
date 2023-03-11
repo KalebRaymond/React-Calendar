@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./SingleDateEvent.scss";
 import EditEventModal from "../EditEventModal/EditEventModal";
 import { useTranslation } from "react-i18next";
+import { ThemeContext } from "../../context/ThemeContext";
 
 const SingleDateEvent = (props) => {
 	const { event } = props;
 	const [showModal, setShowModal] = useState(false);
 	const { t } = useTranslation();
+	const { theme } = useContext(ThemeContext);
 
 	const handleOnClick = () => {
 		setShowModal(true);
@@ -34,7 +36,7 @@ const SingleDateEvent = (props) => {
 				handleOnClick();
 			}}
 		>
-			<div className="content">
+			<div className={`content ${theme === "light" ? "light" : "dark"}`}>
 				<div className="bullet"></div>
 				<span className="eventDetails">
 					<span className="eventTime">

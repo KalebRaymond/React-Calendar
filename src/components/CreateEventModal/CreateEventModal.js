@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./CreateEventModal.scss";
 import IconButton from "components/IconButton/IconButton";
@@ -6,10 +6,12 @@ import { useTranslation } from "react-i18next";
 import EventForm from "components/EventForm/EventForm";
 import { postEvent } from "reducers/calendarReducer";
 import { useDispatch } from "react-redux";
+import { ThemeContext } from "context/ThemeContext";
 
 const CreateEventModal = (props) => {
 	const { t } = useTranslation();
 	const dispatch = useDispatch();
+	const { theme } = useContext(ThemeContext);
 	const defaultFormState = {
 		eventName: "",
 		startDate: "",
@@ -61,11 +63,16 @@ const CreateEventModal = (props) => {
 
 	return (
 		<div
-			className="CreateEventModal modalBackdrop"
+			className={`CreateEventModal modalBackdrop ${
+				theme === "light" ? "light" : "dark"
+			}`}
 			data-testid="CreateEventModal"
 			onClick={props.onClose}
 		>
-			<div className="modalContainer" onClick={(e) => e.stopPropagation()}>
+			<div
+				className={`modalContainer ${theme === "light" ? "light" : "dark"}`}
+				onClick={(e) => e.stopPropagation()}
+			>
 				<div className="modalHeader">
 					<span className="modalTitle">
 						{t("eventModal.labels.createEventModal")}

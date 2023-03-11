@@ -8,7 +8,14 @@
 	width: 100%;
 
 	&.grayed {
-		background-color: #efefef;
+		&.light {
+			background-color: #efefef;
+		}
+
+		&.dark {
+			background-color: #222;
+			color: #fff;
+		}
 	}
 
 	#date-container {

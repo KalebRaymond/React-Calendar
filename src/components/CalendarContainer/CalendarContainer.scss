@@ -1,4 +1,13 @@
 .CalendarContainer {
 	height: 100%;
 	width: 100%;
+
+	&.light {
+		background-color: #fff;
+	}
+
+	&.dark {
+		background-color: #333;
+		color: #fff;
+	}
 }
