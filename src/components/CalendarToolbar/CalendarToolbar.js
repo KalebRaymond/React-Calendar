@@ -42,10 +42,10 @@ const CalendarToolbar = () => {
 				</div>
 			</div>
 			<div className="toolbarSection" id="controlsContainer">
-				<div class="monthYear">
+				<div className="monthYear">
 					<span>{`${focusedMonth} ${focusedYear}`}</span>
 				</div>
-				<div class="calendarButtons">
+				<div className="calendarButtons">
 					<div className="toggleThemeButton">
 						<ThemeToggleButton />
 					</div>

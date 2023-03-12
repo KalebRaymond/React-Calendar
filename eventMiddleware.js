@@ -19,6 +19,12 @@ module.exports = (req, res, next) => {
 		return;
 	}
 
+	res.setHeader("Access-Control-Allow-Origin", "*");
+	res.header(
+		"Access-Control-Allow-Headers",
+		"Origin, X-Requested-With, Content-Type, Accept"
+	);
+
 	switch (req.method) {
 		case "GET": {
 			getEvents(req, res, next);
