@@ -9,13 +9,13 @@
 		align-items: center;
 
 		&.multiDateEventBtn {
-			background-color: #f00;
+			background-color: #ea073e;
 			border-radius: 0.35rem;
 			padding-left: 0.5rem;
 			padding-right: 0.5rem;
 
 			&:hover {
-				filter: brightness(0.85);
+				filter: saturate(0.8);
 			}
 
 			span {

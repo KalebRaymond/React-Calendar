@@ -18,7 +18,7 @@
 		}
 	}
 
-	#date-container {
+	.dateContainer {
 		align-items: center;
 		display: flex;
 		height: 15%;
@@ -36,7 +36,7 @@
 		}
 	}
 
-	#card-body {
+	.card-body {
 		flex-grow: 2;
 	}
 }

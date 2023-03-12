@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styles from "./CalendarGridRow.scss";
 
 const CalendarGridRow = (props) => (
-	<div className="CalendarGridRow" data-testid="CalendarGridRow">
+	<div className="CalendarGridRow" data-testid="CalendarGridRow" role="row">
 		{props.children}
 	</div>
 );

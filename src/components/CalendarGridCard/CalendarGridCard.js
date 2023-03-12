@@ -30,7 +30,7 @@ const CalendarGridCard = (props) => {
 				role="gridcell"
 				aria-label={cardAriaLabel}
 			>
-				<div className="dateContainer" id="date-container">
+				<div className="dateContainer">
 					<span className={`date ${isTodaysDate ? "todaysDate" : ""}`}>
 						{date.format("D")}
 						{isTodaysDate && (
@@ -41,8 +41,7 @@ const CalendarGridCard = (props) => {
 					</span>
 				</div>
 				<div
-					className="clickable"
-					id="card-body"
+					className="clickable card-body"
 					role="region"
 					onClick={handleOpenModal}
 				>

@@ -32,7 +32,7 @@ const WeekDaysHeader = () => {
 	};
 
 	return (
-		<div className={"WeekDaysHeader"} data-testid="WeekDaysHeader">
+		<div className={"WeekDaysHeader"} data-testid="WeekDaysHeader" role="row">
 			{renderDays()}
 		</div>
 	);
