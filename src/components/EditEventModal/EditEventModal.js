@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { createRef, useEffect, useContext, useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./EditEventModal.scss";
 import IconButton from "components/IconButton/IconButton";
@@ -12,6 +12,7 @@ const EditEventModal = (props) => {
 	const { t } = useTranslation();
 	const dispatch = useDispatch();
 	const { theme } = useContext(ThemeContext);
+	const closeButtonRef = createRef();
 	const defaultFormState = {
 		eventName: "",
 		startDate: "",
@@ -20,6 +21,12 @@ const EditEventModal = (props) => {
 		endTime: "",
 		description: "",
 	};
+
+	//Focus on close button when modal is opened
+	useEffect(() => {
+		console.log("### closeButtonRef", { closeButtonRef });
+		closeButtonRef.current?.focus();
+	}, [closeButtonRef]);
 
 	//Initialize formState with existing data from props.event
 	const [formState, setFormState] = useState({
@@ -90,8 +97,10 @@ const EditEventModal = (props) => {
 			<div
 				className={`modalContainer ${theme === "light" ? "light" : "dark"}`}
 				onClick={(e) => e.stopPropagation()}
+				role="dialog"
+				aria-label={t("eventModal.labels.editEventModal")}
 			>
-				<div className="modalHeader">
+				<header className="modalHeader">
 					<span className="modalTitle">
 						{t("eventModal.labels.editEventModal")}
 					</span>
@@ -99,10 +108,11 @@ const EditEventModal = (props) => {
 						name="closeModal"
 						ariaLabel={t("eventModal.labels.closeButton")}
 						onClick={props.onClose}
+						buttonRef={closeButtonRef}
 					>
 						<i className="bi bi-x-lg"></i>
 					</IconButton>
-				</div>
+				</header>
 				<div className="modalBody">
 					<EventForm
 						formState={formState}

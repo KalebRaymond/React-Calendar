@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { createRef, useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./SingleDateEvent.scss";
 import EditEventModal from "../EditEventModal/EditEventModal";
@@ -10,6 +10,15 @@ const SingleDateEvent = (props) => {
 	const [showModal, setShowModal] = useState(false);
 	const { t } = useTranslation();
 	const { theme } = useContext(ThemeContext);
+	const buttonRef = createRef();
+
+	//Set focus on event button when modal is closed
+	useEffect(() => {
+		if (!showModal) {
+			console.log("### buttonRef", { buttonRef });
+			buttonRef.current?.focus();
+		}
+	}, [showModal]);
 
 	const handleOnClick = () => {
 		setShowModal(true);
@@ -35,6 +44,13 @@ const SingleDateEvent = (props) => {
 				e.stopPropagation();
 				handleOnClick();
 			}}
+			tabIndex="0"
+			ref={buttonRef}
+			aria-label={t("event.labels.singleDateEvent", {
+				eventName: event.eventName,
+				startTime: convertTo12HourTime(event.startTime),
+				startDate: event.startDate,
+			})}
 		>
 			<div className={`content ${theme === "light" ? "light" : "dark"}`}>
 				<div className="bullet"></div>

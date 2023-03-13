@@ -4,6 +4,7 @@ import styles from "./EventListContainer.scss";
 import moment from "moment";
 import SingleDateEvent from "components/SingleDateEvent/SingleDateEvent";
 import MultipleDateEvent from "components/MultipleDateEvent/MultipleDateEvent";
+import { t } from "i18next";
 
 const EventListContainer = (props) => {
 	const { multiDateEvents, singleDateEvents } = props;
@@ -27,7 +28,11 @@ const EventListContainer = (props) => {
 	};
 
 	return (
-		<div className={"EventListContainer"} data-testid="EventListContainer">
+		<div
+			className={"EventListContainer"}
+			data-testid="EventListContainer"
+			aria-label={t("calendarGridCard.labels.eventList")}
+		>
 			{renderEvents()}
 		</div>
 	);

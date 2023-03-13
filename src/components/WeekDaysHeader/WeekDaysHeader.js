@@ -16,7 +16,7 @@ const WeekDaysHeader = () => {
 	];
 
 	const renderDays = () => {
-		return days.map((day, i) => {
+		return days.map((day, _) => {
 			return (
 				<div
 					className="weekDay"
@@ -32,7 +32,12 @@ const WeekDaysHeader = () => {
 	};
 
 	return (
-		<div className={"WeekDaysHeader"} data-testid="WeekDaysHeader" role="row">
+		<div
+			className={"WeekDaysHeader"}
+			data-testid="WeekDaysHeader"
+			role="row"
+			aria-label={t("weekDayHeader.labels.weekDayHeader")}
+		>
 			{renderDays()}
 		</div>
 	);

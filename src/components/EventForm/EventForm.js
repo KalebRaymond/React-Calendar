@@ -32,9 +32,10 @@ const EventForm = (props) => {
 				onSubmit={(e) => {
 					e.preventDefault();
 				}}
+				ariaLabel={t("eventForm.labels.form")}
 			>
 				<div className="formSection" id="name-container">
-					<div className="inputContainer">
+					<div className="inputContainer" aria-labelledby="name-label">
 						<label htmlFor="eventName" id="name-label">
 							{t("eventForm.labels.name")}
 						</label>
@@ -43,12 +44,11 @@ const EventForm = (props) => {
 							name="eventName"
 							value={props.formState.eventName}
 							onChange={props.handleInputChange}
-							aria-labelledby="name-label"
 						/>
 					</div>
 				</div>
 				<div className="formSection input" id="dates-container">
-					<div className="inputContainer">
+					<div className="inputContainer" aria-labelledby="start-date-label">
 						<label htmlFor="startDate" id="start-date-label">
 							{t("eventForm.labels.startDate")}
 						</label>
@@ -57,13 +57,12 @@ const EventForm = (props) => {
 							name="startDate"
 							value={props.formState.startDate}
 							onChange={props.handleInputChange}
-							aria-labelledby="start-date-label"
 						/>
 					</div>
 					<div className="hyphen">
 						<span>-</span>
 					</div>
-					<div className="inputContainer">
+					<div className="inputContainer" aria-labelledby="end-date-label">
 						<label htmlFor="startDate" id="end-date-label">
 							{t("eventForm.labels.endDate")}
 						</label>
@@ -72,12 +71,11 @@ const EventForm = (props) => {
 							name="endDate"
 							value={props.formState.endDate}
 							onChange={props.handleInputChange}
-							aria-labelledby="end-date-label"
 						/>
 					</div>
 				</div>
 				<div className="formSection" id="time-container">
-					<div className="inputContainer">
+					<div className="inputContainer" aria-labelledby="start-time-label">
 						<label htmlFor="time" id="start-time-label">
 							{t("eventForm.labels.startTime")}
 						</label>
@@ -86,13 +84,12 @@ const EventForm = (props) => {
 							name="startTime"
 							value={props.formState.startTime}
 							onChange={props.handleInputChange}
-							aria-labelledby="start-time-label"
 						/>
 					</div>
 					<div className="hyphen">
 						<span>-</span>
 					</div>
-					<div className="inputContainer">
+					<div className="inputContainer" aria-labelledby="end-time-label">
 						<label htmlFor="time" id="end-time-label">
 							{t("eventForm.labels.endTime")}
 						</label>
@@ -101,12 +98,11 @@ const EventForm = (props) => {
 							name="endTime"
 							value={props.formState.endTime}
 							onChange={props.handleInputChange}
-							aria-labelledby="end-time-label"
 						/>
 					</div>
 				</div>
 				<div className="formSection" id="description">
-					<div className="inputContainer">
+					<div className="inputContainer" aria-labelledby="description-label">
 						<label htmlFor="description" id="description-label">
 							{t("eventForm.labels.description")}
 						</label>
@@ -114,7 +110,6 @@ const EventForm = (props) => {
 							name="description"
 							value={props.formState.description}
 							onChange={props.handleInputChange}
-							aria-labelledby="description-label"
 						/>
 					</div>
 				</div>

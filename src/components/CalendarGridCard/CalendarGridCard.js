@@ -10,6 +10,8 @@ const CalendarGridCard = (props) => {
 	const { t } = useTranslation();
 	const { theme } = useContext(ThemeContext);
 	const [showModal, setShowModal] = useState(false);
+	const hasEvents =
+		events.singleDateEvents?.length > 0 || events.multiDateEvents?.length > 0;
 
 	const handleOpenModal = () => {
 		setShowModal(true);
@@ -30,12 +32,15 @@ const CalendarGridCard = (props) => {
 				role="gridcell"
 				aria-label={cardAriaLabel}
 			>
+				<span className="visuallyHidden">
+					{t("calendarGridCard.labels.addNewEvent")}
+				</span>
 				<div className="dateContainer">
 					<span className={`date ${isTodaysDate ? "todaysDate" : ""}`}>
 						{date.format("D")}
 						{isTodaysDate && (
 							<span className="visuallyHidden">
-								{t("calendarGridCard.todaysDate")}
+								{t("calendarGridCard.labels.todaysDate")}
 							</span>
 						)}
 					</span>
@@ -44,11 +49,14 @@ const CalendarGridCard = (props) => {
 					className="clickable card-body"
 					role="region"
 					onClick={handleOpenModal}
+					aria-label={!hasEvents ? t("calendarGridCard.labels.noEvents") : ""}
 				>
-					<EventListContainer
-						multiDateEvents={events.multiDateEvents}
-						singleDateEvents={events.singleDateEvents}
-					></EventListContainer>
+					{hasEvents && (
+						<EventListContainer
+							multiDateEvents={events.multiDateEvents}
+							singleDateEvents={events.singleDateEvents}
+						></EventListContainer>
+					)}
 				</div>
 			</div>
 			{showModal && (

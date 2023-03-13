@@ -9,6 +9,7 @@ const IconButton = (props) => (
 			aria-label={props.ariaLabel}
 			className="btn btn-secondary"
 			onClick={props.onClick}
+			ref={props.buttonRef}
 		>
 			{props.children}
 		</button>

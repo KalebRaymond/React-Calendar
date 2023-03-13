@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./MultipleDateEvent.scss";
 import EditEventModal from "../EditEventModal/EditEventModal";
+import { t } from "i18next";
 
 const MultipleDateEvent = (props) => {
 	const { event } = props;
@@ -19,12 +20,18 @@ const MultipleDateEvent = (props) => {
 		return event.isStartOfButton ? (
 			<div
 				className="eventBtn multiDateEventBtn"
+				role="button"
 				style={{ width: `calc((100% * ${event.buttonLength}  - 0.15rem)` }} //Need to subtract 2 * 0.15rem margin
+				aria-label={t("event.labels.multiDateEvent", {
+					eventName: event.eventName,
+					startDate: event.startDate,
+					endDate: event.endDate,
+				})}
 			>
 				<span className="eventName">{event.eventName}</span>
 			</div>
 		) : (
-			<div className="eventBtn placeholderEventBtn"></div>
+			<div className="eventBtn placeholderEventBtn" role="button"></div>
 		);
 	};
 
@@ -36,6 +43,7 @@ const MultipleDateEvent = (props) => {
 				e.stopPropagation();
 				handleOnClick();
 			}}
+			tabIndex="0"
 		>
 			{renderEventButton()}
 			{showModal && (

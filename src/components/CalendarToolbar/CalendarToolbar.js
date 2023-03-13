@@ -38,32 +38,36 @@ const CalendarToolbar = () => {
 		>
 			<div className="toolbarSection" id="calendarLabelContainer">
 				<div id="calendarLabel">
-					<span>{t("calendarToolbar.calendarLabel")}</span>
+					<span>{t("toolbar.labels.calendarLabel")}</span>
 				</div>
 			</div>
 			<div className="toolbarSection" id="controlsContainer">
 				<div className="monthYear">
 					<span>{`${focusedMonth} ${focusedYear}`}</span>
 				</div>
-				<div className="calendarButtons">
+				<div
+					className="calendarButtons"
+					role="group"
+					aria-label={t("toolbar.labels.actionButtons")}
+				>
 					<div className="toggleThemeButton">
 						<ThemeToggleButton />
 					</div>
 					<div
 						className="navButtons"
 						role="group"
-						aria-label={t("calendarToolbar.mainControls")} /*Necessary?*/
+						aria-label={t("toolbar.labels.mainControls")}
 					>
 						<IconButton
 							name="prevMonth"
-							ariaLabel={t("calendarToolbar.leftNavButton")}
+							ariaLabel={t("toolbar.labels.leftNavButton")}
 							onClick={handleLeftNavClick}
 						>
 							<i className="bi bi-chevron-left"></i>
 						</IconButton>
 						<IconButton
 							name="nextMonth"
-							ariaLabel={t("calendarToolbar.rightNavButton")}
+							ariaLabel={t("toolbar.labels.rightNavButton")}
 							onClick={handleRightNavClick}
 						>
 							<i className="bi bi-chevron-right"></i>
