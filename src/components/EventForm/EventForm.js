@@ -32,7 +32,7 @@ const EventForm = (props) => {
 				onSubmit={(e) => {
 					e.preventDefault();
 				}}
-				ariaLabel={t("eventForm.labels.form")}
+				aria-label={t("eventForm.labels.form")}
 			>
 				<div className="formSection" id="name-container">
 					<div className="inputContainer" aria-labelledby="name-label">

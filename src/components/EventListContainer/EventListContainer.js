@@ -11,7 +11,10 @@ const EventListContainer = (props) => {
 
 	const renderEvents = () => {
 		return (
-			<ul className="eventList">
+			<ul
+				className="eventList"
+				aria-label={t("calendarGridCard.labels.eventList")}
+			>
 				{multiDateEvents.map((event, i) => (
 					///This key should use a uuid instead
 					<li key={`${event.eventName}-${i}`}>
@@ -28,11 +31,7 @@ const EventListContainer = (props) => {
 	};
 
 	return (
-		<div
-			className={"EventListContainer"}
-			data-testid="EventListContainer"
-			aria-label={t("calendarGridCard.labels.eventList")}
-		>
+		<div className={"EventListContainer"} data-testid="EventListContainer">
 			{renderEvents()}
 		</div>
 	);

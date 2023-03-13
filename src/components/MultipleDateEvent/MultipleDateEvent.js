@@ -31,7 +31,17 @@ const MultipleDateEvent = (props) => {
 				<span className="eventName">{event.eventName}</span>
 			</div>
 		) : (
-			<div className="eventBtn placeholderEventBtn" role="button"></div>
+			<div
+				className="eventBtn placeholderEventBtn"
+				role="button"
+				aria-label={t("event.labels.multiDateEvent", {
+					eventName: event.eventName,
+					startDate: event.startDate,
+					endDate: event.endDate,
+				})}
+			>
+				{" "}
+			</div>
 		);
 	};
 
