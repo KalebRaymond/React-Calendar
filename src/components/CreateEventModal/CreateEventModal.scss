@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .modalBackdrop {
 	height: 100%;
 	left: 0;
@@ -5,7 +7,7 @@
 	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: 1;
+	z-index: $modal-z-index;
 
 	&.light {
 		background-color: rgba(0, 0, 0, 0.4);

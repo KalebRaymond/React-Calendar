@@ -1,12 +1,13 @@
-import React, { useContext, useState } from "react";
-import PropTypes from "prop-types";
-import styles from "./CreateEventModal.scss";
-import IconButton from "components/IconButton/IconButton";
+import { postEvent } from "reducers/calendarReducer";
+import { ThemeContext } from "context/ThemeContext";
+import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import EventForm from "components/EventForm/EventForm";
-import { postEvent } from "reducers/calendarReducer";
-import { useDispatch } from "react-redux";
-import { ThemeContext } from "context/ThemeContext";
+import FocusTrap from "focus-trap-react";
+import IconButton from "components/IconButton/IconButton";
+import PropTypes from "prop-types";
+import React, { useContext, useState } from "react";
+import styles from "./CreateEventModal.scss";
 
 const CreateEventModal = (props) => {
 	const { t } = useTranslation();
@@ -69,30 +70,34 @@ const CreateEventModal = (props) => {
 			data-testid="CreateEventModal"
 			onClick={props.onClose}
 		>
-			<div
-				className={`modalContainer ${theme === "light" ? "light" : "dark"}`}
-				onClick={(e) => e.stopPropagation()}
-			>
-				<div className="modalHeader">
-					<span className="modalTitle">
-						{t("eventModal.labels.createEventModal")}
-					</span>
-					<IconButton
-						name="closeModal"
-						ariaLabel={t("eventModal.labels.closeButton")}
-						onClick={props.onClose}
-					>
-						<i className="bi bi-x-lg"></i>
-					</IconButton>
+			<FocusTrap>
+				<div
+					className={`modalContainer ${theme === "light" ? "light" : "dark"}`}
+					onClick={(e) => e.stopPropagation()}
+					aria-label={t("eventModal.labels.createEventModal")}
+					role="dialog"
+				>
+					<header className="modalHeader">
+						<span className="modalTitle">
+							{t("eventModal.labels.createEventModal")}
+						</span>
+						<IconButton
+							name="closeModal"
+							ariaLabel={t("eventModal.labels.closeButton")}
+							onClick={props.onClose}
+						>
+							<i className="bi bi-x-lg"></i>
+						</IconButton>
+					</header>
+					<div className="modalBody">
+						<EventForm
+							formState={formState}
+							handleInputChange={handleInputChange}
+							buttonContent={buttonContent}
+						></EventForm>
+					</div>
 				</div>
-				<div className="modalBody">
-					<EventForm
-						formState={formState}
-						handleInputChange={handleInputChange}
-						buttonContent={buttonContent}
-					></EventForm>
-				</div>
-			</div>
+			</FocusTrap>
 		</div>
 	);
 };

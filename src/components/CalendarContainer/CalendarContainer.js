@@ -174,11 +174,14 @@ const CalendarContainer = () => {
 			<CalendarGridRow key={`row-${focusedMonth}-${focusedYear}-${i}`}>
 				{row.map((dateObject, j) => (
 					<CalendarGridCard
-						cardAriaLabel={t("dateFormats.MDY", {
-							month: TranslationService.getMonthTranslation(dateObject.month),
-							day: TranslationService.getOrdinal(dateObject.date),
-							year: dateObject.year,
-						})}
+						cardAriaLabel={`${TranslationService.getWeekdayFromIndex(j)}, ${t(
+							"dateFormats.MDY",
+							{
+								month: TranslationService.getMonthTranslation(dateObject.month),
+								day: TranslationService.getOrdinal(dateObject.date),
+								year: dateObject.year,
+							}
+						)}`}
 						date={moment().set({
 							date: dateObject.date,
 							month: dateObject.month,

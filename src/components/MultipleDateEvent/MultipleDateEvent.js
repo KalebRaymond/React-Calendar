@@ -18,43 +18,41 @@ const MultipleDateEvent = (props) => {
 
 	const renderEventButton = () => {
 		return event.isStartOfButton ? (
-			<div
-				className="eventBtn multiDateEventBtn"
-				role="button"
+			<button
+				className="eventButton multiDateEventButton"
+				data-testid="MultipleDateEvent"
 				style={{ width: `calc((100% * ${event.buttonLength}  - 0.15rem)` }} //Need to subtract 2 * 0.15rem margin
 				aria-label={t("event.labels.multiDateEvent", {
 					eventName: event.eventName,
 					startDate: event.startDate,
 					endDate: event.endDate,
 				})}
+				onClick={(e) => {
+					e.stopPropagation();
+					handleOnClick();
+				}}
 			>
 				<span className="eventName">{event.eventName}</span>
-			</div>
+			</button>
 		) : (
-			<div
-				className="eventBtn placeholderEventBtn"
-				role="button"
+			<button
+				className="eventButton placeholderEventButton"
+				data-testid="MultipleDateEvent"
 				aria-label={t("event.labels.multiDateEvent", {
 					eventName: event.eventName,
 					startDate: event.startDate,
 					endDate: event.endDate,
 				})}
-			>
-				{" "}
-			</div>
+				onClick={(e) => {
+					e.stopPropagation();
+					handleOnClick();
+				}}
+			></button>
 		);
 	};
 
 	return (
-		<div
-			className={"MultipleDateEvent"}
-			data-testid="MultipleDateEvent"
-			onClick={(e) => {
-				e.stopPropagation();
-				handleOnClick();
-			}}
-			tabIndex="0"
-		>
+		<>
 			{renderEventButton()}
 			{showModal && (
 				<EditEventModal
@@ -62,7 +60,7 @@ const MultipleDateEvent = (props) => {
 					onClose={handleCloseModal}
 				></EditEventModal>
 			)}
-		</div>
+		</>
 	);
 };
 

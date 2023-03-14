@@ -10,8 +10,21 @@ const CalendarGridCard = (props) => {
 	const { t } = useTranslation();
 	const { theme } = useContext(ThemeContext);
 	const [showModal, setShowModal] = useState(false);
-	const hasEvents =
-		events.singleDateEvents?.length > 0 || events.multiDateEvents?.length > 0;
+	const numEvents =
+		events.singleDateEvents.length + events.multiDateEvents.length;
+
+	const numEventsAriaLabel = (function () {
+		switch (numEvents) {
+			case 0:
+				return t("calendarGridCard.labels.noEvents");
+			case 1:
+				return t("calendarGridCard.labels.oneEvent");
+			default:
+				return t("calendarGridCard.labels.multipleEvents", {
+					count: numEvents,
+				});
+		}
+	})();
 
 	const handleOpenModal = () => {
 		setShowModal(true);
@@ -28,30 +41,29 @@ const CalendarGridCard = (props) => {
 					theme === "light" ? "light" : "dark"
 				}`}
 				data-testid="CalendarGridCard"
-				tabIndex="0"
 				role="gridcell"
-				aria-label={cardAriaLabel}
 			>
-				<span className="visuallyHidden">
-					{t("calendarGridCard.labels.addNewEvent")}
-				</span>
 				<div className="dateContainer">
 					<span className={`date ${isTodaysDate ? "todaysDate" : ""}`}>
 						{date.format("D")}
-						{isTodaysDate && (
-							<span className="visuallyHidden">
-								{t("calendarGridCard.labels.todaysDate")}
-							</span>
-						)}
 					</span>
 				</div>
-				<div
-					className="clickable card-body"
-					role="region"
+				<button
+					className="cardButton"
 					onClick={handleOpenModal}
-					aria-label={!hasEvents ? t("calendarGridCard.labels.noEvents") : ""}
+					///Quite a large announcement here
+					aria-label={`${cardAriaLabel} ${
+						isTodaysDate ? t("calendarGridCard.labels.todaysDate") : ""
+					} ${numEventsAriaLabel}  ${t("calendarGridCard.labels.addNewEvent")}`}
+				></button>
+				<div
+					className="eventListContainer"
+					role="region"
+					aria-label={
+						numEvents == 0 ? t("calendarGridCard.labels.noEvents") : ""
+					}
 				>
-					{hasEvents && (
+					{numEvents > 0 && (
 						<EventListContainer
 							multiDateEvents={events.multiDateEvents}
 							singleDateEvents={events.singleDateEvents}

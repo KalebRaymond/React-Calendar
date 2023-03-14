@@ -1,1 +1,52 @@
-.EditEventModal {}
+@import "../../variables";
+
+.modalBackdrop {
+	height: 100%;
+	left: 0;
+	overflow: auto;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: $modal-z-index;
+
+	&.light {
+		background-color: rgba(0, 0, 0, 0.4);
+	}
+
+	&.dark {
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+
+	.modalContainer {
+		background-color: #fff;
+		position: relative;
+		top: 5rem;
+		margin: auto;
+		border: 1px solid #888;
+		width: 100%;
+		max-width: 500px;
+
+		&.light {
+			background-color: #fff;
+		}
+
+		&.dark {
+			background-color: #333;
+			color: #fff;
+		}
+
+		.modalHeader {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background-color: #9e91ff;
+			color: white;
+			padding: 0.5rem 2rem;
+			font-size: 1.2rem;
+		}
+
+		.modalBody {
+			padding: 1rem 2rem;
+		}
+	}
+}

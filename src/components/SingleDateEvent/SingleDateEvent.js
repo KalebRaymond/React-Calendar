@@ -37,22 +37,21 @@ const SingleDateEvent = (props) => {
 	};
 
 	return (
-		<div
-			className="SingleDateEvent"
-			data-testid="SingleDateEvent"
-			onClick={(e) => {
-				e.stopPropagation();
-				handleOnClick();
-			}}
-			tabIndex="0"
-			ref={buttonRef}
-			aria-label={t("event.labels.singleDateEvent", {
-				eventName: event.eventName,
-				startTime: convertTo12HourTime(event.startTime),
-				startDate: event.startDate,
-			})}
-		>
-			<div className={`content ${theme === "light" ? "light" : "dark"}`}>
+		<>
+			<button
+				className={`SingleDateEvent ${theme === "light" ? "light" : "dark"}`}
+				data-testid="SingleDateEvent"
+				onClick={(e) => {
+					e.stopPropagation();
+					handleOnClick();
+				}}
+				aria-label={t("event.labels.singleDateEvent", {
+					eventName: event.eventName,
+					startTime: convertTo12HourTime(event.startTime),
+					startDate: event.startDate,
+				})}
+				ref={buttonRef}
+			>
 				<div className="bullet"></div>
 				<span className="eventDetails">
 					<span className="eventTime">
@@ -60,14 +59,14 @@ const SingleDateEvent = (props) => {
 					</span>
 					<strong className="eventName">{event.eventName}</strong>
 				</span>
-			</div>
+			</button>
 			{showModal && (
 				<EditEventModal
 					event={event}
 					onClose={handleCloseModal}
 				></EditEventModal>
 			)}
-		</div>
+		</>
 	);
 };
 

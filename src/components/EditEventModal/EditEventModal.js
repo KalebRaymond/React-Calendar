@@ -1,12 +1,13 @@
-import React, { createRef, useEffect, useContext, useState } from "react";
-import PropTypes from "prop-types";
-import styles from "./EditEventModal.scss";
-import IconButton from "components/IconButton/IconButton";
-import { useTranslation } from "react-i18next";
-import EventForm from "components/EventForm/EventForm";
-import { useDispatch } from "react-redux";
 import { deleteEvent, updateEvent } from "../../reducers/calendarReducer";
 import { ThemeContext } from "context/ThemeContext";
+import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
+import EventForm from "components/EventForm/EventForm";
+import FocusTrap from "focus-trap-react";
+import IconButton from "components/IconButton/IconButton";
+import PropTypes from "prop-types";
+import React, { createRef, useEffect, useContext, useState } from "react";
+import styles from "./EditEventModal.scss";
 
 const EditEventModal = (props) => {
 	const { t } = useTranslation();
@@ -94,33 +95,35 @@ const EditEventModal = (props) => {
 			data-testid="EditEventModal"
 			onClick={props.onClose}
 		>
-			<div
-				className={`modalContainer ${theme === "light" ? "light" : "dark"}`}
-				onClick={(e) => e.stopPropagation()}
-				role="dialog"
-				aria-label={t("eventModal.labels.editEventModal")}
-			>
-				<header className="modalHeader">
-					<span className="modalTitle">
-						{t("eventModal.labels.editEventModal")}
-					</span>
-					<IconButton
-						name="closeModal"
-						ariaLabel={t("eventModal.labels.closeButton")}
-						onClick={props.onClose}
-						buttonRef={closeButtonRef}
-					>
-						<i className="bi bi-x-lg"></i>
-					</IconButton>
-				</header>
-				<div className="modalBody">
-					<EventForm
-						formState={formState}
-						handleInputChange={handleInputChange}
-						buttonContent={buttonContent}
-					></EventForm>
+			<FocusTrap>
+				<div
+					className={`modalContainer ${theme === "light" ? "light" : "dark"}`}
+					onClick={(e) => e.stopPropagation()}
+					role="dialog"
+					aria-label={t("eventModal.labels.editEventModal")}
+				>
+					<header className="modalHeader">
+						<span className="modalTitle">
+							{t("eventModal.labels.editEventModal")}
+						</span>
+						<IconButton
+							name="closeModal"
+							ariaLabel={t("eventModal.labels.closeButton")}
+							onClick={props.onClose}
+							buttonRef={closeButtonRef}
+						>
+							<i className="bi bi-x-lg"></i>
+						</IconButton>
+					</header>
+					<div className="modalBody">
+						<EventForm
+							formState={formState}
+							handleInputChange={handleInputChange}
+							buttonContent={buttonContent}
+						></EventForm>
+					</div>
 				</div>
-			</div>
+			</FocusTrap>
 		</div>
 	);
 };

@@ -1,31 +1,16 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import TranslationService from "services/TranslationService";
 import styles from "./WeekDaysHeader.scss";
 
 const WeekDaysHeader = () => {
 	const { t } = useTranslation();
 
-	const days = [
-		[t("days.sun"), t("days.sunday")],
-		[t("days.mon"), t("days.monday")],
-		[t("days.tue"), t("days.tuesday")],
-		[t("days.wed"), t("days.wednesday")],
-		[t("days.thu"), t("days.thursday")],
-		[t("days.fri"), t("days.friday")],
-		[t("days.sat"), t("days.saturday")],
-	];
-
 	const renderDays = () => {
-		return days.map((day, _) => {
+		return [0, 1, 2, 3, 4, 5, 6].map((_, i) => {
 			return (
-				<div
-					className="weekDay"
-					role="columnheader"
-					tabIndex="0"
-					aria-label={day[1]}
-					key={day[0]}
-				>
-					<span>{day[0]}</span>
+				<div className="weekDay" tabIndex={-1} key={`weekday-${i}`}>
+					<span>{TranslationService.getWeekdayAbbreviatedFromIndex(i)}</span>
 				</div>
 			);
 		});

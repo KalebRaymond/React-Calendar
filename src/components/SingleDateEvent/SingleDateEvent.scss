@@ -1,42 +1,52 @@
+@import "../../variables";
+
 .SingleDateEvent {
+	align-items: center;
+	background-color: rgb(0, 0, 0, 0);
+	border-radius: 0.35rem;
+	border: none;
+	display: flex;
+	flex-wrap: nowrap;
 	margin: 0.15rem;
+	position: relative;
+	width: calc(100% - 0.3rem);
+	z-index: $event-button-z-index;
 
-	.content {
-		align-items: center;
-		border-radius: 0.35rem;
+	&.light {
+		color: #111;
+	}
+
+	&.dark {
+		color: #fff;
+	}
+
+	.bullet {
+		background-color: #7f0;
+		border-radius: 100%;
+		display: inline-block;
+		height: 0.5rem;
+		min-height: 0.5rem;
+		min-width: 0.5rem;
+		width: 0.5rem;
+		margin-right: 0.3rem;
+	}
+
+	.eventDetails {
 		display: flex;
-		flex-wrap: nowrap;
-		width: 100%;
+		overflow: hidden;
 
-		.bullet {
-			background-color: #7f0;
-			border-radius: 100%;
-			display: inline-block;
-			height: 0.5rem;
-			min-height: 0.5rem;
-			min-width: 0.5rem;
-			width: 0.5rem;
+		.eventTime {
 			margin-right: 0.3rem;
 		}
+	}
 
-		.eventDetails {
-			display: flex;
-			overflow: hidden;
-
-			.eventTime {
-				margin-right: 0.3rem;
-			}
+	&:hover {
+		&.light {
+			background-color: #eee;
 		}
 
-		&:hover {
-			&.light {
-				background-color: #eee;
-			}
-
-			&.dark {
-				background-color: #111;
-				color: #fff;
-			}
+		&.dark {
+			background-color: #111;
 		}
 	}
 }
