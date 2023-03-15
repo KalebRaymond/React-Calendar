@@ -15,7 +15,6 @@ const SingleDateEvent = (props) => {
 	//Set focus on event button when modal is closed
 	useEffect(() => {
 		if (!showModal) {
-			console.log("### buttonRef", { buttonRef });
 			buttonRef.current?.focus();
 		}
 	}, [showModal]);
@@ -39,7 +38,9 @@ const SingleDateEvent = (props) => {
 	return (
 		<>
 			<button
-				className={`SingleDateEvent ${theme === "light" ? "light" : "dark"}`}
+				className={`SingleDateEvent ${
+					theme === "light" ? "light" : "dark"
+				} eventButton`}
 				data-testid="SingleDateEvent"
 				onClick={(e) => {
 					e.stopPropagation();

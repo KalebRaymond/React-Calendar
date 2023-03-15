@@ -25,7 +25,6 @@ const EditEventModal = (props) => {
 
 	//Focus on close button when modal is opened
 	useEffect(() => {
-		console.log("### closeButtonRef", { closeButtonRef });
 		closeButtonRef.current?.focus();
 	}, [closeButtonRef]);
 

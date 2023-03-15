@@ -11,18 +11,16 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<ThemeProvider>
-					<header
-						className="toolbarHeader"
-						aria-label={t("toolbar.labels.toolbar")}
-					>
-						<CalendarToolbar></CalendarToolbar>
-					</header>
-					<div className="content">
-						<SidePanel></SidePanel>
-						<CalendarContainer></CalendarContainer>
-					</div>
-				</ThemeProvider>
+				<header
+					className="toolbarHeader"
+					aria-label={t("toolbar.labels.toolbar")}
+				>
+					<CalendarToolbar></CalendarToolbar>
+				</header>
+				<div className="content">
+					<SidePanel></SidePanel>
+					<CalendarContainer></CalendarContainer>
+				</div>
 			</div>
 		);
 	}

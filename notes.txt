@@ -11,7 +11,7 @@ npx generate-react-cli component MyComponent
 [_] Testing
 	> MSW
 [X] Theme Provider
-[_] Accessibility
+[X] Accessibility
 
 
 

@@ -8,12 +8,15 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import store from "./app/store.js";
+import { ThemeProvider } from "context/ThemeContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
 		<Provider store={store}>
-			<App />
+			<ThemeProvider>
+				<App />
+			</ThemeProvider>
 		</Provider>
 	</React.StrictMode>
 );
