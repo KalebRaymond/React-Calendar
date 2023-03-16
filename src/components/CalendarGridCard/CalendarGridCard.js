@@ -44,12 +44,16 @@ const CalendarGridCard = (props) => {
 				role="gridcell"
 			>
 				<div className="dateContainer">
-					<span className={`date ${isTodaysDate ? "todaysDate" : ""}`}>
+					<span
+						id="card-date"
+						className={`date ${isTodaysDate ? "todaysDate" : ""}`}
+					>
 						{date.format("D")}
 					</span>
 				</div>
 				<button
 					className="cardButton"
+					id="card-button"
 					onClick={handleOpenModal}
 					///Quite a large announcement here
 					aria-label={`${cardAriaLabel} ${

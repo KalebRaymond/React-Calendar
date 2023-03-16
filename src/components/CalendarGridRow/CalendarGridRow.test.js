@@ -3,6 +3,8 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import CalendarGridRow from "./CalendarGridRow";
 import CalendarGridCard from "components/CalendarGridCard/CalendarGridCard";
+import { ThemeProvider } from "context/ThemeContext";
+import moment from "moment";
 
 describe("<CalendarGridRow />", () => {
 	test("it should mount", () => {
@@ -13,19 +15,30 @@ describe("<CalendarGridRow />", () => {
 		expect(calendarGridRow).toBeInTheDocument();
 	});
 	it("should render children", async () => {
+		const mockEvents = {
+			singleDateEvents: [],
+			multiDateEvents: [],
+		};
+
+		const mockDate = moment();
+
 		const children = (
 			<>
-				<CalendarGridCard date={1}></CalendarGridCard>
-				<CalendarGridCard date={2}></CalendarGridCard>
-				<CalendarGridCard date={3}></CalendarGridCard>
-				<CalendarGridCard date={4}></CalendarGridCard>
-				<CalendarGridCard date={5}></CalendarGridCard>
-				<CalendarGridCard date={6}></CalendarGridCard>
-				<CalendarGridCard date={7}></CalendarGridCard>
+				<CalendarGridCard events={mockEvents} date={mockDate} />
+				<CalendarGridCard events={mockEvents} date={mockDate} />
+				<CalendarGridCard events={mockEvents} date={mockDate} />
+				<CalendarGridCard events={mockEvents} date={mockDate} />
+				<CalendarGridCard events={mockEvents} date={mockDate} />
+				<CalendarGridCard events={mockEvents} date={mockDate} />
+				<CalendarGridCard events={mockEvents} date={mockDate} />
 			</>
 		);
 
-		render(<CalendarGridRow children={children} />);
+		render(
+			<ThemeProvider>
+				<CalendarGridRow children={children} />
+			</ThemeProvider>
+		);
 
 		expect(await screen.findAllByTestId("CalendarGridCard")).toHaveLength(7);
 	});

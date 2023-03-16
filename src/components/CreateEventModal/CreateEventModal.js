@@ -63,14 +63,14 @@ const CreateEventModal = (props) => {
 	];
 
 	return (
-		<div
-			className={`CreateEventModal modalBackdrop ${
-				theme === "light" ? "light" : "dark"
-			}`}
-			data-testid="CreateEventModal"
-			onClick={props.onClose}
-		>
-			<FocusTrap>
+		<FocusTrap>
+			<div
+				className={`CreateEventModal modalBackdrop ${
+					theme === "light" ? "light" : "dark"
+				}`}
+				data-testid="CreateEventModal"
+				onClick={props.onClose}
+			>
 				<div
 					className={`modalContainer ${theme === "light" ? "light" : "dark"}`}
 					onClick={(e) => e.stopPropagation()}
@@ -97,8 +97,8 @@ const CreateEventModal = (props) => {
 						></EventForm>
 					</div>
 				</div>
-			</FocusTrap>
-		</div>
+			</div>
+		</FocusTrap>
 	);
 };
 

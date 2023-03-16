@@ -42,6 +42,7 @@ const EventForm = (props) => {
 						<input
 							type="text"
 							name="eventName"
+							id="eventName"
 							value={props.formState.eventName}
 							onChange={props.handleInputChange}
 						/>
@@ -55,6 +56,7 @@ const EventForm = (props) => {
 						<input
 							type="date"
 							name="startDate"
+							id="startDate"
 							value={props.formState.startDate}
 							onChange={props.handleInputChange}
 						/>
@@ -69,6 +71,7 @@ const EventForm = (props) => {
 						<input
 							type="date"
 							name="endDate"
+							id="endDate"
 							value={props.formState.endDate}
 							onChange={props.handleInputChange}
 						/>
@@ -82,6 +85,7 @@ const EventForm = (props) => {
 						<input
 							type="time"
 							name="startTime"
+							id="startTime"
 							value={props.formState.startTime}
 							onChange={props.handleInputChange}
 						/>
@@ -96,6 +100,7 @@ const EventForm = (props) => {
 						<input
 							type="time"
 							name="endTime"
+							id="endTime"
 							value={props.formState.endTime}
 							onChange={props.handleInputChange}
 						/>
@@ -108,6 +113,7 @@ const EventForm = (props) => {
 						</label>
 						<textarea
 							name="description"
+							id="description"
 							value={props.formState.description}
 							onChange={props.handleInputChange}
 						/>

@@ -87,14 +87,14 @@ const EditEventModal = (props) => {
 	];
 
 	return (
-		<div
-			className={`EditEventModal modalBackdrop ${
-				theme === "light" ? "light" : "dark"
-			}`}
-			data-testid="EditEventModal"
-			onClick={props.onClose}
-		>
-			<FocusTrap>
+		<FocusTrap>
+			<div
+				className={`EditEventModal modalBackdrop ${
+					theme === "light" ? "light" : "dark"
+				}`}
+				data-testid="EditEventModal"
+				onClick={props.onClose}
+			>
 				<div
 					className={`modalContainer ${theme === "light" ? "light" : "dark"}`}
 					onClick={(e) => e.stopPropagation()}
@@ -122,8 +122,8 @@ const EditEventModal = (props) => {
 						></EventForm>
 					</div>
 				</div>
-			</FocusTrap>
-		</div>
+			</div>
+		</FocusTrap>
 	);
 };
 
