@@ -54,7 +54,9 @@ describe("<CalendarGridCard />", () => {
 			</Provider>
 		);
 
-		const modalButton = screen.getByRole("button", { id: "card-button" });
+		const modalButton = screen.getByRole("button", {
+			"data-testid": "card-button",
+		});
 
 		fireEvent.click(modalButton);
 
@@ -155,7 +157,7 @@ describe("<CalendarGridCard />", () => {
 			</Provider>
 		);
 
-		const dateLabel = container.querySelector("span[id='card-date']");
+		const dateLabel = container.querySelector("span[data-testid='card-date']");
 		expect(dateLabel).toHaveClass("todaysDate");
 	});
 	it("should not render differently if props.isTodaysDate is false", () => {
@@ -167,7 +169,7 @@ describe("<CalendarGridCard />", () => {
 			</Provider>
 		);
 
-		const dateLabel = container.querySelector("span[id='card-date']");
+		const dateLabel = container.querySelector("span[data-testid='card-date']");
 		expect(dateLabel).not.toHaveClass("todaysDate");
 	});
 });

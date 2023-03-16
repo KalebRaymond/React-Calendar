@@ -1,0 +1,1259 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CalendarContainer /> should render events correctly 1`] = `
+<div
+  class="CalendarContainer light"
+  data-testid="CalendarContainer"
+>
+  <div
+    aria-label="Calendar Grid"
+    class="CalendarGrid"
+    data-testid="CalendarGrid"
+    role="grid"
+  >
+    <div
+      aria-label="Week Day Header"
+      class="WeekDaysHeader"
+      data-testid="WeekDaysHeader"
+      role="row"
+    >
+      <div
+        class="weekDay"
+        role="columnheader"
+        tabindex="-1"
+      >
+        <span>
+          SUN
+        </span>
+      </div>
+      <div
+        class="weekDay"
+        role="columnheader"
+        tabindex="-1"
+      >
+        <span>
+          MON
+        </span>
+      </div>
+      <div
+        class="weekDay"
+        role="columnheader"
+        tabindex="-1"
+      >
+        <span>
+          TUE
+        </span>
+      </div>
+      <div
+        class="weekDay"
+        role="columnheader"
+        tabindex="-1"
+      >
+        <span>
+          WED
+        </span>
+      </div>
+      <div
+        class="weekDay"
+        role="columnheader"
+        tabindex="-1"
+      >
+        <span>
+          THU
+        </span>
+      </div>
+      <div
+        class="weekDay"
+        role="columnheader"
+        tabindex="-1"
+      >
+        <span>
+          FRI
+        </span>
+      </div>
+      <div
+        class="weekDay"
+        role="columnheader"
+        tabindex="-1"
+      >
+        <span>
+          SAT
+        </span>
+      </div>
+    </div>
+    <div
+      class="CalendarGridRow"
+      data-testid="CalendarGridRow"
+      role="row"
+    >
+      <div
+        class="CalendarGridCard grayed light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            26
+          </span>
+        </div>
+        <button
+          aria-label="Sunday, February 26th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard grayed light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            27
+          </span>
+        </div>
+        <button
+          aria-label="Monday, February 27th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard grayed light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            28
+          </span>
+        </div>
+        <button
+          aria-label="Tuesday, February 28th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            1
+          </span>
+        </div>
+        <button
+          aria-label="Wednesday, March 1st, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            2
+          </span>
+        </div>
+        <button
+          aria-label="Thursday, March 2nd, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            3
+          </span>
+        </div>
+        <button
+          aria-label="Friday, March 3rd, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            4
+          </span>
+        </div>
+        <button
+          aria-label="Saturday, March 4th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+    </div>
+    <div
+      class="CalendarGridRow"
+      data-testid="CalendarGridRow"
+      role="row"
+    >
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            5
+          </span>
+        </div>
+        <button
+          aria-label="Sunday, March 5th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            6
+          </span>
+        </div>
+        <button
+          aria-label="Monday, March 6th, 2023  1 event on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label=""
+          class="eventListContainer"
+          role="region"
+        >
+          <div
+            class="EventListContainer"
+            data-testid="EventListContainer"
+          >
+            <ul
+              aria-label="Event List"
+              class="eventList"
+            >
+              <li>
+                <button
+                  aria-label="Test, event from 2023-03-06 to 2023-03-08"
+                  class="eventButton multiDateEventButton"
+                  data-testid="MultipleDateEvent"
+                  style="width: calc((100% * 3  - 0.15rem);"
+                >
+                  <span
+                    class="eventName"
+                  >
+                    Test
+                  </span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            7
+          </span>
+        </div>
+        <button
+          aria-label="Tuesday, March 7th, 2023  2 events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label=""
+          class="eventListContainer"
+          role="region"
+        >
+          <div
+            class="EventListContainer"
+            data-testid="EventListContainer"
+          >
+            <ul
+              aria-label="Event List"
+              class="eventList"
+            >
+              <li>
+                <button
+                  aria-label="Test, event from 2023-03-06 to 2023-03-08"
+                  class="eventButton placeholderEventButton"
+                  data-testid="MultipleDateEvent"
+                />
+              </li>
+              <li>
+                <button
+                  aria-label="Huh, event from 2023-03-07 to 2023-03-09"
+                  class="eventButton multiDateEventButton"
+                  data-testid="MultipleDateEvent"
+                  style="width: calc((100% * 3  - 0.15rem);"
+                >
+                  <span
+                    class="eventName"
+                  >
+                    Huh
+                  </span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            8
+          </span>
+        </div>
+        <button
+          aria-label="Wednesday, March 8th, 2023  2 events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label=""
+          class="eventListContainer"
+          role="region"
+        >
+          <div
+            class="EventListContainer"
+            data-testid="EventListContainer"
+          >
+            <ul
+              aria-label="Event List"
+              class="eventList"
+            >
+              <li>
+                <button
+                  aria-label="Test, event from 2023-03-06 to 2023-03-08"
+                  class="eventButton placeholderEventButton"
+                  data-testid="MultipleDateEvent"
+                />
+              </li>
+              <li>
+                <button
+                  aria-label="Huh, event from 2023-03-07 to 2023-03-09"
+                  class="eventButton placeholderEventButton"
+                  data-testid="MultipleDateEvent"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            9
+          </span>
+        </div>
+        <button
+          aria-label="Thursday, March 9th, 2023  1 event on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label=""
+          class="eventListContainer"
+          role="region"
+        >
+          <div
+            class="EventListContainer"
+            data-testid="EventListContainer"
+          >
+            <ul
+              aria-label="Event List"
+              class="eventList"
+            >
+              <li>
+                <button
+                  aria-label="Huh, event from 2023-03-07 to 2023-03-09"
+                  class="eventButton placeholderEventButton"
+                  data-testid="MultipleDateEvent"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            10
+          </span>
+        </div>
+        <button
+          aria-label="Friday, March 10th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            11
+          </span>
+        </div>
+        <button
+          aria-label="Saturday, March 11th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+    </div>
+    <div
+      class="CalendarGridRow"
+      data-testid="CalendarGridRow"
+      role="row"
+    >
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            12
+          </span>
+        </div>
+        <button
+          aria-label="Sunday, March 12th, 2023  1 event on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label=""
+          class="eventListContainer"
+          role="region"
+        >
+          <div
+            class="EventListContainer"
+            data-testid="EventListContainer"
+          >
+            <ul
+              aria-label="Event List"
+              class="eventList"
+            >
+              <li>
+                <button
+                  aria-label="Test, event starting at 10:00am on 2023-03-12"
+                  class="SingleDateEvent light eventButton"
+                  data-testid="SingleDateEvent"
+                >
+                  <div
+                    class="bullet"
+                  />
+                  <span
+                    class="eventDetails"
+                  >
+                    <span
+                      class="eventTime"
+                    >
+                      10:00am
+                    </span>
+                    <strong
+                      class="eventName"
+                    >
+                      Test
+                    </strong>
+                  </span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            13
+          </span>
+        </div>
+        <button
+          aria-label="Monday, March 13th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            14
+          </span>
+        </div>
+        <button
+          aria-label="Tuesday, March 14th, 2023  2 events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label=""
+          class="eventListContainer"
+          role="region"
+        >
+          <div
+            class="EventListContainer"
+            data-testid="EventListContainer"
+          >
+            <ul
+              aria-label="Event List"
+              class="eventList"
+            >
+              <li>
+                <button
+                  aria-label="Test, event starting at 10:00am on 2023-03-14"
+                  class="SingleDateEvent light eventButton"
+                  data-testid="SingleDateEvent"
+                >
+                  <div
+                    class="bullet"
+                  />
+                  <span
+                    class="eventDetails"
+                  >
+                    <span
+                      class="eventTime"
+                    >
+                      10:00am
+                    </span>
+                    <strong
+                      class="eventName"
+                    >
+                      Test
+                    </strong>
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button
+                  aria-label="Test, event starting at 12:00pm on 2023-03-14"
+                  class="SingleDateEvent light eventButton"
+                  data-testid="SingleDateEvent"
+                >
+                  <div
+                    class="bullet"
+                  />
+                  <span
+                    class="eventDetails"
+                  >
+                    <span
+                      class="eventTime"
+                    >
+                      12:00pm
+                    </span>
+                    <strong
+                      class="eventName"
+                    >
+                      Test
+                    </strong>
+                  </span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            15
+          </span>
+        </div>
+        <button
+          aria-label="Wednesday, March 15th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date todaysDate"
+            data-testid="card-date"
+          >
+            16
+          </span>
+        </div>
+        <button
+          aria-label="Thursday, March 16th, 2023 Today's date 1 event on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label=""
+          class="eventListContainer"
+          role="region"
+        >
+          <div
+            class="EventListContainer"
+            data-testid="EventListContainer"
+          >
+            <ul
+              aria-label="Event List"
+              class="eventList"
+            >
+              <li>
+                <button
+                  aria-label="Midnight, event starting at 12:00pm on 2023-03-16"
+                  class="SingleDateEvent light eventButton"
+                  data-testid="SingleDateEvent"
+                >
+                  <div
+                    class="bullet"
+                  />
+                  <span
+                    class="eventDetails"
+                  >
+                    <span
+                      class="eventTime"
+                    >
+                      12:00pm
+                    </span>
+                    <strong
+                      class="eventName"
+                    >
+                      Midnight
+                    </strong>
+                  </span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            17
+          </span>
+        </div>
+        <button
+          aria-label="Friday, March 17th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            18
+          </span>
+        </div>
+        <button
+          aria-label="Saturday, March 18th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+    </div>
+    <div
+      class="CalendarGridRow"
+      data-testid="CalendarGridRow"
+      role="row"
+    >
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            19
+          </span>
+        </div>
+        <button
+          aria-label="Sunday, March 19th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            20
+          </span>
+        </div>
+        <button
+          aria-label="Monday, March 20th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            21
+          </span>
+        </div>
+        <button
+          aria-label="Tuesday, March 21st, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            22
+          </span>
+        </div>
+        <button
+          aria-label="Wednesday, March 22nd, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            23
+          </span>
+        </div>
+        <button
+          aria-label="Thursday, March 23rd, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            24
+          </span>
+        </div>
+        <button
+          aria-label="Friday, March 24th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            25
+          </span>
+        </div>
+        <button
+          aria-label="Saturday, March 25th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+    </div>
+    <div
+      class="CalendarGridRow"
+      data-testid="CalendarGridRow"
+      role="row"
+    >
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            26
+          </span>
+        </div>
+        <button
+          aria-label="Sunday, March 26th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            27
+          </span>
+        </div>
+        <button
+          aria-label="Monday, March 27th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            28
+          </span>
+        </div>
+        <button
+          aria-label="Tuesday, March 28th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            29
+          </span>
+        </div>
+        <button
+          aria-label="Wednesday, March 29th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            30
+          </span>
+        </div>
+        <button
+          aria-label="Thursday, March 30th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard  light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            31
+          </span>
+        </div>
+        <button
+          aria-label="Friday, March 31st, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+      <div
+        class="CalendarGridCard grayed light"
+        data-testid="CalendarGridCard"
+        role="gridcell"
+      >
+        <div
+          class="dateContainer"
+        >
+          <span
+            class="date "
+            data-testid="card-date"
+          >
+            1
+          </span>
+        </div>
+        <button
+          aria-label="Saturday, April 1st, 2023  No events on this date  Press ENTER to add a new event on this date"
+          class="cardButton"
+          data-testid="cardButton"
+        />
+        <div
+          aria-label="No events on this date"
+          class="eventListContainer"
+          role="region"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

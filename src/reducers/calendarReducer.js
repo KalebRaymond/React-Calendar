@@ -118,7 +118,7 @@ export const calendarReducer = createSlice({
 		},
 		loadEventsSuccess: (state, action) => {
 			state.loadingEvents = "idle";
-			console.log("### Load events success", { events: action.payload });
+			///console.log("### Load events success", { events: action.payload });
 			state.events = action.payload;
 		},
 		loadEventsFailure: (state, action) => {
@@ -126,7 +126,7 @@ export const calendarReducer = createSlice({
 			console.error("Events failed to fetch.", action.payload);
 		},
 		createEventSuccess: (state, action) => {
-			console.log("### Event created successfully", action.payload);
+			///console.log("### Event created successfully", action.payload);
 			state.events = action.payload;
 		},
 		createEventFailure: (state, action) => {
@@ -139,14 +139,14 @@ export const calendarReducer = createSlice({
 			console.error("### Events failed to delete", action.payload);
 		},
 		deleteEventSuccess: (state, action) => {
-			console.log("### Event deleted successfully", action.payload);
+			///console.log("### Event deleted successfully", action.payload);
 			state.events = action.payload;
 		},
 		updateEventFailure: (state, action) => {
 			console.error("### Events failed to update", action.payload);
 		},
 		updateEventSuccess: (state, action) => {
-			console.log("### Event updated successfully", action.payload);
+			///console.log("### Event updated successfully", action.payload);
 			state.events = action.payload;
 		},
 	},
