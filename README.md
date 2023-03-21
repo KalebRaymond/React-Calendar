@@ -1,3 +1,10 @@
+# Screenshots
+<img width="1437" alt="Screenshot 2023-03-21 at 6 42 32 PM" src="https://user-images.githubusercontent.com/43358126/226767980-ef197e9c-d21e-4124-bb72-0a7f9f73d512.png">
+
+<img width="1439" alt="Screenshot 2023-03-21 at 6 46 06 PM" src="https://user-images.githubusercontent.com/43358126/226768004-49c6ee52-06e9-403b-b3b5-f15e7159a2a2.png">
+
+<img width="938" alt="Screenshot 2023-03-21 at 6 43 20 PM" src="https://user-images.githubusercontent.com/43358126/226768012-cee13772-84ba-4c51-a30a-4e0e133b5bb8.png">
+
 # User stories
 
 ## 1. View Current Month
