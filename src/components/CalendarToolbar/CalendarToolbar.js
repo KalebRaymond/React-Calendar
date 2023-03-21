@@ -60,6 +60,7 @@ const CalendarToolbar = () => {
 					>
 						<IconButton
 							name="prevMonth"
+							buttonId="leftNavButton"
 							ariaLabel={t("toolbar.labels.leftNavButton")}
 							onClick={handleLeftNavClick}
 						>
@@ -67,6 +68,7 @@ const CalendarToolbar = () => {
 						</IconButton>
 						<IconButton
 							name="nextMonth"
+							buttonId="rightNavButton"
 							ariaLabel={t("toolbar.labels.rightNavButton")}
 							onClick={handleRightNavClick}
 						>

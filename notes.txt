@@ -9,7 +9,10 @@ npx generate-react-cli component MyComponent
 	> [X] CSS
 	> [X] Responsiveness
 [_] Testing
-	> MSW
+	> Don't mock selector functions or React-Redux hooks
+	> Clean up tests with beforeEach, beforeAll
+	> Use MSW to mock network requests
+	> [_] MSW
 [X] Theme Provider
 [X] Accessibility
 

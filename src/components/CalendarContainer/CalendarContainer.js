@@ -204,9 +204,9 @@ const CalendarContainer = () => {
 	};
 
 	//Render the calendar content when the state changes
-	const calendarContent = useSelector((state) =>
-		renderCalendarContent(state.calendar.visibleDates)
-	);
+	const calendarContent = useSelector((state) => {
+		return renderCalendarContent(state.calendar.visibleDates);
+	});
 
 	return (
 		<div

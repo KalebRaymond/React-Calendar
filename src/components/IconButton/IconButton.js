@@ -6,6 +6,7 @@ const IconButton = (props) => (
 	<div className="IconButton" data-testid="IconButton">
 		<button
 			name={props.name}
+			id={props.buttonId}
 			aria-label={props.ariaLabel}
 			className="btn btn-secondary"
 			onClick={props.onClick}

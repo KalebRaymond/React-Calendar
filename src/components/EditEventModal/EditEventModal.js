@@ -68,18 +68,21 @@ const EditEventModal = (props) => {
 	const buttonContent = [
 		{
 			type: "submit",
+			id: "saveEvent",
 			ariaLabel: t("eventModal.buttons.save.hat"),
 			text: t("eventModal.buttons.save.text"),
 			onClick: handleFormSubmit,
 		},
 		{
 			type: "button",
+			id: "resetForm",
 			ariaLabel: t("eventModal.buttons.reset.hat"),
 			text: t("eventModal.buttons.reset.text"),
 			onClick: handleResetForm,
 		},
 		{
 			type: "button",
+			id: "deleteEvent",
 			ariaLabel: t("eventModal.buttons.delete.hat"),
 			text: t("eventModal.buttons.delete.text"),
 			onClick: handleDeleteEvent,

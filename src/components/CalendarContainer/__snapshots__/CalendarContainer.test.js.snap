@@ -772,14 +772,14 @@ exports[`<CalendarContainer /> should render events correctly 1`] = `
           class="dateContainer"
         >
           <span
-            class="date todaysDate"
+            class="date "
             data-testid="card-date"
           >
             16
           </span>
         </div>
         <button
-          aria-label="Thursday, March 16th, 2023 Today's date 1 event on this date  Press ENTER to add a new event on this date"
+          aria-label="Thursday, March 16th, 2023  1 event on this date  Press ENTER to add a new event on this date"
           class="cardButton"
           data-testid="cardButton"
         />
@@ -918,14 +918,14 @@ exports[`<CalendarContainer /> should render events correctly 1`] = `
           class="dateContainer"
         >
           <span
-            class="date "
+            class="date todaysDate"
             data-testid="card-date"
           >
             20
           </span>
         </div>
         <button
-          aria-label="Monday, March 20th, 2023  No events on this date  Press ENTER to add a new event on this date"
+          aria-label="Monday, March 20th, 2023 Today's date No events on this date  Press ENTER to add a new event on this date"
           class="cardButton"
           data-testid="cardButton"
         />

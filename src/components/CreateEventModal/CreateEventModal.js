@@ -50,12 +50,14 @@ const CreateEventModal = (props) => {
 	const buttonContent = [
 		{
 			type: "submit",
+			id: "submitEvent",
 			ariaLabel: t("eventModal.buttons.submit.hat"),
 			text: t("eventModal.buttons.submit.text"),
 			onClick: handleFormSubmit,
 		},
 		{
 			type: "button",
+			id: "resetEvent",
 			ariaLabel: t("eventModal.buttons.reset.hat"),
 			text: t("eventModal.buttons.reset.text"),
 			onClick: handleResetForm,

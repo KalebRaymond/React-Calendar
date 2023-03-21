@@ -5,9 +5,9 @@ import axios from "axios";
 /* 	Given a month and year, returns an array of objects representing
  *	the dates that are visible on the calendar for that specific month.
  *	This includes any days from the previous or next month that "spill over".
- *	Each date object contains the month index, year, date, and day of week index
+ *	Each date object contains the month index, year, date, and day of week index.
  */
-const getVisibleDates = (monthIndex, year) => {
+export const getVisibleDates = (monthIndex, year) => {
 	const focusedDateObj = moment();
 	focusedDateObj.set("month", monthIndex);
 	focusedDateObj.set("year", year);
@@ -89,14 +89,12 @@ const getVisibleDates = (monthIndex, year) => {
 
 //Initialize focused date to today's date
 const focusedDate = moment();
-//Initialize visible dates to the current month's dates
-const visibleDates = getVisibleDates(focusedDate.month(), focusedDate.year());
 
 export const calendarReducer = createSlice({
 	name: "calendar",
 	initialState: {
 		focusedDate: focusedDate.format("YYYY-MM-DD"),
-		visibleDates: visibleDates,
+		visibleDates: getVisibleDates(focusedDate.month(), focusedDate.year()),
 		loadingEvents: "idle",
 		events: {},
 	},
@@ -113,13 +111,19 @@ export const calendarReducer = createSlice({
 			state.focusedDate = momentObj.format("YYYY-MM-DD");
 			state.visibleDates = getVisibleDates(momentObj.month(), momentObj.year());
 		},
+		setFocusedDate: (state, action) => {
+			state.focusedDate = action.payload;
+			const momentObj = moment(state.focusedDate);
+			state.visibleDates = getVisibleDates(momentObj.month(), momentObj.year());
+		},
 		loadEvents: (state) => {
 			state.loadingEvents = "loading";
 		},
 		loadEventsSuccess: (state, action) => {
 			state.loadingEvents = "idle";
-			///console.log("### Load events success", { events: action.payload });
+
 			state.events = action.payload;
+			///console.log("### Load events success", state.events);
 		},
 		loadEventsFailure: (state, action) => {
 			state.loadingEvents = "idle";
@@ -131,9 +135,6 @@ export const calendarReducer = createSlice({
 		},
 		createEventFailure: (state, action) => {
 			console.error("### Events failed to create", action.payload);
-		},
-		setVisibleDates: (state, action) => {
-			state.visibleDates = action.payload;
 		},
 		deleteEventFailure: (state, action) => {
 			console.error("### Events failed to delete", action.payload);
@@ -156,12 +157,12 @@ export const calendarReducer = createSlice({
 export const {
 	incrementMonth,
 	decrementMonth,
+	setFocusedDate,
 	loadEvents,
 	loadEventsFailure,
 	loadEventsSuccess,
 	createEventFailure,
 	createEventSuccess,
-	setVisibleDates,
 	deleteEventFailure,
 	deleteEventSuccess,
 	updateEventFailure,

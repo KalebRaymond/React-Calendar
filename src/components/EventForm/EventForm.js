@@ -11,13 +11,14 @@ const EventForm = (props) => {
 			? props.buttonContent.map((button, i) => {
 					return (
 						<button
+							aria-label={button.ariaLabel}
 							className={`btn ${
 								button.type === "submit" ? "btn-primary" : "btn-secondary"
 							}`}
-							type={button.type}
-							aria-label={button.ariaLabel}
-							onClick={button.onClick}
+							id={button.id}
 							key={`${button.text}-${i}`}
+							onClick={button.onClick}
+							type={button.type}
 						>
 							{button.text}
 						</button>
@@ -106,7 +107,7 @@ const EventForm = (props) => {
 						/>
 					</div>
 				</div>
-				<div className="formSection" id="description">
+				<div className="formSection" id="description-container">
 					<div className="inputContainer" aria-labelledby="description-label">
 						<label htmlFor="description" id="description-label">
 							{t("eventForm.labels.description")}
