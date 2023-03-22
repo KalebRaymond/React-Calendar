@@ -1,3 +1,6 @@
+# React Calendar
+A Google Calendars style calendar made with React, Redux, and JSON-Server. Lets you add, modify, and delete events on the calendar.
+
 # Screenshots
 <img width="1437" alt="Screenshot 2023-03-21 at 6 42 32 PM" src="https://user-images.githubusercontent.com/43358126/226767980-ef197e9c-d21e-4124-bb72-0a7f9f73d512.png">
 
