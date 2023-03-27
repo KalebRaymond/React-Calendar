@@ -1,0 +1,345 @@
+{
+  "events": {
+    "2023-03-06": [
+      {
+        "eventName": "Event 1",
+        "startDate": "2023-03-01",
+        "endDate": "2023-03-07",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 7,
+        "id": "zSeIVKNgyYbf/6tz"
+      }
+    ],
+    "2023-03-07": [
+      {
+        "eventName": "Event 2",
+        "startDate": "2023-03-07",
+        "endDate": "2023-03-08",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 2,
+        "id": "cAVON3YTq5fADyON"
+      },
+      {
+        "eventName": "Event 1",
+        "startDate": "2023-03-01",
+        "endDate": "2023-03-07",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 7,
+        "id": "zSeIVKNgyYbf/6tz"
+      }
+    ],
+    "2023-03-08": [
+      {
+        "eventName": "Event 2",
+        "startDate": "2023-03-07",
+        "endDate": "2023-03-08",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 2,
+        "id": "cAVON3YTq5fADyON"
+      },
+      {
+        "eventName": "Event 3",
+        "startDate": "2023-03-08",
+        "endDate": "2023-03-09",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 2,
+        "id": "epil2UnlY8JxYzxv"
+      }
+    ],
+    "2023-03-12": [],
+    "2023-03-13": [],
+    "2023-03-14": [],
+    "2023-03-15": [],
+    "2023-03-16": [
+      {
+        "eventName": "Vacation",
+        "startDate": "2023-03-16",
+        "endDate": "2023-03-20",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 5,
+        "id": "78mbyzHmNKV6SOG6"
+      },
+      {
+        "eventName": "Breakfast",
+        "startDate": "2023-03-16",
+        "endDate": "2023-03-16",
+        "startTime": "07:00",
+        "endTime": "",
+        "description": "",
+        "numDays": 1,
+        "id": "SfKfac7CbAnU7/B5"
+      }
+    ],
+    "2023-03-17": [
+      {
+        "eventName": "Vacation",
+        "startDate": "2023-03-16",
+        "endDate": "2023-03-20",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 5,
+        "id": "78mbyzHmNKV6SOG6"
+      }
+    ],
+    "2023-03-18": [
+      {
+        "eventName": "Vacation",
+        "startDate": "2023-03-16",
+        "endDate": "2023-03-20",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 5,
+        "id": "78mbyzHmNKV6SOG6"
+      }
+    ],
+    "2023-03-19": [
+      {
+        "eventName": "Vacation",
+        "startDate": "2023-03-16",
+        "endDate": "2023-03-20",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 5,
+        "id": "78mbyzHmNKV6SOG6"
+      }
+    ],
+    "2023-03-20": [
+      {
+        "eventName": "Vacation",
+        "startDate": "2023-03-16",
+        "endDate": "2023-03-20",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 5,
+        "id": "78mbyzHmNKV6SOG6"
+      }
+    ],
+    "2023-03-21": [],
+    "2023-03-22": [],
+    "2023-03-23": [
+      {
+        "eventName": "Dentist",
+        "startDate": "2023-03-23",
+        "endDate": "2023-03-23",
+        "startTime": "13:00",
+        "endTime": "",
+        "description": "",
+        "numDays": 1,
+        "id": "4+8e7Xa7/shG204p"
+      },
+      {
+        "eventName": "Dinner",
+        "startDate": "2023-03-23",
+        "endDate": "2023-03-23",
+        "startTime": "17:00",
+        "endTime": "",
+        "description": "",
+        "numDays": 1,
+        "id": "JuN6YdWYftT+IyzZ"
+      }
+    ],
+    "2023-03-09": [
+      {
+        "eventName": "Event 3",
+        "startDate": "2023-03-08",
+        "endDate": "2023-03-09",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 2,
+        "id": "epil2UnlY8JxYzxv"
+      },
+      {
+        "eventName": "Event 4",
+        "startDate": "2023-03-09",
+        "endDate": "2023-03-10",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 2,
+        "id": "bwNTX4lDFA/9900v"
+      }
+    ],
+    "2023-04-03": [
+      {
+        "eventName": "Multiple Months",
+        "startDate": "2023-03-30",
+        "endDate": "2023-04-05",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 7,
+        "id": "/06MQ3F6OsvLmyU5"
+      }
+    ],
+    "2023-05-04": [],
+    "2023-05-09": [],
+    "2023-05-10": [],
+    "2023-05-11": [],
+    "2023-03-10": [
+      {
+        "eventName": "Event 4",
+        "startDate": "2023-03-09",
+        "endDate": "2023-03-10",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 2,
+        "id": "bwNTX4lDFA/9900v"
+      }
+    ],
+    "2023-03-24": [],
+    "2023-03-25": [],
+    "2023-03-26": [],
+    "2023-03-27": [],
+    "2023-03-28": [],
+    "2023-03-30": [
+      {
+        "eventName": "Multiple Months",
+        "startDate": "2023-03-30",
+        "endDate": "2023-04-05",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 7,
+        "id": "/06MQ3F6OsvLmyU5"
+      }
+    ],
+    "2023-03-31": [
+      {
+        "eventName": "Multiple Months",
+        "startDate": "2023-03-30",
+        "endDate": "2023-04-05",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 7,
+        "id": "/06MQ3F6OsvLmyU5"
+      }
+    ],
+    "2023-04-01": [
+      {
+        "eventName": "Multiple Months",
+        "startDate": "2023-03-30",
+        "endDate": "2023-04-05",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 7,
+        "id": "/06MQ3F6OsvLmyU5"
+      }
+    ],
+    "2023-04-02": [
+      {
+        "eventName": "Multiple Months",
+        "startDate": "2023-03-30",
+        "endDate": "2023-04-05",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 7,
+        "id": "/06MQ3F6OsvLmyU5"
+      }
+    ],
+    "2023-04-04": [
+      {
+        "eventName": "Multiple Months",
+        "startDate": "2023-03-30",
+        "endDate": "2023-04-05",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 7,
+        "id": "/06MQ3F6OsvLmyU5"
+      }
+    ],
+    "2023-04-05": [
+      {
+        "eventName": "Multiple Months",
+        "startDate": "2023-03-30",
+        "endDate": "2023-04-05",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 7,
+        "id": "/06MQ3F6OsvLmyU5"
+      }
+    ],
+    "2023-03-01": [
+      {
+        "eventName": "Event 1",
+        "startDate": "2023-03-01",
+        "endDate": "2023-03-07",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 7,
+        "id": "zSeIVKNgyYbf/6tz"
+      }
+    ],
+    "2023-03-02": [
+      {
+        "eventName": "Event 1",
+        "startDate": "2023-03-01",
+        "endDate": "2023-03-07",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 7,
+        "id": "zSeIVKNgyYbf/6tz"
+      }
+    ],
+    "2023-03-03": [
+      {
+        "eventName": "Event 1",
+        "startDate": "2023-03-01",
+        "endDate": "2023-03-07",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 7,
+        "id": "zSeIVKNgyYbf/6tz"
+      }
+    ],
+    "2023-03-04": [
+      {
+        "eventName": "Event 1",
+        "startDate": "2023-03-01",
+        "endDate": "2023-03-07",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 7,
+        "id": "zSeIVKNgyYbf/6tz"
+      }
+    ],
+    "2023-03-05": [
+      {
+        "eventName": "Event 1",
+        "startDate": "2023-03-01",
+        "endDate": "2023-03-07",
+        "startTime": "",
+        "endTime": "",
+        "description": "",
+        "numDays": 7,
+        "id": "zSeIVKNgyYbf/6tz"
+      }
+    ]
+  }
+}
